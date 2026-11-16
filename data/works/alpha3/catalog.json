@@ -1,0 +1,812 @@
+[
+  {
+    "id": "c00",
+    "titleJa": "プロローグ",
+    "titleZh": "序章",
+    "route": "序"
+  },
+  {
+    "id": "c01t",
+    "titleJa": "闘志、炎に燃ゆる",
+    "titleZh": "鬥志在火焰裡燒",
+    "route": "刀馬"
+  },
+  {
+    "id": "c02t",
+    "titleJa": "さらばGGG、さらば勇者",
+    "titleZh": "再見 GGG，再見勇者",
+    "route": "刀馬"
+  },
+  {
+    "id": "c01k",
+    "titleJa": "出撃！ 鋼の龍虎",
+    "titleZh": "出擊，鋼之龍虎",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c02k",
+    "titleJa": "新たなる侵略者！ 立ち上がれV！",
+    "titleZh": "新的侵略者，站起來 V",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c01q",
+    "titleJa": "虚空からの転生",
+    "titleZh": "從虛空轉生",
+    "route": "科布雷"
+  },
+  {
+    "id": "c02q",
+    "titleJa": "血の狼煙",
+    "titleZh": "血的烽煙",
+    "route": "科布雷"
+  },
+  {
+    "id": "c01e",
+    "titleJa": "シークレット・ミッション",
+    "titleZh": "秘密任務",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c02e",
+    "titleJa": "フラッシュ・デイ",
+    "titleZh": "閃光之日",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c03",
+    "titleJa": "逆襲！ 機界31原種！",
+    "titleZh": "逆襲，機界三十一原種",
+    "route": "合流"
+  },
+  {
+    "id": "c04",
+    "titleJa": "地獄門、開く",
+    "titleZh": "地獄門打開",
+    "route": "合流"
+  },
+  {
+    "id": "c05",
+    "titleJa": "地球圏絶対防衛線",
+    "titleZh": "地球圈絕對防衛線",
+    "route": "合流"
+  },
+  {
+    "id": "c06t",
+    "titleJa": "平和、遥か遠く",
+    "titleZh": "和平，在很遠的地方",
+    "route": "刀馬"
+  },
+  {
+    "id": "c07t",
+    "titleJa": "燃えろ宙！ 妖花フローラの挑戦",
+    "titleZh": "燃燒吧宇宙，妖花芙羅拉的挑戰",
+    "route": "刀馬"
+  },
+  {
+    "id": "c08t",
+    "titleJa": "立ち上がれ！ 勇気ある者達",
+    "titleZh": "站起來，有勇氣的人們",
+    "route": "刀馬"
+  },
+  {
+    "id": "c09t",
+    "titleJa": "内なる修羅",
+    "titleZh": "內在的修羅",
+    "route": "刀馬"
+  },
+  {
+    "id": "c10t",
+    "titleJa": "激震の地底帝国",
+    "titleZh": "劇震的地底帝國",
+    "route": "刀馬"
+  },
+  {
+    "id": "c11t",
+    "titleJa": "戦場の邂逅、そして決別",
+    "titleZh": "戰場上的邂逅，然後訣別",
+    "route": "刀馬"
+  },
+  {
+    "id": "c12t",
+    "titleJa": "守るべきモノ",
+    "titleZh": "該守護的東西",
+    "route": "刀馬"
+  },
+  {
+    "id": "c06k",
+    "titleJa": "北米戦線、異常アリ",
+    "titleZh": "北美戰線有異常",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c07k",
+    "titleJa": "怒りの獣、野生の咆哮",
+    "titleZh": "憤怒的獸，野生的咆哮",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c08k",
+    "titleJa": "輝け！ 不死身の勇者",
+    "titleZh": "發光吧，不死的勇者",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c09k",
+    "titleJa": "再会！ ニューヨーク解放戦",
+    "titleZh": "重逢，紐約解放戰",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c10k",
+    "titleJa": "龍を喰らうもの",
+    "titleZh": "吃龍的東西",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c11k",
+    "titleJa": "新たなる人類",
+    "titleZh": "新的人類",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c12k",
+    "titleJa": "別れの宇宙",
+    "titleZh": "分別的宇宙",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c06q",
+    "titleJa": "GUNDAM出撃",
+    "titleZh": "GUNDAM 出擊",
+    "route": "科布雷"
+  },
+  {
+    "id": "c07q",
+    "titleJa": "崩壊の大地",
+    "titleZh": "崩塌的大地",
+    "route": "科布雷"
+  },
+  {
+    "id": "c08q",
+    "titleJa": "誘う声",
+    "titleZh": "引誘的聲音",
+    "route": "科布雷"
+  },
+  {
+    "id": "c09q",
+    "titleJa": "正義の在処",
+    "titleZh": "正義在哪裡",
+    "route": "科布雷"
+  },
+  {
+    "id": "c10q",
+    "titleJa": "消えていく光",
+    "titleZh": "正在消失的光",
+    "route": "科布雷"
+  },
+  {
+    "id": "c11q",
+    "titleJa": "君と戦場で",
+    "titleZh": "和你在戰場",
+    "route": "科布雷"
+  },
+  {
+    "id": "c12q",
+    "titleJa": "ディーンの火",
+    "titleZh": "迪恩之火",
+    "route": "科布雷"
+  },
+  {
+    "id": "c06e",
+    "titleJa": "ザ・ビギニング",
+    "titleZh": "開端",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c07e",
+    "titleJa": "ワンズ・ジャスティス",
+    "titleZh": "一人之正義",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c08e",
+    "titleJa": "インビジブル・イントルーダー",
+    "titleZh": "看不見的侵入者",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c09e",
+    "titleJa": "アベンジャー",
+    "titleZh": "復仇者",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c10e",
+    "titleJa": "グッバイ・フレンズ",
+    "titleZh": "再見，朋友",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c11e",
+    "titleJa": "パワー・ジャンクション",
+    "titleZh": "力量交會",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c12e",
+    "titleJa": "コンクルージョン",
+    "titleZh": "結論",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c13",
+    "titleJa": "もう一度、自らの足で",
+    "titleZh": "再一次，用自己的腳",
+    "route": "合流"
+  },
+  {
+    "id": "cs1",
+    "titleJa": "光と闇",
+    "titleZh": "光與暗",
+    "route": "副話 · 第13話後"
+  },
+  {
+    "id": "c14",
+    "titleJa": "オペレーション・ハルパー",
+    "titleZh": "哈爾珀作戰",
+    "route": "合流"
+  },
+  {
+    "id": "c15",
+    "titleJa": "遥かなる凱歌",
+    "titleZh": "遙遠的凱歌",
+    "route": "合流"
+  },
+  {
+    "id": "c16",
+    "titleJa": "導かれる魂、銀河で",
+    "titleZh": "被引導的魂，在銀河",
+    "route": "合流"
+  },
+  {
+    "id": "c17",
+    "titleJa": "ディスコード・ハーモニー",
+    "titleZh": "不和的和聲",
+    "route": "合流"
+  },
+  {
+    "id": "c18",
+    "titleJa": "銀河流浪",
+    "titleZh": "銀河流浪",
+    "route": "合流"
+  },
+  {
+    "id": "cs2",
+    "titleJa": "母と誓った明日のために",
+    "titleZh": "為了和母親發誓的明天",
+    "route": "副話 · 第18話後"
+  },
+  {
+    "id": "c19g",
+    "titleJa": "宇宙に降る星",
+    "titleZh": "落到宇宙的星",
+    "route": "地上 · 大天使"
+  },
+  {
+    "id": "c20g",
+    "titleJa": "強襲、砂漠の虎",
+    "titleZh": "強襲，沙漠之虎",
+    "route": "地上 · 大天使"
+  },
+  {
+    "id": "c21g",
+    "titleJa": "プリティ・デビル",
+    "titleZh": "漂亮的魔鬼",
+    "route": "地上 · 大天使"
+  },
+  {
+    "id": "c22g",
+    "titleJa": "砂塵の果て",
+    "titleZh": "沙塵的盡頭",
+    "route": "地上 · 大天使"
+  },
+  {
+    "id": "c23g",
+    "titleJa": "エモーション・ハイ",
+    "titleZh": "情緒高漲",
+    "route": "地上 · 大天使"
+  },
+  {
+    "id": "c19d",
+    "titleJa": "悪夢への招待状",
+    "titleZh": "通往惡夢的請柬",
+    "route": "星間 · 大空魔龍"
+  },
+  {
+    "id": "c20d",
+    "titleJa": "異邦人達の帰還",
+    "titleZh": "異邦人回來",
+    "route": "星間 · 大空魔龍"
+  },
+  {
+    "id": "c21d",
+    "titleJa": "裏切りの代償",
+    "titleZh": "背叛的代價",
+    "route": "星間 · 大空魔龍"
+  },
+  {
+    "id": "c22d",
+    "titleJa": "発動する力、無限大",
+    "titleZh": "發動的力量，無限大",
+    "route": "星間 · 大空魔龍"
+  },
+  {
+    "id": "c23d",
+    "titleJa": "決戦！ 地獄の月荒野！",
+    "titleZh": "決戰，地獄的月之荒野",
+    "route": "星間 · 大空魔龍"
+  },
+  {
+    "id": "c24",
+    "titleJa": "戦神の星で",
+    "titleZh": "在戰神的星球",
+    "route": "合流"
+  },
+  {
+    "id": "c25",
+    "titleJa": "選ばれし者、選びし者",
+    "titleZh": "被選中的人，做出選擇的人",
+    "route": "合流"
+  },
+  {
+    "id": "c26",
+    "titleJa": "かりそめの旅人",
+    "titleZh": "暫住的旅人",
+    "route": "合流"
+  },
+  {
+    "id": "cs3",
+    "titleJa": "勝利への誓い",
+    "titleZh": "通向勝利的誓言",
+    "route": "副話 · 第26話後"
+  },
+  {
+    "id": "c27",
+    "titleJa": "勇気ある者達の誓い",
+    "titleZh": "有勇氣的人們的誓言",
+    "route": "合流"
+  },
+  {
+    "id": "cs4",
+    "titleJa": "駆け抜ける竜巻",
+    "titleZh": "奔過去的龍捲",
+    "route": "副話 · 第27話後"
+  },
+  {
+    "id": "c28",
+    "titleJa": "いつか星の海へ",
+    "titleZh": "總有一天去星之海",
+    "route": "合流"
+  },
+  {
+    "id": "c29",
+    "titleJa": "押された烙印",
+    "titleZh": "被按下的烙印",
+    "route": "合流"
+  },
+  {
+    "id": "c30g",
+    "titleJa": "終わらない閃光",
+    "titleZh": "停不下來的閃光",
+    "route": "地球部隊"
+  },
+  {
+    "id": "c31g",
+    "titleJa": "青き清浄なる世界のために",
+    "titleZh": "為了青色潔淨的世界",
+    "route": "地球部隊"
+  },
+  {
+    "id": "c32g",
+    "titleJa": "守護神の巫女",
+    "titleZh": "守護神的巫女",
+    "route": "地球部隊"
+  },
+  {
+    "id": "c33g",
+    "titleJa": "暁への脱出",
+    "titleZh": "逃向黎明",
+    "route": "地球部隊"
+  },
+  {
+    "id": "c30o",
+    "titleJa": "ロスト・ディーヴァ",
+    "titleZh": "失落的歌姬",
+    "route": "外宇宙艦隊"
+  },
+  {
+    "id": "c31o",
+    "titleJa": "禁断の惑星へ",
+    "titleZh": "去禁忌的行星",
+    "route": "外宇宙艦隊"
+  },
+  {
+    "id": "c32o",
+    "titleJa": "インフィニティ・ソウル",
+    "titleZh": "無限之魂",
+    "route": "外宇宙艦隊"
+  },
+  {
+    "id": "c33o",
+    "titleJa": "受け継ぎし遺産",
+    "titleZh": "繼承下來的遺產",
+    "route": "外宇宙艦隊"
+  },
+  {
+    "id": "c34t",
+    "titleJa": "武人の心、その意味",
+    "titleZh": "武人的心，那個意思",
+    "route": "刀馬"
+  },
+  {
+    "id": "c35t",
+    "titleJa": "闘志、誰がために",
+    "titleZh": "鬥志為了誰",
+    "route": "刀馬"
+  },
+  {
+    "id": "c34k",
+    "titleJa": "怒りの強念者",
+    "titleZh": "憤怒的強念者",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c35k",
+    "titleJa": "魂、久遠に",
+    "titleZh": "魂，直到永遠",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c34q",
+    "titleJa": "虚ろな魂の捕囚",
+    "titleZh": "空虛之魂的囚禁",
+    "route": "科布雷"
+  },
+  {
+    "id": "c35q",
+    "titleJa": "THE GUN OF DIS",
+    "titleZh": "THE GUN OF DIS",
+    "route": "科布雷"
+  },
+  {
+    "id": "c34e",
+    "titleJa": "ベトレイヤー",
+    "titleZh": "背叛者",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c35e",
+    "titleJa": "クロージング・ハート",
+    "titleZh": "正在關上的心",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c36",
+    "titleJa": "激突！ 勇者VS勇者！",
+    "titleZh": "激突，勇者對勇者",
+    "route": "合流"
+  },
+  {
+    "id": "cs5",
+    "titleJa": "バサラ放浪",
+    "titleZh": "巴薩拉流浪",
+    "route": "副話 · 第36話後"
+  },
+  {
+    "id": "c37",
+    "titleJa": "果て無き旅路の始まり",
+    "titleZh": "沒有盡頭的旅程開始",
+    "route": "合流"
+  },
+  {
+    "id": "c38s",
+    "titleJa": "運命の炎の中で",
+    "titleZh": "在命運的火焰裡",
+    "route": "索洛艦這邊"
+  },
+  {
+    "id": "c39s",
+    "titleJa": "果てに待つもの",
+    "titleZh": "在盡頭等待的東西",
+    "route": "索洛艦這邊"
+  },
+  {
+    "id": "c40s",
+    "titleJa": "勇者王、最後の刻！",
+    "titleZh": "勇者王，最後的時刻",
+    "route": "索洛艦這邊"
+  },
+  {
+    "id": "c38b",
+    "titleJa": "戦火は星の瞬きと",
+    "titleZh": "戰火像星的閃爍",
+    "route": "Battle 7 這邊"
+  },
+  {
+    "id": "c39b",
+    "titleJa": "ただ母星のために",
+    "titleZh": "只為母星",
+    "route": "Battle 7 這邊"
+  },
+  {
+    "id": "c40b",
+    "titleJa": "勇気、果つる時･･･",
+    "titleZh": "勇氣結束的時候",
+    "route": "Battle 7 這邊"
+  },
+  {
+    "id": "c41",
+    "titleJa": "銀河が消滅する日",
+    "titleZh": "銀河消滅的日子",
+    "route": "合流"
+  },
+  {
+    "id": "c42",
+    "titleJa": "超勇者黙示録",
+    "titleZh": "超勇者默示錄",
+    "route": "合流"
+  },
+  {
+    "id": "cs6",
+    "titleJa": "過去からの願い",
+    "titleZh": "來自過去的願望",
+    "route": "副話 · 第42話後"
+  },
+  {
+    "id": "c43t",
+    "titleJa": "閉ざされた世界で",
+    "titleZh": "在被關上的世界",
+    "route": "刀馬"
+  },
+  {
+    "id": "c44t",
+    "titleJa": "闘志、未来のために",
+    "titleZh": "鬥志，為了未來",
+    "route": "刀馬"
+  },
+  {
+    "id": "c43k",
+    "titleJa": "真の龍神",
+    "titleZh": "真正的龍神",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c44k",
+    "titleJa": "四神招魂、ここに",
+    "titleZh": "四神招魂，在此",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "c43q",
+    "titleJa": "人形達の宴",
+    "titleZh": "人偶們的宴席",
+    "route": "科布雷"
+  },
+  {
+    "id": "c44q",
+    "titleJa": "鋼の戦神",
+    "titleZh": "鋼之戰神",
+    "route": "科布雷"
+  },
+  {
+    "id": "c43e",
+    "titleJa": "サイレント・クライ",
+    "titleZh": "無聲的哭",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "c44e",
+    "titleJa": "マイホーム・マイフレンズ",
+    "titleZh": "我的家，我的朋友",
+    "route": "瑟蕾娜"
+  },
+  {
+    "id": "cs7",
+    "titleJa": "正義の旗の下に",
+    "titleZh": "在正義的旗下",
+    "route": "副話 · 第44話後"
+  },
+  {
+    "id": "c45g",
+    "titleJa": "とらわれの心、叫ぶ時",
+    "titleZh": "被困住的心叫出來的時候",
+    "route": "地球 · 保護伊爾伊"
+  },
+  {
+    "id": "c46g",
+    "titleJa": "さらば父よ、戦士達の旅立ち",
+    "titleZh": "再見了父親，戰士們出發",
+    "route": "地球 · 保護伊爾伊"
+  },
+  {
+    "id": "c47g",
+    "titleJa": "神になろうとした男",
+    "titleZh": "想變成神的男人",
+    "route": "地球 · 保護伊爾伊"
+  },
+  {
+    "id": "c45z",
+    "titleJa": "忍び寄る終焉",
+    "titleZh": "悄悄靠近的終焉",
+    "route": "宇宙 · 對 ZAFT"
+  },
+  {
+    "id": "c46z",
+    "titleJa": "永遠を信じて",
+    "titleZh": "相信永遠",
+    "route": "宇宙 · 對 ZAFT"
+  },
+  {
+    "id": "c47z",
+    "titleJa": "ヒトの見た夢",
+    "titleZh": "人看見的夢",
+    "route": "宇宙 · 對 ZAFT"
+  },
+  {
+    "id": "c45b",
+    "titleJa": "悪夢の突入作戦",
+    "titleZh": "惡夢的突入作戰",
+    "route": "巴羅塔"
+  },
+  {
+    "id": "c46b",
+    "titleJa": "野望の第4惑星",
+    "titleZh": "野心的第四行星",
+    "route": "巴羅塔"
+  },
+  {
+    "id": "c47b",
+    "titleJa": "大宇宙の意志",
+    "titleZh": "大宇宙的意志",
+    "route": "巴羅塔"
+  },
+  {
+    "id": "c45o",
+    "titleJa": "もう一つの母星 ボアザン",
+    "titleZh": "另一顆母星，波阿贊",
+    "route": "波阿贊"
+  },
+  {
+    "id": "c46o",
+    "titleJa": "崩れゆく邪悪の塔",
+    "titleZh": "正在崩塌的邪惡之塔",
+    "route": "波阿贊"
+  },
+  {
+    "id": "c47o",
+    "titleJa": "因果の海で",
+    "titleZh": "在因果之海",
+    "route": "波阿贊"
+  },
+  {
+    "id": "c48a",
+    "titleJa": "失われた者たちへの鎮魂歌",
+    "titleZh": "給失去的人們的鎮魂歌",
+    "route": "地球與宇宙共用"
+  },
+  {
+    "id": "c48b",
+    "titleJa": "銀河に死す",
+    "titleZh": "死在銀河",
+    "route": "巴羅塔與波阿贊共用"
+  },
+  {
+    "id": "c49",
+    "titleJa": "銀河に響く歌声",
+    "titleZh": "響在銀河的歌聲",
+    "route": "合流"
+  },
+  {
+    "id": "cs8",
+    "titleJa": "新たなる海原へ",
+    "titleZh": "去新的海",
+    "route": "副話 · 第49話後"
+  },
+  {
+    "id": "c50",
+    "titleJa": "二つの門と二つの星",
+    "titleZh": "兩扇門和兩顆星",
+    "route": "合流"
+  },
+  {
+    "id": "c51",
+    "titleJa": "終わらない明日へ",
+    "titleZh": "走向停不下來的明天",
+    "route": "合流"
+  },
+  {
+    "id": "c52",
+    "titleJa": "世界の中心でアイを叫んだけもの",
+    "titleZh": "在世界中心大喊愛的野獸",
+    "route": "合流"
+  },
+  {
+    "id": "c53",
+    "titleJa": "出航！ 銀河殴り込み艦隊！",
+    "titleZh": "出航，銀河打進去艦隊",
+    "route": "合流"
+  },
+  {
+    "id": "c54",
+    "titleJa": "神に守られし星",
+    "titleZh": "被神守護的星",
+    "route": "合流"
+  },
+  {
+    "id": "c55",
+    "titleJa": "まつろわぬ神",
+    "titleZh": "不服的神",
+    "route": "合流"
+  },
+  {
+    "id": "c56",
+    "titleJa": "終わりなき総力戦",
+    "titleZh": "沒有結束的總力戰",
+    "route": "合流"
+  },
+  {
+    "id": "csp",
+    "titleJa": "スペシャルステージ",
+    "titleZh": "特別舞台",
+    "route": "副話 · 主線都過了"
+  },
+  {
+    "id": "c57b",
+    "titleJa": "憎しみの環の中で",
+    "titleZh": "在憎恨的環裡",
+    "route": "另找路 · 巴夫"
+  },
+  {
+    "id": "c58b",
+    "titleJa": "発動",
+    "titleZh": "發動",
+    "route": "另找路 · 巴夫"
+  },
+  {
+    "id": "c57k",
+    "titleJa": "終わりの始まり",
+    "titleZh": "結束的開始",
+    "route": "另找路 · 宇宙怪獸"
+  },
+  {
+    "id": "c58k",
+    "titleJa": "死闘、未来を懸けて",
+    "titleZh": "死鬥，把未來押上去",
+    "route": "另找路 · 宇宙怪獸"
+  },
+  {
+    "id": "c57f",
+    "titleJa": "銀河に君と",
+    "titleZh": "銀河裡有你",
+    "route": "選擇戰鬥 · 意迪安結局"
+  },
+  {
+    "id": "c59",
+    "titleJa": "果てしなき流れの果てに",
+    "titleZh": "沒有盡頭的流動的盡頭",
+    "route": "合流"
+  },
+  {
+    "id": "c60f",
+    "titleJa": "今遥か遠い彼方･･･",
+    "titleZh": "如今在遙遠的彼方",
+    "route": "熟練度 57 以上，420 回合以內"
+  },
+  {
+    "id": "c60e",
+    "titleJa": "終焉の銀河",
+    "titleZh": "終焉的銀河",
+    "route": "未達上面的條件"
+  }
+]

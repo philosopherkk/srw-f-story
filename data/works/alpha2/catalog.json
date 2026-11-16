@@ -1,0 +1,902 @@
+[
+  {
+    "id": "b01s",
+    "titleJa": "悪を断つ剣なり",
+    "titleZh": "斬斷邪惡的劍",
+    "route": "善格"
+  },
+  {
+    "id": "b02s",
+    "titleJa": "地獄に堕ちた剣鉄也",
+    "titleZh": "墜入地獄的劍鐵也",
+    "route": "善格"
+  },
+  {
+    "id": "b03s",
+    "titleJa": "世紀のマグネ・ロボット",
+    "titleZh": "世紀的磁力機器人",
+    "route": "善格"
+  },
+  {
+    "id": "b04s",
+    "titleJa": "立て！闘将ダイモス",
+    "titleZh": "站起來，鬥將戴摩斯",
+    "route": "善格"
+  },
+  {
+    "id": "b05s",
+    "titleJa": "我が手に太陽の輝きを－前編－",
+    "titleZh": "把太陽的光輝握在手裡（前）",
+    "route": "善格"
+  },
+  {
+    "id": "b06s",
+    "titleJa": "我が手に太陽の輝きを－後編－",
+    "titleZh": "把太陽的光輝握在手裡（後）",
+    "route": "善格"
+  },
+  {
+    "id": "b07s",
+    "titleJa": "ゴーショーグン発進せよ",
+    "titleZh": "剛修剛出發",
+    "route": "善格"
+  },
+  {
+    "id": "b08s",
+    "titleJa": "アンチボディ",
+    "titleZh": "抗體",
+    "route": "善格"
+  },
+  {
+    "id": "b09s",
+    "titleJa": "ファイナルフュージョン、承認！",
+    "titleZh": "最終合體，批准",
+    "route": "善格"
+  },
+  {
+    "id": "b10s",
+    "titleJa": "二つのクロスボーン・バンガード",
+    "titleZh": "兩個骸骨先鋒隊",
+    "route": "善格"
+  },
+  {
+    "id": "b11s",
+    "titleJa": "宿命の出会いは戦火の中",
+    "titleZh": "宿命的相遇在戰火裡",
+    "route": "善格"
+  },
+  {
+    "id": "b12s",
+    "titleJa": "木星からの帰還者",
+    "titleZh": "從木星回來的人",
+    "route": "善格"
+  },
+  {
+    "id": "b13s",
+    "titleJa": "悲しい罪は涙で消えない",
+    "titleZh": "悲傷的罪不會被眼淚消去",
+    "route": "善格"
+  },
+  {
+    "id": "b14s",
+    "titleJa": "反逆の狼煙",
+    "titleZh": "反逆的烽煙",
+    "route": "善格"
+  },
+  {
+    "id": "b15s",
+    "titleJa": "天翔けるガンダム",
+    "titleZh": "翱翔的高達",
+    "route": "善格"
+  },
+  {
+    "id": "b16s",
+    "titleJa": "復活の赤い彗星",
+    "titleZh": "復活的紅色彗星",
+    "route": "善格"
+  },
+  {
+    "id": "b17s",
+    "titleJa": "緑の髪の少年",
+    "titleZh": "綠頭髮的少年",
+    "route": "善格"
+  },
+  {
+    "id": "b18s",
+    "titleJa": "銀河を旅する船",
+    "titleZh": "在銀河旅行的船",
+    "route": "善格"
+  },
+  {
+    "id": "b19s",
+    "titleJa": "愛する者は、すでに亡く",
+    "titleZh": "愛的人已經不在",
+    "route": "善格"
+  },
+  {
+    "id": "b20s",
+    "titleJa": "エリカとダイモス、涙の戦い！",
+    "titleZh": "艾麗卡與戴摩斯，含淚的戰鬥",
+    "route": "善格"
+  },
+  {
+    "id": "b01k",
+    "titleJa": "龍虎激突",
+    "titleZh": "龍虎激突",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b02k",
+    "titleJa": "ゴーショーグン、合身GO！",
+    "titleZh": "剛修剛，合身 GO",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b03k",
+    "titleJa": "勇者王誕生！",
+    "titleZh": "勇者王誕生",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b04k",
+    "titleJa": "飛び立て！ 大空魔竜ガイキング",
+    "titleZh": "飛吧，大空魔龍蓋金",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b05k",
+    "titleJa": "深海からの来訪者",
+    "titleZh": "來自深海的訪客",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b06k",
+    "titleJa": "その名は超竜神",
+    "titleZh": "他的名字是超龍神",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b07k",
+    "titleJa": "光を求めて",
+    "titleZh": "尋找光",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b08k",
+    "titleJa": "もう一つのゲッターロボ",
+    "titleZh": "另一台蓋特",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b09k",
+    "titleJa": "太古の怨霊",
+    "titleZh": "太古怨靈",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b10k",
+    "titleJa": "宙よ立て！ビルドアップ！！",
+    "titleZh": "宇宙啊站起來，組裝",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b11k",
+    "titleJa": "G奪回作戦",
+    "titleZh": "G 奪回作戰",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b12k",
+    "titleJa": "軍神が災いを呼ぶ",
+    "titleZh": "軍神招來災禍",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b13k",
+    "titleJa": "忍び寄る隣人",
+    "titleZh": "悄悄靠近的鄰人",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b14k",
+    "titleJa": "その闇の名は木星",
+    "titleZh": "那黑暗的名字是木星",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b15k",
+    "titleJa": "悪夢！私の兄は地球の敵",
+    "titleZh": "惡夢，我哥哥是地球的敵人",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b16k",
+    "titleJa": "ティターンズの亡霊",
+    "titleZh": "泰坦斯的亡靈",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b17k",
+    "titleJa": "二人の姫君",
+    "titleZh": "兩位公主",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b18k",
+    "titleJa": "遅すぎた追撃",
+    "titleZh": "太遲的追擊",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b19k",
+    "titleJa": "帰るべき場所",
+    "titleZh": "該回去的地方",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b20k",
+    "titleJa": "母国の誇りをかけた勇士",
+    "titleZh": "以祖國為傲的勇士",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b01a",
+    "titleJa": "抹消されたMk-III",
+    "titleZh": "被抹消的 Mk-III",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b02a",
+    "titleJa": "ロンデニオンへ来た男",
+    "titleZh": "來到隆迪尼恩的男人",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b03a",
+    "titleJa": "約束は炎に消えて",
+    "titleZh": "約定消失在火焰裡",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b04a",
+    "titleJa": "守るべきもの、倒すべき敵",
+    "titleZh": "該守護的，該打倒的",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b05a",
+    "titleJa": "Gの帰還",
+    "titleZh": "G 歸來",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b06a",
+    "titleJa": "動乱の赤き星",
+    "titleZh": "動亂的赤星",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b07a",
+    "titleJa": "宇宙海賊 クロスボーン・バンガード",
+    "titleZh": "宇宙海盜，骸骨先鋒隊",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b08a",
+    "titleJa": "引き裂かれた想い",
+    "titleZh": "被撕開的心意",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b09a",
+    "titleJa": "反乱と死の旋風",
+    "titleZh": "叛亂與死亡旋風",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b10a",
+    "titleJa": "弱肉強食の理",
+    "titleZh": "弱肉強食的道理",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b11a",
+    "titleJa": "ロンデニオン強襲",
+    "titleZh": "強襲隆迪尼恩",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b12a",
+    "titleJa": "シャアズ・ビリービング・アワズプレイ",
+    "titleZh": "夏亞所相信的，是我們的戲",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b13a",
+    "titleJa": "リクレイマー",
+    "titleZh": "回收者",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b14a",
+    "titleJa": "謎のエネルギー、ビムラー",
+    "titleZh": "謎樣的能量，比姆拉",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b15a",
+    "titleJa": "リバイバル",
+    "titleZh": "復活",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b16a",
+    "titleJa": "鉄の巨神",
+    "titleZh": "鐵之巨神",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b17a",
+    "titleJa": "青と赤",
+    "titleZh": "青與紅",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b18a",
+    "titleJa": "敵か味方か",
+    "titleZh": "是敵是友",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b19a",
+    "titleJa": "邪魔大王国の復活",
+    "titleZh": "邪魔大王國復活",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b20a",
+    "titleJa": "ミッション・イミテイション",
+    "titleZh": "模仿任務",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b01i",
+    "titleJa": "銀の流星",
+    "titleZh": "銀色流星",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b02i",
+    "titleJa": "海賊のガンダム",
+    "titleZh": "海盜的高達",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b03i",
+    "titleJa": "闘将、火星に立つ",
+    "titleZh": "鬥將，立於火星",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b04i",
+    "titleJa": "我らと共に真実へ",
+    "titleZh": "和我們一起走向真實",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b05i",
+    "titleJa": "木星帝国",
+    "titleZh": "木星帝國",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b06i",
+    "titleJa": "滅びを告げる者",
+    "titleZh": "宣告毀滅的人",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b07i",
+    "titleJa": "戦火に消えた平和の願い",
+    "titleZh": "消失在戰火裡的和平心願",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b08i",
+    "titleJa": "ザビーネ反乱",
+    "titleZh": "扎比內叛亂",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b09i",
+    "titleJa": "戦士の戦い、兵士の信念",
+    "titleZh": "戰士的戰鬥，士兵的信念",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b10i",
+    "titleJa": "少年達の決意",
+    "titleZh": "少年們的決意",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b11i",
+    "titleJa": "我が妹に誇り高き死を",
+    "titleZh": "把驕傲的死留給我妹妹",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b12i",
+    "titleJa": "反逆の翼、再び",
+    "titleZh": "反逆之翼，再次",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b13i",
+    "titleJa": "彗星の来襲",
+    "titleZh": "彗星來襲",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b14i",
+    "titleJa": "深海を発して",
+    "titleZh": "從深海出發",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b15i",
+    "titleJa": "長き旅路の始まり",
+    "titleZh": "長途的開始",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b16i",
+    "titleJa": "比瑪とブレンパワード",
+    "titleZh": "比瑪與腦力",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b17i",
+    "titleJa": "勇者王ガオガイガー",
+    "titleZh": "勇者王我王凱牙",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b18i",
+    "titleJa": "ビルドアップ！鋼鉄ジーグ！！",
+    "titleZh": "組裝，鋼鐵吉克",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b19i",
+    "titleJa": "勇の戦い",
+    "titleZh": "勇的戰鬥",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b20i",
+    "titleJa": "まやかしの平和は要らない",
+    "titleZh": "不要虛假的和平",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b21",
+    "titleJa": "金色の破壊神",
+    "titleZh": "金色的破壞神",
+    "route": "合流"
+  },
+  {
+    "id": "b22s",
+    "titleJa": "目覚めろジーグ！ 怒りの反撃！！",
+    "titleZh": "醒來吧吉克，憤怒的反擊",
+    "route": "超級系"
+  },
+  {
+    "id": "b23s",
+    "titleJa": "マシーンランド浮上",
+    "titleZh": "機器大陸浮上",
+    "route": "超級系"
+  },
+  {
+    "id": "b24s",
+    "titleJa": "帝王ゴール決死の猛反撃",
+    "titleZh": "帝王格爾拼命的反擊",
+    "route": "超級系"
+  },
+  {
+    "id": "b22r",
+    "titleJa": "戦うだけのマシン",
+    "titleZh": "只會戰鬥的機器",
+    "route": "即時系"
+  },
+  {
+    "id": "b23r",
+    "titleJa": "恐竜帝国の逆襲－前編－",
+    "titleZh": "恐龍帝國的逆襲（前）",
+    "route": "即時系"
+  },
+  {
+    "id": "b24r",
+    "titleJa": "恐竜帝国の逆襲－後編－",
+    "titleZh": "恐龍帝國的逆襲（後）",
+    "route": "即時系"
+  },
+  {
+    "id": "b25",
+    "titleJa": "開かれた地獄の扉",
+    "titleZh": "被打開的地獄之門",
+    "route": "合流"
+  },
+  {
+    "id": "b26v",
+    "titleJa": "相容れぬ存在",
+    "titleZh": "不能相容的存在",
+    "route": "生命網"
+  },
+  {
+    "id": "b27v",
+    "titleJa": "ファルコン壊滅の危機",
+    "titleZh": "獵鷹毀滅的危機",
+    "route": "生命網"
+  },
+  {
+    "id": "b28v",
+    "titleJa": "我が拳に命を懸けて",
+    "titleZh": "把命押在我的拳頭上",
+    "route": "生命網"
+  },
+  {
+    "id": "b29v",
+    "titleJa": "怒りの日輪",
+    "titleZh": "憤怒的日輪",
+    "route": "生命網"
+  },
+  {
+    "id": "b30v",
+    "titleJa": "コロスは殺せない",
+    "titleZh": "殺不了科洛斯",
+    "route": "生命網"
+  },
+  {
+    "id": "b26z",
+    "titleJa": "謀略の大地",
+    "titleZh": "謀略的大地",
+    "route": "北美新吉翁"
+  },
+  {
+    "id": "b27z",
+    "titleJa": "熱砂の蜉蝣",
+    "titleZh": "熱沙的蜉蝣",
+    "route": "北美新吉翁"
+  },
+  {
+    "id": "b28z",
+    "titleJa": "海底城！大攻撃開始！！",
+    "titleZh": "海底城，大攻擊開始",
+    "route": "北美新吉翁"
+  },
+  {
+    "id": "b29z",
+    "titleJa": "地球ぶった切り作戦",
+    "titleZh": "把地球切開的作戰",
+    "route": "北美新吉翁"
+  },
+  {
+    "id": "b30z",
+    "titleJa": "華麗なるかな二流",
+    "titleZh": "華麗的二流",
+    "route": "北美新吉翁"
+  },
+  {
+    "id": "b31s",
+    "titleJa": "武神装攻、降臨",
+    "titleZh": "武神裝攻降臨",
+    "route": "善格"
+  },
+  {
+    "id": "b31k",
+    "titleJa": "我ニ敵ナシ",
+    "titleZh": "我無敵",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b31a",
+    "titleJa": "百舌と隼",
+    "titleZh": "伯勞與隼",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b31i",
+    "titleJa": "約束の宇宙へ",
+    "titleZh": "去約定的宇宙",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b32",
+    "titleJa": "妄執の妖花",
+    "titleZh": "執念的妖花",
+    "route": "合流"
+  },
+  {
+    "id": "b33",
+    "titleJa": "少年の向かう未来",
+    "titleZh": "少年走向的未來",
+    "route": "合流"
+  },
+  {
+    "id": "b34m",
+    "titleJa": "オペレーション・アポロ",
+    "titleZh": "阿波羅作戰",
+    "route": "前往月球"
+  },
+  {
+    "id": "b35m",
+    "titleJa": "大空魔竜、危機一髪！！",
+    "titleZh": "大空魔龍千鈞一髮",
+    "route": "前往月球"
+  },
+  {
+    "id": "b36m",
+    "titleJa": "涙のデビルジャガー",
+    "titleZh": "含淚的魔鬼美洲虎",
+    "route": "前往月球"
+  },
+  {
+    "id": "b34x",
+    "titleJa": "いつかまた出逢う日のために",
+    "titleZh": "為了總有一天再相遇",
+    "route": "前往阿克西斯"
+  },
+  {
+    "id": "b35x",
+    "titleJa": "魂、重力に引かれて－前編－",
+    "titleZh": "魂被重力拉住（前）",
+    "route": "前往阿克西斯"
+  },
+  {
+    "id": "b36x",
+    "titleJa": "魂、重力に引かれて－後編－",
+    "titleZh": "魂被重力拉住（後）",
+    "route": "前往阿克西斯"
+  },
+  {
+    "id": "b37s",
+    "titleJa": "常世の舞",
+    "titleZh": "常世之舞",
+    "route": "善格"
+  },
+  {
+    "id": "b37k",
+    "titleJa": "超機人の宿命",
+    "titleZh": "超機人的宿命",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b37a",
+    "titleJa": "ツイン・バード",
+    "titleZh": "雙鳥",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b37i",
+    "titleJa": "輝きを一つに",
+    "titleZh": "把光芒合成一個",
+    "route": "艾比絲"
+  },
+  {
+    "id": "b38",
+    "titleJa": "星の屑、再び",
+    "titleZh": "星屑，再次",
+    "route": "合流"
+  },
+  {
+    "id": "b39",
+    "titleJa": "絶望と奈落への降下",
+    "titleZh": "墜向絕望和深淵",
+    "route": "合流"
+  },
+  {
+    "id": "b40",
+    "titleJa": "ネリー・リバイバル",
+    "titleZh": "奈莉復活",
+    "route": "合流"
+  },
+  {
+    "id": "b41",
+    "titleJa": "恐怖！ 日本制圧作戦－前編－",
+    "titleZh": "恐怖，日本制圧作戰（前）",
+    "route": "合流"
+  },
+  {
+    "id": "b42",
+    "titleJa": "恐怖！ 日本制圧作戦－後編－",
+    "titleZh": "恐怖，日本制圧作戰（後）",
+    "route": "合流"
+  },
+  {
+    "id": "b43",
+    "titleJa": "スーパーロボット軍団、怒りの大反撃！！",
+    "titleZh": "超級機器人軍團，憤怒的大反擊",
+    "route": "合流"
+  },
+  {
+    "id": "b44",
+    "titleJa": "応えよ、オルファン",
+    "titleZh": "回應吧，奧凡",
+    "route": "合流"
+  },
+  {
+    "id": "b45",
+    "titleJa": "ビムラーの意志",
+    "titleZh": "比姆拉的意志",
+    "route": "合流"
+  },
+  {
+    "id": "b46j",
+    "titleJa": "大東京消滅－前編－",
+    "titleZh": "大東京消滅（前）",
+    "route": "日本"
+  },
+  {
+    "id": "b47j",
+    "titleJa": "大東京消滅－後編－",
+    "titleZh": "大東京消滅（後）",
+    "route": "日本"
+  },
+  {
+    "id": "b46m",
+    "titleJa": "激突！ ミケーネ帝国－前編－",
+    "titleZh": "激突，邁錫尼帝國（前）",
+    "route": "邁錫尼"
+  },
+  {
+    "id": "b47m",
+    "titleJa": "激突！ ミケーネ帝国－後編－",
+    "titleZh": "激突，邁錫尼帝國（後）",
+    "route": "邁錫尼"
+  },
+  {
+    "id": "b48",
+    "titleJa": "決戦への秒読み",
+    "titleZh": "決戰倒數",
+    "route": "合流"
+  },
+  {
+    "id": "b49",
+    "titleJa": "決断",
+    "titleZh": "決斷",
+    "route": "合流"
+  },
+  {
+    "id": "b50rm",
+    "titleJa": "機界転生－前編－",
+    "titleZh": "機界轉生（前）",
+    "route": "拒絕哈曼 · 邁錫尼"
+  },
+  {
+    "id": "b51rm",
+    "titleJa": "機界転生－後編－",
+    "titleZh": "機界轉生（後）",
+    "route": "拒絕哈曼 · 邁錫尼"
+  },
+  {
+    "id": "b50rj",
+    "titleJa": "抗う力は我にあり－前編－",
+    "titleZh": "抗拒的力量在我這裡（前）",
+    "route": "拒絕哈曼 · 日本"
+  },
+  {
+    "id": "b51rj",
+    "titleJa": "抗う力は我にあり－後編－",
+    "titleZh": "抗拒的力量在我這裡（後）",
+    "route": "拒絕哈曼 · 日本"
+  },
+  {
+    "id": "b52r",
+    "titleJa": "私が守りたかったもの",
+    "titleZh": "我想守護的東西",
+    "route": "拒絕哈曼"
+  },
+  {
+    "id": "b53r",
+    "titleJa": "許されざる罪",
+    "titleZh": "不被允許的罪",
+    "route": "拒絕哈曼"
+  },
+  {
+    "id": "b54r",
+    "titleJa": "邪悪な救世主",
+    "titleZh": "邪惡的救世主",
+    "route": "拒絕哈曼"
+  },
+  {
+    "id": "b55r",
+    "titleJa": "忌まわしい記憶と共に",
+    "titleZh": "和可憎的記憶一起",
+    "route": "拒絕哈曼"
+  },
+  {
+    "id": "b56r",
+    "titleJa": "BEYOND THE TIME",
+    "titleZh": "BEYOND THE TIME",
+    "route": "拒絕哈曼"
+  },
+  {
+    "id": "b50t",
+    "titleJa": "小バームの大攻防戦",
+    "titleZh": "小巴爾姆的大攻防",
+    "route": "與哈曼休戰"
+  },
+  {
+    "id": "b51t",
+    "titleJa": "暗黒の支配者",
+    "titleZh": "黑暗的支配者",
+    "route": "與哈曼休戰"
+  },
+  {
+    "id": "b52t",
+    "titleJa": "決着は人間の手で",
+    "titleZh": "由人的手來了結",
+    "route": "與哈曼休戰"
+  },
+  {
+    "id": "b53t",
+    "titleJa": "人の心の光",
+    "titleZh": "人心的光",
+    "route": "與哈曼休戰"
+  },
+  {
+    "id": "b54t",
+    "titleJa": "逆襲のシャア",
+    "titleZh": "逆襲的夏亞",
+    "route": "與哈曼休戰"
+  },
+  {
+    "id": "b55tm",
+    "titleJa": "機械仕掛けの世界－前編－",
+    "titleZh": "機械仕掛け的世界（前）",
+    "route": "休戰 · 邁錫尼"
+  },
+  {
+    "id": "b56tm",
+    "titleJa": "機械仕掛けの世界－後編－",
+    "titleZh": "機械仕掛け的世界（後）",
+    "route": "休戰 · 邁錫尼"
+  },
+  {
+    "id": "b55tj",
+    "titleJa": "燃える地球－前編－",
+    "titleZh": "燃燒的地球（前）",
+    "route": "休戰 · 日本"
+  },
+  {
+    "id": "b56tj",
+    "titleJa": "燃える地球－後編－",
+    "titleZh": "燃燒的地球（後）",
+    "route": "休戰 · 日本"
+  },
+  {
+    "id": "b57s",
+    "titleJa": "神を断つ剣なり",
+    "titleZh": "斬斷神的劍",
+    "route": "善格"
+  },
+  {
+    "id": "b57k",
+    "titleJa": "FOREVER & EVER",
+    "titleZh": "FOREVER & EVER",
+    "route": "庫絲哈"
+  },
+  {
+    "id": "b57a",
+    "titleJa": "争いのない日々を、荒野に花束を",
+    "titleZh": "沒有爭鬥的日子，把花束放在荒野",
+    "route": "亞拉多"
+  },
+  {
+    "id": "b57i",
+    "titleJa": "母なる星に抱かれて",
+    "titleZh": "被母親的星球抱住",
+    "route": "艾比絲"
+  }
+]

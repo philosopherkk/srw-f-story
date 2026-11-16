@@ -1,0 +1,416 @@
+[
+  {
+    "id": "g01",
+    "titleJa": "戦火、再び",
+    "titleZh": "戰火，再次",
+    "route": "現代"
+  },
+  {
+    "id": "g02",
+    "titleJa": "あえて汚名を",
+    "titleZh": "寧可背上污名",
+    "route": "現代"
+  },
+  {
+    "id": "g03",
+    "titleJa": "勝利へのVサイン",
+    "titleZh": "通向勝利的 V 字",
+    "route": "現代"
+  },
+  {
+    "id": "g04a",
+    "titleJa": "13番目の星座",
+    "titleZh": "第十三個星座",
+    "route": "月，利恩·霍斯"
+  },
+  {
+    "id": "g05a",
+    "titleJa": "月のゆりかご",
+    "titleZh": "月亮的搖籃",
+    "route": "月，利恩·霍斯"
+  },
+  {
+    "id": "g06a",
+    "titleJa": "情け無用のJ9",
+    "titleZh": "不講情面的 J9",
+    "route": "月，利恩·霍斯"
+  },
+  {
+    "id": "g04b",
+    "titleJa": "正義は我にあり",
+    "titleZh": "正義在我這裡",
+    "route": "極東，亞加瑪"
+  },
+  {
+    "id": "g05b",
+    "titleJa": "鎖を解き放て",
+    "titleZh": "打開鎖",
+    "route": "極東，亞加瑪"
+  },
+  {
+    "id": "g06b",
+    "titleJa": "お呼びとあらば即参上",
+    "titleZh": "一叫就到",
+    "route": "極東，亞加瑪"
+  },
+  {
+    "id": "g07",
+    "titleJa": "終わらない円舞曲",
+    "titleZh": "停不下來的圓舞曲",
+    "route": "現代"
+  },
+  {
+    "id": "g08",
+    "titleJa": "ヌビアは笑う",
+    "titleZh": "努比亞在笑",
+    "route": "現代"
+  },
+  {
+    "id": "g09",
+    "titleJa": "愚者の祭典",
+    "titleZh": "愚者的祭典",
+    "route": "現代"
+  },
+  {
+    "id": "g10",
+    "titleJa": "遥かなる時の彼方",
+    "titleZh": "遙遠的時間彼端",
+    "route": "未來"
+  },
+  {
+    "id": "g11",
+    "titleJa": "なんで掟をやぶるのさ",
+    "titleZh": "為什麼要破規矩",
+    "route": "未來"
+  },
+  {
+    "id": "g12",
+    "titleJa": "謎また謎のイノセント",
+    "titleZh": "謎上加謎的純真者",
+    "route": "未來"
+  },
+  {
+    "id": "g13",
+    "titleJa": "罪なき者の聖域",
+    "titleZh": "無罪者的聖域",
+    "route": "未來"
+  },
+  {
+    "id": "g14a",
+    "titleJa": "月は出ているか",
+    "titleZh": "月亮出來了嗎",
+    "route": "直去塞文堡"
+  },
+  {
+    "id": "g15a",
+    "titleJa": "あなたに、力を…",
+    "titleZh": "把力量給你",
+    "route": "直去塞文堡"
+  },
+  {
+    "id": "g16a",
+    "titleJa": "ガンダム、売るよ",
+    "titleZh": "高達，賣了",
+    "route": "直去塞文堡"
+  },
+  {
+    "id": "g17a",
+    "titleJa": "月の民",
+    "titleZh": "月亮的人民",
+    "route": "直去塞文堡"
+  },
+  {
+    "id": "g14b",
+    "titleJa": "招かれざる客",
+    "titleZh": "不請自來的客人",
+    "route": "不直去"
+  },
+  {
+    "id": "g15b",
+    "titleJa": "ディアナ降臨",
+    "titleZh": "戴安娜降臨",
+    "route": "不直去"
+  },
+  {
+    "id": "g16b",
+    "titleJa": "ローラ＝ローラ",
+    "titleZh": "羅拉·羅拉",
+    "route": "不直去"
+  },
+  {
+    "id": "g17b",
+    "titleJa": "白い悪魔",
+    "titleZh": "白色惡魔",
+    "route": "不直去"
+  },
+  {
+    "id": "g18a",
+    "titleJa": "僕がニュータイプだ",
+    "titleZh": "我才是新人類",
+    "route": "去塞文堡，弗里登"
+  },
+  {
+    "id": "g19a",
+    "titleJa": "共鳴する力",
+    "titleZh": "共鳴的力量",
+    "route": "去塞文堡，弗里登"
+  },
+  {
+    "id": "g20a",
+    "titleJa": "過去からの侵略",
+    "titleZh": "來自過去的侵略",
+    "route": "去塞文堡，弗里登"
+  },
+  {
+    "id": "g18b",
+    "titleJa": "機械の獣たち",
+    "titleZh": "機械的獸",
+    "route": "留在比西尼提，鐵齒輪"
+  },
+  {
+    "id": "g19b",
+    "titleJa": "百年の恋",
+    "titleZh": "百年的戀",
+    "route": "留在比西尼提，鐵齒輪"
+  },
+  {
+    "id": "g20b",
+    "titleJa": "黒歴史の遺産",
+    "titleZh": "黑歷史的遺產",
+    "route": "留在比西尼提，鐵齒輪"
+  },
+  {
+    "id": "g21",
+    "titleJa": "地上をこの手に",
+    "titleZh": "把地上握在這隻手裡",
+    "route": "未來"
+  },
+  {
+    "id": "g22",
+    "titleJa": "謎のランドシップ",
+    "titleZh": "謎樣的陸上艦",
+    "route": "未來"
+  },
+  {
+    "id": "g23",
+    "titleJa": "Loreleiの海",
+    "titleZh": "羅蕾萊之海",
+    "route": "未來"
+  },
+  {
+    "id": "g24",
+    "titleJa": "大地の守護神",
+    "titleZh": "大地的守護神",
+    "route": "未來"
+  },
+  {
+    "id": "g25",
+    "titleJa": "もう逢えない気がして",
+    "titleZh": "覺得再也不會見面",
+    "route": "未來"
+  },
+  {
+    "id": "g26h",
+    "titleJa": "果てしなき大空に誓う",
+    "titleZh": "向沒有盡頭的天空發誓",
+    "route": "熟練度 15 以上"
+  },
+  {
+    "id": "g27h",
+    "titleJa": "ホーラの意地",
+    "titleZh": "霍拉的意氣",
+    "route": "熟練度 15 以上"
+  },
+  {
+    "id": "g28h",
+    "titleJa": "イノセントの黒歴史",
+    "titleZh": "純真者的黑歷史",
+    "route": "熟練度 15 以上"
+  },
+  {
+    "id": "g29h",
+    "titleJa": "女いろいろ万華鏡",
+    "titleZh": "女人們的萬花筒",
+    "route": "熟練度 15 以上"
+  },
+  {
+    "id": "g26l",
+    "titleJa": "破れかぶれのラグ",
+    "titleZh": "破罐破摔的拉格",
+    "route": "熟練度 14 以下"
+  },
+  {
+    "id": "g27l",
+    "titleJa": "捨て身と捨て身の大戦闘",
+    "titleZh": "捨命對捨命",
+    "route": "熟練度 14 以下"
+  },
+  {
+    "id": "g28l",
+    "titleJa": "暗黒大将軍の挑戦",
+    "titleZh": "黑暗大將軍的挑戰",
+    "route": "熟練度 14 以下"
+  },
+  {
+    "id": "g29l",
+    "titleJa": "女の心をあやつれば",
+    "titleZh": "若能操縱女人心",
+    "route": "熟練度 14 以下"
+  },
+  {
+    "id": "g30",
+    "titleJa": "イノセントを統べる者",
+    "titleZh": "統率純真者的人",
+    "route": "未來"
+  },
+  {
+    "id": "g31",
+    "titleJa": "天地を灼く剣",
+    "titleZh": "灼燒天地的劍",
+    "route": "未來"
+  },
+  {
+    "id": "g32a",
+    "titleJa": "飛べ、宇宙へ",
+    "titleZh": "飛吧，去宇宙",
+    "route": "前往月球"
+  },
+  {
+    "id": "g33a",
+    "titleJa": "ターンX起動",
+    "titleZh": "Turn X 啟動",
+    "route": "前往月球"
+  },
+  {
+    "id": "g34a",
+    "titleJa": "時を超えた対決",
+    "titleZh": "跨越時間的對決",
+    "route": "前往月球"
+  },
+  {
+    "id": "g35a",
+    "titleJa": "私はD.O.M.E.…黒歴史を封印する者",
+    "titleZh": "我是 D.O.M.E.，封印黑歷史的人",
+    "route": "前往月球"
+  },
+  {
+    "id": "g36a",
+    "titleJa": "奪われた真・ゲッターロボ",
+    "titleZh": "被奪走的真蓋特",
+    "route": "前往月球"
+  },
+  {
+    "id": "g32b",
+    "titleJa": "姿なき恐竜空爆隊",
+    "titleZh": "看不見的恐龍空爆隊",
+    "route": "前往 X 點"
+  },
+  {
+    "id": "g33b",
+    "titleJa": "エルチ目覚めよ",
+    "titleZh": "醒來吧，艾爾奇",
+    "route": "前往 X 點"
+  },
+  {
+    "id": "g34b",
+    "titleJa": "この星は僕らのものだ",
+    "titleZh": "這顆星是我們的",
+    "route": "前往 X 點"
+  },
+  {
+    "id": "g35b",
+    "titleJa": "戦闘神降臨",
+    "titleZh": "戰鬥神降臨",
+    "route": "前往 X 點"
+  },
+  {
+    "id": "g36b",
+    "titleJa": "真・ゲッターロボ対マジンカイザー",
+    "titleZh": "真蓋特對魔神凱撒",
+    "route": "前往 X 點"
+  },
+  {
+    "id": "g37",
+    "titleJa": "僕らが求めた戦争だ",
+    "titleZh": "這是我們追求的戰爭",
+    "route": "未來"
+  },
+  {
+    "id": "g38",
+    "titleJa": "月光蝶",
+    "titleZh": "月光蝶",
+    "route": "未來"
+  },
+  {
+    "id": "g39",
+    "titleJa": "決戦！Xポイント",
+    "titleZh": "決戰，X 點",
+    "route": "未來"
+  },
+  {
+    "id": "g40",
+    "titleJa": "ABAYO",
+    "titleZh": "ABAYO",
+    "route": "未來"
+  },
+  {
+    "id": "g41",
+    "titleJa": "黒歴史の終焉",
+    "titleZh": "黑歷史的終焉",
+    "route": "難／普"
+  },
+  {
+    "id": "g42h",
+    "titleJa": "竜が滅ぶ日",
+    "titleZh": "龍滅亡的日子",
+    "route": "難"
+  },
+  {
+    "id": "g43h",
+    "titleJa": "人類死すべし",
+    "titleZh": "人類當死",
+    "route": "難"
+  },
+  {
+    "id": "g44",
+    "titleJa": "未来は誰のために",
+    "titleZh": "未來是為了誰",
+    "route": "難"
+  },
+  {
+    "id": "g45",
+    "titleJa": "ラグナロク",
+    "titleZh": "諸神黃昏",
+    "route": "難，結束"
+  },
+  {
+    "id": "g42n",
+    "titleJa": "地球の後継者",
+    "titleZh": "地球的後繼者",
+    "route": "普"
+  },
+  {
+    "id": "g43n",
+    "titleJa": "時の流れの果てに",
+    "titleZh": "時間之流的盡頭",
+    "route": "普，結束"
+  },
+  {
+    "id": "g41e",
+    "titleJa": "恐竜帝国の滅びる日",
+    "titleZh": "恐龍帝國滅亡的日子",
+    "route": "易"
+  },
+  {
+    "id": "g42e",
+    "titleJa": "歪んだ未来",
+    "titleZh": "扭曲的未來",
+    "route": "易"
+  },
+  {
+    "id": "g43e",
+    "titleJa": "眠れ、地の底に",
+    "titleZh": "睡吧，在地底",
+    "route": "易，結束"
+  }
+]

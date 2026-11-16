@@ -1,0 +1,788 @@
+[
+  {
+    "id": "a01s",
+    "titleJa": "鋼鉄のコクピット",
+    "titleZh": "鋼鐵的座艙",
+    "route": "開幕 · 超級系"
+  },
+  {
+    "id": "a02s",
+    "titleJa": "マジンガーZ絶体絶命",
+    "titleZh": "魔神Z絕體絕命",
+    "route": "開幕 · 超級系"
+  },
+  {
+    "id": "a03s",
+    "titleJa": "ゲッターチーム出撃せよ！",
+    "titleZh": "蓋特小隊出擊",
+    "route": "開幕 · 超級系"
+  },
+  {
+    "id": "a04s",
+    "titleJa": "ジオン再臨",
+    "titleZh": "吉翁再臨",
+    "route": "開幕 · 超級系"
+  },
+  {
+    "id": "a05s",
+    "titleJa": "シークレット・ナンバーズ",
+    "titleZh": "秘密番號",
+    "route": "開幕 · 超級系"
+  },
+  {
+    "id": "a06s",
+    "titleJa": "アーガマ撃墜命令",
+    "titleZh": "亞加瑪擊墜命令",
+    "route": "開幕 · 超級系"
+  },
+  {
+    "id": "a01r",
+    "titleJa": "バニシング・トルーパー",
+    "titleZh": "消逝的士兵",
+    "route": "開幕 · 即時系"
+  },
+  {
+    "id": "a02r",
+    "titleJa": "黒いガンダム",
+    "titleZh": "黑色高達",
+    "route": "開幕 · 即時系"
+  },
+  {
+    "id": "a03r",
+    "titleJa": "ホワイトベース救出",
+    "titleZh": "救出白色基地",
+    "route": "開幕 · 即時系"
+  },
+  {
+    "id": "a04r",
+    "titleJa": "死神と呼ばれたG",
+    "titleZh": "被稱為死神的 G",
+    "route": "開幕 · 即時系"
+  },
+  {
+    "id": "a05r",
+    "titleJa": "ジオンの亡霊",
+    "titleZh": "吉翁的亡靈",
+    "route": "開幕 · 即時系"
+  },
+  {
+    "id": "a06r",
+    "titleJa": "対決、極東基地",
+    "titleZh": "對決，極東基地",
+    "route": "開幕 · 即時系"
+  },
+  {
+    "id": "a07",
+    "titleJa": "レッツ！コンバイン",
+    "titleZh": "來吧，合體",
+    "route": "合流"
+  },
+  {
+    "id": "a08",
+    "titleJa": "出撃！その名はジャイアント・ロボ",
+    "titleZh": "出擊，他的名字是鐵甲人",
+    "route": "合流"
+  },
+  {
+    "id": "a09s",
+    "titleJa": "風を呼ぶ者",
+    "titleZh": "喚風的人",
+    "route": "第9話 · 超級系"
+  },
+  {
+    "id": "a09r",
+    "titleJa": "未知なる災い",
+    "titleZh": "未知的災禍",
+    "route": "第9話 · 即時系"
+  },
+  {
+    "id": "a10s",
+    "titleJa": "目覚めよ、勇者",
+    "titleZh": "醒來吧，勇者",
+    "route": "南阿塔利亞"
+  },
+  {
+    "id": "a11s",
+    "titleJa": "ガンダム強奪",
+    "titleZh": "高達被搶走",
+    "route": "南阿塔利亞"
+  },
+  {
+    "id": "a12s",
+    "titleJa": "野望の男",
+    "titleZh": "野心的男人",
+    "route": "南阿塔利亞"
+  },
+  {
+    "id": "a13s",
+    "titleJa": "少女が見た流星",
+    "titleZh": "少女看見的流星",
+    "route": "南阿塔利亞"
+  },
+  {
+    "id": "a10r",
+    "titleJa": "アムロ再び",
+    "titleZh": "阿姆羅再次出擊",
+    "route": "賈布羅"
+  },
+  {
+    "id": "a11r",
+    "titleJa": "白いモビルスーツ",
+    "titleZh": "白色機動戰士",
+    "route": "賈布羅"
+  },
+  {
+    "id": "a12r",
+    "titleJa": "戦いは誰のために",
+    "titleZh": "戰鬥是為了誰",
+    "route": "賈布羅"
+  },
+  {
+    "id": "a13r",
+    "titleJa": "翼を持ったガンダム",
+    "titleZh": "長了翅膀的高達",
+    "route": "賈布羅"
+  },
+  {
+    "id": "a14",
+    "titleJa": "父との約束",
+    "titleZh": "與父親的約定",
+    "route": "合流"
+  },
+  {
+    "id": "a15",
+    "titleJa": "使徒、襲来",
+    "titleZh": "使徒來襲",
+    "route": "合流"
+  },
+  {
+    "id": "a16",
+    "titleJa": "咆哮、EVA初号機",
+    "titleZh": "咆哮，EVA 初號機",
+    "route": "合流"
+  },
+  {
+    "id": "a17",
+    "titleJa": "GR対GR2",
+    "titleZh": "鐵甲人對鐵甲人2",
+    "route": "合流"
+  },
+  {
+    "id": "a18s",
+    "titleJa": "紅い稲妻 空飛ぶマジンガー",
+    "titleZh": "紅電，會飛的魔神",
+    "route": "第18話 · 超級系"
+  },
+  {
+    "id": "a19s",
+    "titleJa": "激突！ゲッターロボVSゲッターロボG",
+    "titleZh": "蓋特對蓋特 G",
+    "route": "第19話 · 超級系"
+  },
+  {
+    "id": "a18r",
+    "titleJa": "ゼータの鼓動",
+    "titleZh": "Z 的鼓動",
+    "route": "第18話 · 即時系"
+  },
+  {
+    "id": "a19r",
+    "titleJa": "第二次直上会戦",
+    "titleZh": "第二次直上會戰",
+    "route": "第19話 · 即時系"
+  },
+  {
+    "id": "a20",
+    "titleJa": "決戦、第2新東京市",
+    "titleZh": "決戰，第二新東京市",
+    "route": "合流"
+  },
+  {
+    "id": "a21a",
+    "titleJa": "ホンコン・シティ",
+    "titleZh": "香港市",
+    "route": "隆德·貝爾"
+  },
+  {
+    "id": "a22a",
+    "titleJa": "ガンダム、星の海へ",
+    "titleZh": "高達，去星之海",
+    "route": "隆德·貝爾"
+  },
+  {
+    "id": "a23a",
+    "titleJa": "始動ダブルゼータ",
+    "titleZh": "ZZ 啟動",
+    "route": "隆德·貝爾"
+  },
+  {
+    "id": "a24a",
+    "titleJa": "ソロモンの悪夢",
+    "titleZh": "所羅門的惡夢",
+    "route": "隆德·貝爾"
+  },
+  {
+    "id": "a25a",
+    "titleJa": "クロスボーン・バンガード",
+    "titleZh": "骸骨先鋒隊",
+    "route": "隆德·貝爾"
+  },
+  {
+    "id": "a26a",
+    "titleJa": "海からのマレビト",
+    "titleZh": "海上來的客人",
+    "route": "隆德·貝爾"
+  },
+  {
+    "id": "a21b",
+    "titleJa": "獣を超え、人を超え、いでよ神の戦士",
+    "titleZh": "超越獸，超越人，神之戰士出來",
+    "route": "極東"
+  },
+  {
+    "id": "a22b",
+    "titleJa": "戦いの海へ",
+    "titleZh": "到戰鬥的海",
+    "route": "極東"
+  },
+  {
+    "id": "a23b",
+    "titleJa": "マジンガーZ対暗黒大将軍",
+    "titleZh": "魔神Z對黑暗大將軍",
+    "route": "極東"
+  },
+  {
+    "id": "a24b",
+    "titleJa": "ボルテス起死回生",
+    "titleZh": "霹靂合體起死回生",
+    "route": "極東"
+  },
+  {
+    "id": "a25b",
+    "titleJa": "シャーキン悪魔の戦い",
+    "titleZh": "夏金，惡魔的戰鬥",
+    "route": "極東"
+  },
+  {
+    "id": "a26b",
+    "titleJa": "紅いエヴァンゲリオン",
+    "titleZh": "紅色的福音戰士",
+    "route": "極東"
+  },
+  {
+    "id": "a21c",
+    "titleJa": "聖戦士たち",
+    "titleZh": "聖戰士們",
+    "route": "亞加瑪"
+  },
+  {
+    "id": "a22c",
+    "titleJa": "エレの霊力",
+    "titleZh": "艾爾的靈力",
+    "route": "亞加瑪"
+  },
+  {
+    "id": "a23c",
+    "titleJa": "ナの国の女王",
+    "titleZh": "娜之國的女王",
+    "route": "亞加瑪"
+  },
+  {
+    "id": "a24c",
+    "titleJa": "オーラロード",
+    "titleZh": "氣力之路",
+    "route": "亞加瑪"
+  },
+  {
+    "id": "a25c",
+    "titleJa": "東京上空",
+    "titleZh": "東京上空",
+    "route": "亞加瑪"
+  },
+  {
+    "id": "a27",
+    "titleJa": "マシン展開",
+    "titleZh": "機械展開",
+    "route": "合流"
+  },
+  {
+    "id": "a28",
+    "titleJa": "EOTの島",
+    "titleZh": "EOT 之島",
+    "route": "合流"
+  },
+  {
+    "id": "a29s",
+    "titleJa": "心に念じる見えない刃",
+    "titleZh": "心裡念著的看不見的刃",
+    "route": "第29話 · 超級系"
+  },
+  {
+    "id": "a29r",
+    "titleJa": "黒い超闘士",
+    "titleZh": "黑色超鬥士",
+    "route": "第29話 · 即時系"
+  },
+  {
+    "id": "a30a",
+    "titleJa": "瞬間、心かさねて",
+    "titleZh": "瞬間，心疊在一起",
+    "route": "同步率"
+  },
+  {
+    "id": "a30b",
+    "titleJa": "精霊憑依",
+    "titleZh": "精靈憑依",
+    "route": "硬上"
+  },
+  {
+    "id": "a31a",
+    "titleJa": "ブービー・トラップ",
+    "titleZh": "詭雷",
+    "route": "擊落"
+  },
+  {
+    "id": "a32a",
+    "titleJa": "カウント・ダウン",
+    "titleZh": "倒數",
+    "route": "擊落"
+  },
+  {
+    "id": "a33a",
+    "titleJa": "トランス・フォーメーション",
+    "titleZh": "變形",
+    "route": "擊落"
+  },
+  {
+    "id": "a34a",
+    "titleJa": "隠された殺意",
+    "titleZh": "藏起來的殺意",
+    "route": "擊落"
+  },
+  {
+    "id": "a35a",
+    "titleJa": "サタン・ファイト",
+    "titleZh": "撒旦之戰",
+    "route": "擊落"
+  },
+  {
+    "id": "a36a",
+    "titleJa": "リン・ミンメイ",
+    "titleZh": "林明美",
+    "route": "擊落"
+  },
+  {
+    "id": "a37a",
+    "titleJa": "ジュピトリアン",
+    "titleZh": "木星人",
+    "route": "擊落"
+  },
+  {
+    "id": "a38a",
+    "titleJa": "帝国の女王",
+    "titleZh": "帝國的女王",
+    "route": "擊落"
+  },
+  {
+    "id": "a39a",
+    "titleJa": "終末への前奏曲",
+    "titleZh": "走向終末的前奏",
+    "route": "擊落"
+  },
+  {
+    "id": "a31b",
+    "titleJa": "奇跡の価値は",
+    "titleZh": "奇蹟的價值",
+    "route": "接住"
+  },
+  {
+    "id": "a32b",
+    "titleJa": "スペース・フォールド",
+    "titleZh": "空間折疊",
+    "route": "接住"
+  },
+  {
+    "id": "a33b",
+    "titleJa": "アームド・アタック",
+    "titleZh": "武裝攻擊",
+    "route": "接住"
+  },
+  {
+    "id": "a34b",
+    "titleJa": "天敵との遭遇",
+    "titleZh": "遇上天敵",
+    "route": "接住"
+  },
+  {
+    "id": "a35b",
+    "titleJa": "イングラムの真意",
+    "titleZh": "英格拉姆的真意",
+    "route": "接住"
+  },
+  {
+    "id": "a36b",
+    "titleJa": "ミス・マクロス",
+    "titleZh": "麥克羅斯小姐",
+    "route": "接住"
+  },
+  {
+    "id": "a37b",
+    "titleJa": "木星からの逃亡者",
+    "titleZh": "來自木星的逃亡者",
+    "route": "接住"
+  },
+  {
+    "id": "a38b",
+    "titleJa": "人類を導く者",
+    "titleZh": "引導人類的人",
+    "route": "接住"
+  },
+  {
+    "id": "a39b",
+    "titleJa": "ファースト・コンタクト",
+    "titleZh": "第一次接觸",
+    "route": "接住"
+  },
+  {
+    "id": "a40",
+    "titleJa": "ビッグ・エスケープ",
+    "titleZh": "大逃亡",
+    "route": "合流"
+  },
+  {
+    "id": "a41",
+    "titleJa": "バイバイ・マルス",
+    "titleZh": "再見，火星",
+    "route": "合流"
+  },
+  {
+    "id": "a42a",
+    "titleJa": "アクシズからの使者",
+    "titleZh": "來自阿克西斯的使者",
+    "route": "利恩·霍斯 Jr."
+  },
+  {
+    "id": "a43a",
+    "titleJa": "プルとアクシズと",
+    "titleZh": "普露與阿克西斯",
+    "route": "利恩·霍斯 Jr."
+  },
+  {
+    "id": "a44a",
+    "titleJa": "リィナの血",
+    "titleZh": "莉娜的血",
+    "route": "利恩·霍斯 Jr."
+  },
+  {
+    "id": "a45a",
+    "titleJa": "漆黒の天使来たりて",
+    "titleZh": "漆黑的天使來了",
+    "route": "利恩·霍斯 Jr."
+  },
+  {
+    "id": "a42b",
+    "titleJa": "ジュピター・ゴースト",
+    "titleZh": "木星幽靈",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a43b",
+    "titleJa": "宇宙に咲く妖花",
+    "titleZh": "宇宙裡開的妖花",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a44b",
+    "titleJa": "ゼロと呼ばれたガンダム",
+    "titleZh": "被叫做零的高達",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a45b",
+    "titleJa": "強襲、阻止限界点",
+    "titleZh": "強襲，阻止界限點",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a42c",
+    "titleJa": "父よ地球は近い",
+    "titleZh": "父親啊，地球很近",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a43c",
+    "titleJa": "静止した闇の中で",
+    "titleZh": "在靜止的黑暗裡",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a44c",
+    "titleJa": "赤い髪の女",
+    "titleZh": "紅頭髮的女人",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a45c",
+    "titleJa": "神か、悪魔か…",
+    "titleZh": "是神，還是惡魔",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a46s",
+    "titleJa": "龍と虎",
+    "titleZh": "龍與虎",
+    "route": "第46話 · 超級系"
+  },
+  {
+    "id": "a46r",
+    "titleJa": "第三の力",
+    "titleZh": "第三股力量",
+    "route": "第46話 · 即時系"
+  },
+  {
+    "id": "a47",
+    "titleJa": "男の戰い",
+    "titleZh": "男人的戰鬥",
+    "route": "合流"
+  },
+  {
+    "id": "a48",
+    "titleJa": "誰がために鐘は踊る",
+    "titleZh": "鐘為誰而跳",
+    "route": "合流"
+  },
+  {
+    "id": "a49",
+    "titleJa": "進路に光明、退路に絶望",
+    "titleZh": "前路有光，退路是絕望",
+    "route": "合流"
+  },
+  {
+    "id": "a50",
+    "titleJa": "ヴァリアブル・フォーメーション",
+    "titleZh": "可變陣形",
+    "route": "合流"
+  },
+  {
+    "id": "a51a",
+    "titleJa": "ガラスの王国",
+    "titleZh": "玻璃王國",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a52a",
+    "titleJa": "王国崩壊",
+    "titleZh": "王國崩塌",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a53a",
+    "titleJa": "クロス・ファイト",
+    "titleZh": "交叉戰鬥",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a54a",
+    "titleJa": "異邦人たちの帰還",
+    "titleZh": "異邦人回來",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a55a",
+    "titleJa": "女王リリーナ",
+    "titleZh": "女王莉莉娜",
+    "route": "古蘭·加蘭"
+  },
+  {
+    "id": "a51b",
+    "titleJa": "ダカールの日",
+    "titleZh": "達卡的日子",
+    "route": "拉·凱拉姆"
+  },
+  {
+    "id": "a52b",
+    "titleJa": "バイブレーション",
+    "titleZh": "震動",
+    "route": "拉·凱拉姆"
+  },
+  {
+    "id": "a53b",
+    "titleJa": "ソロモン攻略戦",
+    "titleZh": "所羅門攻略戰",
+    "route": "拉·凱拉姆"
+  },
+  {
+    "id": "a54b",
+    "titleJa": "女たちの戦場",
+    "titleZh": "女人們的戰場",
+    "route": "拉·凱拉姆"
+  },
+  {
+    "id": "a55b",
+    "titleJa": "駆け抜ける嵐",
+    "titleZh": "奔過去的嵐",
+    "route": "拉·凱拉姆"
+  },
+  {
+    "id": "a51c",
+    "titleJa": "あしゅら男爵、散る",
+    "titleZh": "阿修羅男爵散去",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a52c",
+    "titleJa": "魔神皇帝",
+    "titleZh": "魔神皇帝",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a53c",
+    "titleJa": "地球を賭けた一騎討ち",
+    "titleZh": "以地球為賭注的一騎討",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a54c",
+    "titleJa": "思い出を未来へ",
+    "titleZh": "把回憶帶去未來",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a55c",
+    "titleJa": "父の胸の中で泣け！",
+    "titleZh": "在父親懷裡哭吧",
+    "route": "哥拉翁"
+  },
+  {
+    "id": "a56",
+    "titleJa": "ジオンの幻像",
+    "titleZh": "吉翁的幻像",
+    "route": "合流"
+  },
+  {
+    "id": "a57",
+    "titleJa": "天使の輪の上で",
+    "titleZh": "在天使之輪上面",
+    "route": "合流"
+  },
+  {
+    "id": "a58a",
+    "titleJa": "神の国への誘惑",
+    "titleZh": "對神之國的誘惑",
+    "route": "阿克西斯"
+  },
+  {
+    "id": "a59a",
+    "titleJa": "クロス・ターゲット",
+    "titleZh": "交叉目標",
+    "route": "阿克西斯"
+  },
+  {
+    "id": "a60a",
+    "titleJa": "戦士、再び…",
+    "titleZh": "戰士，再次",
+    "route": "阿克西斯"
+  },
+  {
+    "id": "a58b",
+    "titleJa": "勝者と敗者に祝福を",
+    "titleZh": "祝福勝者和敗者",
+    "route": "天使之環"
+  },
+  {
+    "id": "a59b",
+    "titleJa": "せめて、人間らしく",
+    "titleZh": "至少，像個人",
+    "route": "天使之環"
+  },
+  {
+    "id": "a60b",
+    "titleJa": "最後のシ者",
+    "titleZh": "最後的使徒",
+    "route": "天使之環"
+  },
+  {
+    "id": "a61",
+    "titleJa": "運命の矢",
+    "titleZh": "命運之箭",
+    "route": "合流"
+  },
+  {
+    "id": "a62",
+    "titleJa": "愛・おぼえていますか",
+    "titleZh": "愛，你還記得嗎",
+    "route": "合流"
+  },
+  {
+    "id": "a63",
+    "titleJa": "終わりの始まり",
+    "titleZh": "結束的開始",
+    "route": "對話"
+  },
+  {
+    "id": "a64",
+    "titleJa": "Air",
+    "titleZh": "Air",
+    "route": "合流"
+  },
+  {
+    "id": "a65",
+    "titleJa": "ギア・オブ・デスティニー",
+    "titleZh": "命運的齒輪",
+    "route": "合流"
+  },
+  {
+    "id": "a66h",
+    "titleJa": "絶望の宴は今から始まる",
+    "titleZh": "絕望的宴席現在開始",
+    "route": "熟練度高"
+  },
+  {
+    "id": "a67h",
+    "titleJa": "この星の明日のために",
+    "titleZh": "為了這顆星的明天",
+    "route": "熟練度高"
+  },
+  {
+    "id": "a66l",
+    "titleJa": "人類に逃げ場なし",
+    "titleZh": "人類沒有逃處",
+    "route": "熟練度低"
+  },
+  {
+    "id": "a67l",
+    "titleJa": "鋼の魂",
+    "titleZh": "鋼之魂",
+    "route": "熟練度低"
+  },
+  {
+    "id": "a66d",
+    "titleJa": "シト新生",
+    "titleZh": "使徒新生",
+    "route": "DC 追加"
+  },
+  {
+    "id": "a67d",
+    "titleJa": "閉じ行く世界",
+    "titleZh": "正在關上的世界",
+    "route": "DC 追加"
+  },
+  {
+    "id": "a68",
+    "titleJa": "全能なる調停者（前）",
+    "titleZh": "全能的調停者（前）",
+    "route": "DC 追加"
+  },
+  {
+    "id": "a69",
+    "titleJa": "全能なる調停者（後）",
+    "titleZh": "全能的調停者（後）",
+    "route": "DC 追加"
+  },
+  {
+    "id": "a70",
+    "titleJa": "神々の黄昏",
+    "titleZh": "諸神的黃昏",
+    "route": "DC 追加"
+  }
+]

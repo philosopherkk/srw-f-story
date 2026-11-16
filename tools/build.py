@@ -3,6 +3,7 @@
 
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -141,6 +142,11 @@ LEX_PATH = ROOT / "data" / "lexicon.json"
 
 def load_lexicon():
     raw = json.loads(LEX_PATH.read_text(encoding="utf-8"))
+    extra_path = ROOT / "data" / "series-lexicon.json"
+    if extra_path.exists():
+        extra = json.loads(extra_path.read_text(encoding="utf-8"))
+        raw["blocks"].extend(extra.get("blocks") or [])
+        raw["entries"].extend(extra["entries"])
     blocks = tuple(sorted(raw["blocks"], key=len, reverse=True))
     flat = []
     for entry in raw["entries"]:
@@ -152,6 +158,9 @@ def load_lexicon():
 
 FORMS, ENTRIES, BLOCKS = load_lexicon()
 LOOKS = json.loads((ROOT / "data" / "looks.json").read_text(encoding="utf-8"))
+_SERIES_LOOKS = ROOT / "data" / "series-looks.json"
+if _SERIES_LOOKS.exists():
+    LOOKS.update(json.loads(_SERIES_LOOKS.read_text(encoding="utf-8")))
 SUMMARIES = json.loads((ROOT / "data" / "summaries.json").read_text(encoding="utf-8"))
 _LOOK_IDS = {entry["id"] for entry in ENTRIES if entry["kind"] in ("person", "unit")}
 _MISSING_LOOKS = sorted(_LOOK_IDS - set(LOOKS))
@@ -262,9 +271,48 @@ KIND_LABEL = (
 )
 
 
-def render_names():
+def name_in_blob(entry, blob):
+    if entry["ja"] and entry["ja"] in blob:
+        return True
+    for name in entry["zh"]:
+        start = 0
+        while True:
+            found = blob.find(name, start)
+            if found < 0:
+                break
+            if not covered_by_block(blob, found, len(name)):
+                return True
+            start = found + 1
+    return False
+
+
+def stage_blob(stages, *chunks):
+    parts = [chunk for chunk in chunks if chunk]
+    for stage in stages:
+        parts.extend(
+            [
+                stage.get("titleZh") or "",
+                stage.get("titleJa") or "",
+                stage.get("summary") or SUMMARIES.get(stage["id"]) or "",
+                stage.get("route") or "",
+                stage.get("thin") or "",
+                stage.get("note") or "",
+                " ".join(stage.get("joins") or []),
+                " ".join(stage.get("leaves") or []),
+                " ".join(stage.get("flags") or []),
+                " ".join(stage.get("before") or []),
+                " ".join(stage.get("during") or []),
+                " ".join(stage.get("after") or []),
+            ]
+        )
+    return "\n".join(parts)
+
+
+def render_names(blob=None):
     groups = {kind: [] for kind, _label in KIND_LABEL}
     for entry in ENTRIES:
+        if blob is not None and not name_in_blob(entry, blob):
+            continue
         groups[entry["kind"]].append(entry)
     chips = ['<div class="name-filters">']
     chips.append('<button type="button" class="name-chip on" data-kind="all">全部</button>')
@@ -361,7 +409,11 @@ def token_order(routes):
     for dim in routes["dimensions"]:
         for choice in dim["choices"]:
             order.append(f"{dim['id']}-{choice['id']}")
-    order.append("reunion")
+    for token in routes.get("extra") or []:
+        if token not in order:
+            order.append(token)
+    if "reunion" not in order and "reunion" in routes.get("membership", {}):
+        order.append("reunion")
     return order
 
 
@@ -593,6 +645,8 @@ def render_route_tree(routes, by_id):
         ],
         "hideWhen": routes["hideWhen"],
     }
+    if routes.get("page"):
+        config["page"] = routes["page"]
     blob = json.dumps(config, ensure_ascii=False).replace("<", "\\u003c")
     return (
         '<div class="route-tree" id="route-tree">'
@@ -637,7 +691,7 @@ def render_stage(stage, routes):
             " ".join(stage.get("after") or []),
         ]
     )
-    summary = SUMMARIES[stage["id"]]
+    summary = stage.get("summary") or SUMMARIES[stage["id"]]
     plain = summary + " " + plain
     search = plain + " " + " ".join(matched_names(plain))
     route = esc(" ".join(tokens_for(stage["id"], routes)))
@@ -738,10 +792,13 @@ TEMPLATE_HEAD = r"""<!DOCTYPE html>
 </nav>
 <div class="main">
   <div class="topbar">
+    <div class="topbar-row">
     <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">目錄</button>
     <input class="search" id="q" type="search" placeholder="搜尋話名、角色、機體或日文" aria-label="搜尋話數與名字">
     <button class="ruby-btn" id="ruby" type="button" aria-pressed="false">括號日文</button>
     <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <!--WORKS-->
   </div>
   <div class="reader" id="reader" hidden>
     <button type="button" id="reader-prev">上一話</button>
@@ -843,21 +900,241 @@ TEMPLATE_TAIL = r"""
 """
 
 
+WORK_LINKS = (
+    ("index.html", "F／F完結編"),
+    ("alpha.html", "α"),
+    ("alpha-gaiden.html", "α外傳"),
+    ("alpha2.html", "第2次α"),
+    ("alpha3.html", "第3次α"),
+)
+
+
+def works_nav(current):
+    links = []
+    for href, label in WORK_LINKS:
+        current_attr = ' aria-current="page"' if href == current else ""
+        links.append(f'<a href="{esc(href)}"{current_attr}>{esc(label)}</a>')
+    return '<nav class="works" aria-label="作品">' + "".join(links) + "</nav>"
+
+
+class WorkPending(Exception):
+    pass
+
+
+def load_work(slug):
+    base = ROOT / "data" / "works" / slug
+    work = json.loads((base / "work.json").read_text(encoding="utf-8"))
+    catalog = json.loads((base / "catalog.json").read_text(encoding="utf-8"))
+    routes = json.loads((base / "routes.json").read_text(encoding="utf-8"))
+    prose = {}
+    stage_dir = base / "stages"
+    if stage_dir.exists():
+        for path in sorted(stage_dir.glob("*.json")):
+            data = json.loads(path.read_text(encoding="utf-8"))
+            rows = data if isinstance(data, list) else [data]
+            for row in rows:
+                prose[row["id"]] = row
+    if len(prose) < len(catalog):
+        raise WorkPending(f"{slug}: {len(prose)}/{len(catalog)} stages")
+    stages = []
+    for row in catalog:
+        body = prose.get(row["id"])
+        if body is None:
+            raise WorkPending(f"{slug}: missing {row['id']}")
+        summary = body.get("summary") or ""
+        if "\n" in summary or not summary.endswith("。"):
+            raise SystemExit(f"{row['id']} summary must be one sentence ending with 。")
+        stage = {
+            "id": row["id"],
+            "group": slug,
+            "game": work["game"],
+            "route": row["route"],
+            "titleJa": row["titleJa"],
+            "titleZh": row["titleZh"],
+            "summary": summary,
+            "before": body.get("before") or [],
+            "during": body.get("during") or [],
+            "after": body.get("after") or [],
+        }
+        for key in ("joins", "leaves", "flags", "thin", "note"):
+            if body.get(key):
+                stage[key] = body[key]
+        blob = "\n".join(stage["before"] + stage["during"] + stage["after"])
+        if re.search(r"第[0-9０-９一二三四五六七八九十]+回合", blob):
+            raise SystemExit(f"{row['id']} invents a round count")
+        for key in ("before", "during", "after"):
+            if len(stage[key]) < 1:
+                raise SystemExit(f"{row['id']} missing {key}")
+        stages.append(stage)
+    placed = place_tokens(routes["tree"])
+    if set(placed) != {stage["id"] for stage in stages}:
+        raise SystemExit(f"{slug}: route tree does not cover the catalog")
+    for stage in stages:
+        if placed[stage["id"]] != set(tokens_for(stage["id"], routes)):
+            raise SystemExit(f"{stage['id']} tree tokens do not match membership")
+    return work, routes, stages
+
+
+def render_work_document(work, routes, stages):
+    by_id = {stage["id"]: stage for stage in stages}
+    jumps = "".join(
+        f'<a class="item" href="#{esc(item["id"])}">{esc(item["label"])}</a>'
+        for item in work["jumps"]
+    )
+    brand = "<br>".join(esc(line) for line in work["brand"])
+    head = f"""<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{esc(work["title"])} 故事導讀</title>
+  <meta name="description" content="{esc(work["description"])}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="hide-ruby">
+<a class="skip" href="#content">跳到正文</a>
+<div class="layout">
+<nav class="nav" id="nav" aria-label="章節">
+  <a class="brand" href="#overview"><small>スーパーロボット大戦</small><strong>{brand}</strong></a>
+  <div class="nav-group">導讀</div>
+  <a class="item" href="#overview">總覽</a>
+  <a class="item" href="#flow">路線圖</a>
+  <a class="item" href="#names">角色與機體</a>
+  <a class="item" href="#endings">結局</a>
+  <a class="item" href="#sources">出典</a>
+  <div id="path-nav">
+    <div class="nav-group">從哪一段讀</div>
+    <p class="nav-hint">選好路線後，這裡改成那一條路的話，由上到下。</p>
+    {jumps}
+  </div>
+</nav>
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-row">
+    <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">目錄</button>
+    <input class="search" id="q" type="search" placeholder="搜尋話名、角色、機體或日文" aria-label="搜尋話數與名字">
+    <button class="ruby-btn" id="ruby" type="button" aria-pressed="false">括號日文</button>
+    <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    {works_nav(work["file"])}
+  </div>
+  <div class="reader" id="reader" hidden>
+    <button type="button" id="reader-prev">上一話</button>
+    <a id="reader-now" href="#stages"></a>
+    <button type="button" id="reader-next">下一話</button>
+  </div>
+  <div class="page" id="content">
+"""
+    seen = set()
+    paragraphs = []
+    for index, text in enumerate(work["paragraphs"]):
+        klass = ' class="lede"' if index == 0 else ""
+        paragraphs.append(f"<p{klass}>{annotate(text, seen)}</p>")
+    endings = []
+    for item in work["endings"]:
+        endings.append(f"<h3>{esc(item['h'])}</h3>")
+        endings.extend(f"<p>{annotate(p, seen)}</p>" for p in item["p"])
+    sources = []
+    for item in work["sources"]:
+        sources.append(
+            f'<li><a href="{esc(item["href"])}">{esc(item["text"])}</a></li>'
+        )
+    first = stages[0]["id"]
+    ending_text = "\n".join(paragraph for item in work["endings"] for paragraph in item["p"])
+    blob = stage_blob(stages, "\n".join(work["paragraphs"]), ending_text)
+    intro = f"""
+<section id="overview">
+  <div class="hero">
+    <p class="eyebrow">{esc(work["kicker"])}</p>
+    <h1>{esc(work["title"])}</h1>
+    <p class="ja-line" lang="ja">{esc(work["titleJa"])}</p>
+    <nav class="start" aria-label="從這裡開始">
+      <a href="#flow">用分岐樹選話</a>
+      <a href="#names">角色與機體</a>
+      <a href="#{esc(first)}">從第一話讀起</a>
+    </nav>
+  </div>
+  <div class="prose">
+  {"".join(paragraphs)}
+  </div>
+</section>
+
+<section id="flow" class="block">
+  <h2>路線圖</h2>
+  <div class="prose">
+    <ol class="howto">
+      <li>先在每一叉選一邊。沒選的留在「全部」，兩邊都走得到的話會留著。</li>
+      <li>話數先收著。要看標題再按「展開話數」，免得一頁塞滿。</li>
+      <li>點標題就進正文。讀的時候用下方的上一話、下一話，左邊目錄會改成這一條路。</li>
+    </ol>
+    <p>點到一話若正被收起，會先把路線撥過去。選擇會留在這一頁。</p>
+  </div>
+  {render_route_tree(routes, by_id)}
+</section>
+
+<section id="names" class="block">
+  <h2>角色與機體</h2>
+  <p class="prose">正文用香港通行的中文。每一話第一次寫到的角色、機體、勢力和地名，後面附上日文；同一話裡再出現就只留中文。下面只列這一頁寫到的名字。角色和機體各有一行外形：髮色、衣服、裝甲和輪廓，不放遊戲圖。</p>
+  {render_names(blob)}
+</section>
+"""
+    end = f"""
+<section id="endings" class="prose">
+  <h2>結局</h2>
+  {"".join(endings)}
+</section>
+<section id="sources" class="prose">
+  <h2>出典</h2>
+  <p>話名和分岐照超級機器人大戰維基的全話表。正文是重新寫的繁體中文，不錄對白，也不把攻略的回合表搬過來。某一話若只有標題能確定，會縮短並標出來。</p>
+  <ul class="sources">
+    {"".join(sources)}
+  </ul>
+</section>
+<footer class="colophon">
+  <p>靜態頁面。日文話名保留官方全話表的寫法。角色和機體在每一話第一次出現時附上日文。中文從香港習慣，不代表遊戲內有官方中文。</p>
+</footer>
+"""
+    body = [head, intro, '<section id="stages" class="block"><h2>全話</h2>']
+    body.append("".join(render_stage(stage, routes) for stage in stages))
+    body.append("</section>")
+    body.append(end)
+    body.append(TEMPLATE_TAIL)
+    return "".join(body)
+
+
+def render_works():
+    for slug in ("alpha", "alpha-gaiden", "alpha2", "alpha3"):
+        try:
+            work, routes, stages = load_work(slug)
+        except WorkPending as err:
+            print(f"skip {err}")
+            continue
+        out = ROOT / work["file"]
+        out.write_text(render_work_document(work, routes, stages), encoding="utf-8")
+        print(f"wrote {out} with {len(stages)} stages")
+
+
 def main():
     stages = load_stages()
     routes = load_routes()
     check(stages)
     check_routes(stages, routes)
     by_id = {stage["id"]: stage for stage in stages}
-    intro = annotate_html(TEMPLATE_INTRO).replace("<!--NAME_INDEX-->", render_names())
+    head = TEMPLATE_HEAD.replace("<!--WORKS-->", works_nav("index.html"))
+    blob = stage_blob(stages, TEMPLATE_INTRO, TEMPLATE_END)
+    intro = annotate_html(TEMPLATE_INTRO).replace("<!--NAME_INDEX-->", render_names(blob))
     intro = intro.replace("<!--ROUTE_TREE-->", render_route_tree(routes, by_id))
-    body = [TEMPLATE_HEAD, intro, '<section id="stages" class="block"><h2>全話</h2>']
+    body = [head, intro, '<section id="stages" class="block"><h2>全話</h2>']
     body.append("".join(render_stage(stage, routes) for stage in stages))
     body.append("</section>")
     body.append(annotate_html(TEMPLATE_END))
     body.append(TEMPLATE_TAIL)
     OUT.write_text("".join(body), encoding="utf-8")
     print(f"wrote {OUT} with {len(stages)} stages")
+    render_works()
 
 
 if __name__ == "__main__":

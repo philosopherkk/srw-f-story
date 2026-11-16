@@ -1,0 +1,829 @@
+{
+  "page": "alpha",
+  "dimensions": [
+    {
+      "id": "opening",
+      "choices": [
+        {
+          "id": "super",
+          "label": "超級系",
+          "hint": "魔神、蓋特、霹靂合體",
+          "tone": "super"
+        },
+        {
+          "id": "real",
+          "label": "即時系",
+          "hint": "高達、新世紀福音戰士",
+          "tone": "real"
+        }
+      ],
+      "label": "開局路線",
+      "neutral": "全部"
+    },
+    {
+      "id": "early",
+      "choices": [
+        {
+          "id": "atalia",
+          "label": "南阿塔利亞",
+          "hint": "勇者那邊",
+          "tone": "super"
+        },
+        {
+          "id": "jaburo",
+          "label": "賈布羅",
+          "hint": "阿姆羅那邊",
+          "tone": "real"
+        }
+      ],
+      "label": "第10話",
+      "neutral": "全部"
+    },
+    {
+      "id": "fleet",
+      "choices": [
+        {
+          "id": "londo",
+          "label": "隆德·貝爾",
+          "hint": "利加·米利迪亞",
+          "tone": "super"
+        },
+        {
+          "id": "east",
+          "label": "極東",
+          "hint": "龍勢、兜甲兒",
+          "tone": "real"
+        },
+        {
+          "id": "argama",
+          "label": "亞加瑪",
+          "hint": "卡繆、聖戰士",
+          "tone": "earth"
+        }
+      ],
+      "label": "第21話，三支艦隊",
+      "neutral": "全部"
+    },
+    {
+      "id": "eva",
+      "choices": [
+        {
+          "id": "sync",
+          "label": "同步率",
+          "hint": "兩台 EVA",
+          "tone": "super"
+        },
+        {
+          "id": "force",
+          "label": "硬上",
+          "hint": "精靈憑依",
+          "tone": "real"
+        }
+      ],
+      "label": "第30話，使徒",
+      "neutral": "全部"
+    },
+    {
+      "id": "bullet",
+      "choices": [
+        {
+          "id": "shoot",
+          "label": "擊落",
+          "hint": "把子彈打下來",
+          "tone": "super"
+        },
+        {
+          "id": "catch",
+          "label": "接住",
+          "hint": "EVA 接住",
+          "tone": "real"
+        }
+      ],
+      "label": "第31話，子彈",
+      "neutral": "全部"
+    },
+    {
+      "id": "ship",
+      "choices": [
+        {
+          "id": "lean",
+          "label": "利恩·霍斯 Jr.",
+          "hint": "阿克西斯方向",
+          "tone": "super"
+        },
+        {
+          "id": "gran",
+          "label": "古蘭·加蘭",
+          "hint": "木星幽靈",
+          "tone": "real"
+        },
+        {
+          "id": "gora",
+          "label": "哥拉翁",
+          "hint": "父親的船",
+          "tone": "earth"
+        }
+      ],
+      "label": "第42話，乘哪艘",
+      "neutral": "全部"
+    },
+    {
+      "id": "endship",
+      "choices": [
+        {
+          "id": "gran",
+          "label": "古蘭·加蘭",
+          "hint": "玻璃王國",
+          "tone": "super"
+        },
+        {
+          "id": "ra",
+          "label": "拉·凱拉姆",
+          "hint": "達卡",
+          "tone": "real"
+        },
+        {
+          "id": "gora",
+          "label": "哥拉翁",
+          "hint": "阿修羅男爵",
+          "tone": "earth"
+        }
+      ],
+      "label": "第51話",
+      "neutral": "全部"
+    },
+    {
+      "id": "closing",
+      "choices": [
+        {
+          "id": "axis",
+          "label": "阿克西斯",
+          "hint": "神之國",
+          "tone": "super"
+        },
+        {
+          "id": "angel",
+          "label": "天使之環",
+          "hint": "最後的使徒",
+          "tone": "real"
+        }
+      ],
+      "label": "第58話",
+      "neutral": "全部"
+    },
+    {
+      "id": "version",
+      "choices": [
+        {
+          "id": "ps",
+          "label": "PS",
+          "hint": "正史，看熟練度",
+          "tone": "super"
+        },
+        {
+          "id": "dc",
+          "label": "DC 追加",
+          "hint": "使徒新生到諸神黃昏",
+          "tone": "real"
+        }
+      ],
+      "label": "平台",
+      "neutral": "全部"
+    },
+    {
+      "id": "skill",
+      "choices": [
+        {
+          "id": "high",
+          "label": "45 以上",
+          "hint": "為了這顆星的明天",
+          "tone": "super"
+        },
+        {
+          "id": "low",
+          "label": "44 以下",
+          "hint": "鋼之魂",
+          "tone": "real"
+        }
+      ],
+      "label": "熟練度",
+      "neutral": "全部"
+    }
+  ],
+  "membership": {
+    "opening-super": [
+      "a01s",
+      "a02s",
+      "a03s",
+      "a04s",
+      "a05s",
+      "a06s",
+      "a09s",
+      "a18s",
+      "a19s",
+      "a29s",
+      "a46s"
+    ],
+    "opening-real": [
+      "a01r",
+      "a02r",
+      "a03r",
+      "a04r",
+      "a05r",
+      "a06r",
+      "a09r",
+      "a18r",
+      "a19r",
+      "a29r",
+      "a46r"
+    ],
+    "early-atalia": [
+      "a10s",
+      "a11s",
+      "a12s",
+      "a13s"
+    ],
+    "early-jaburo": [
+      "a10r",
+      "a11r",
+      "a12r",
+      "a13r"
+    ],
+    "fleet-londo": [
+      "a21a",
+      "a22a",
+      "a23a",
+      "a24a",
+      "a25a",
+      "a26a"
+    ],
+    "fleet-east": [
+      "a21b",
+      "a22b",
+      "a23b",
+      "a24b",
+      "a25b",
+      "a26b"
+    ],
+    "fleet-argama": [
+      "a21c",
+      "a22c",
+      "a23c",
+      "a24c",
+      "a25c"
+    ],
+    "eva-sync": [
+      "a30a"
+    ],
+    "eva-force": [
+      "a30b"
+    ],
+    "bullet-shoot": [
+      "a31a",
+      "a32a",
+      "a33a",
+      "a34a",
+      "a35a",
+      "a36a",
+      "a37a",
+      "a38a",
+      "a39a"
+    ],
+    "bullet-catch": [
+      "a31b",
+      "a32b",
+      "a33b",
+      "a34b",
+      "a35b",
+      "a36b",
+      "a37b",
+      "a38b",
+      "a39b"
+    ],
+    "ship-lean": [
+      "a42a",
+      "a43a",
+      "a44a",
+      "a45a"
+    ],
+    "ship-gran": [
+      "a42b",
+      "a43b",
+      "a44b",
+      "a45b"
+    ],
+    "ship-gora": [
+      "a42c",
+      "a43c",
+      "a44c",
+      "a45c"
+    ],
+    "endship-gran": [
+      "a51a",
+      "a52a",
+      "a53a",
+      "a54a",
+      "a55a"
+    ],
+    "endship-ra": [
+      "a51b",
+      "a52b",
+      "a53b",
+      "a54b",
+      "a55b"
+    ],
+    "endship-gora": [
+      "a51c",
+      "a52c",
+      "a53c",
+      "a54c",
+      "a55c"
+    ],
+    "closing-axis": [
+      "a58a",
+      "a59a",
+      "a60a"
+    ],
+    "closing-angel": [
+      "a58b",
+      "a59b",
+      "a60b"
+    ],
+    "version-ps": [
+      "a66h",
+      "a67h",
+      "a66l",
+      "a67l"
+    ],
+    "version-dc": [
+      "a66d",
+      "a67d",
+      "a68",
+      "a69",
+      "a70"
+    ],
+    "skill-high": [
+      "a66h",
+      "a67h"
+    ],
+    "skill-low": [
+      "a66l",
+      "a67l"
+    ]
+  },
+  "hideWhen": [],
+  "tree": [
+    {
+      "kind": "fork",
+      "id": "open",
+      "dimension": "opening",
+      "title": "開幕",
+      "limbs": [
+        {
+          "choice": "super",
+          "stages": [
+            "a01s",
+            "a02s",
+            "a03s",
+            "a04s",
+            "a05s",
+            "a06s"
+          ]
+        },
+        {
+          "choice": "real",
+          "stages": [
+            "a01r",
+            "a02r",
+            "a03r",
+            "a04r",
+            "a05r",
+            "a06r"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s07",
+      "label": "合流",
+      "stages": [
+        "a07",
+        "a08"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "open9",
+      "dimension": "opening",
+      "title": "第9話",
+      "limbs": [
+        {
+          "choice": "super",
+          "stages": [
+            "a09s"
+          ]
+        },
+        {
+          "choice": "real",
+          "stages": [
+            "a09r"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "early",
+      "dimension": "early",
+      "title": "第10話",
+      "limbs": [
+        {
+          "choice": "atalia",
+          "stages": [
+            "a10s",
+            "a11s",
+            "a12s",
+            "a13s"
+          ]
+        },
+        {
+          "choice": "jaburo",
+          "stages": [
+            "a10r",
+            "a11r",
+            "a12r",
+            "a13r"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s14",
+      "label": "合流",
+      "stages": [
+        "a14",
+        "a15",
+        "a16",
+        "a17"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "open18",
+      "dimension": "opening",
+      "title": "第18話",
+      "limbs": [
+        {
+          "choice": "super",
+          "stages": [
+            "a18s",
+            "a19s"
+          ]
+        },
+        {
+          "choice": "real",
+          "stages": [
+            "a18r",
+            "a19r"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s20",
+      "label": "合流",
+      "stages": [
+        "a20"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "fleet",
+      "dimension": "fleet",
+      "title": "第21話",
+      "limbs": [
+        {
+          "choice": "londo",
+          "stages": [
+            "a21a",
+            "a22a",
+            "a23a",
+            "a24a",
+            "a25a",
+            "a26a"
+          ]
+        },
+        {
+          "choice": "east",
+          "stages": [
+            "a21b",
+            "a22b",
+            "a23b",
+            "a24b",
+            "a25b",
+            "a26b"
+          ]
+        },
+        {
+          "choice": "argama",
+          "stages": [
+            "a21c",
+            "a22c",
+            "a23c",
+            "a24c",
+            "a25c"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s27",
+      "label": "合流",
+      "stages": [
+        "a27",
+        "a28"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "open29",
+      "dimension": "opening",
+      "title": "第29話",
+      "limbs": [
+        {
+          "choice": "super",
+          "stages": [
+            "a29s"
+          ]
+        },
+        {
+          "choice": "real",
+          "stages": [
+            "a29r"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "eva",
+      "dimension": "eva",
+      "title": "第30話",
+      "limbs": [
+        {
+          "choice": "sync",
+          "stages": [
+            "a30a"
+          ]
+        },
+        {
+          "choice": "force",
+          "stages": [
+            "a30b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "bullet",
+      "dimension": "bullet",
+      "title": "第31話",
+      "limbs": [
+        {
+          "choice": "shoot",
+          "stages": [
+            "a31a",
+            "a32a",
+            "a33a",
+            "a34a",
+            "a35a",
+            "a36a",
+            "a37a",
+            "a38a",
+            "a39a"
+          ]
+        },
+        {
+          "choice": "catch",
+          "stages": [
+            "a31b",
+            "a32b",
+            "a33b",
+            "a34b",
+            "a35b",
+            "a36b",
+            "a37b",
+            "a38b",
+            "a39b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s40",
+      "label": "合流",
+      "stages": [
+        "a40",
+        "a41"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "ship",
+      "dimension": "ship",
+      "title": "第42話",
+      "limbs": [
+        {
+          "choice": "lean",
+          "stages": [
+            "a42a",
+            "a43a",
+            "a44a",
+            "a45a"
+          ]
+        },
+        {
+          "choice": "gran",
+          "stages": [
+            "a42b",
+            "a43b",
+            "a44b",
+            "a45b"
+          ]
+        },
+        {
+          "choice": "gora",
+          "stages": [
+            "a42c",
+            "a43c",
+            "a44c",
+            "a45c"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "open46",
+      "dimension": "opening",
+      "title": "第46話",
+      "limbs": [
+        {
+          "choice": "super",
+          "stages": [
+            "a46s"
+          ]
+        },
+        {
+          "choice": "real",
+          "stages": [
+            "a46r"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s47",
+      "label": "合流",
+      "stages": [
+        "a47",
+        "a48",
+        "a49",
+        "a50"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "endship",
+      "dimension": "endship",
+      "title": "第51話",
+      "limbs": [
+        {
+          "choice": "gran",
+          "stages": [
+            "a51a",
+            "a52a",
+            "a53a",
+            "a54a",
+            "a55a"
+          ]
+        },
+        {
+          "choice": "ra",
+          "stages": [
+            "a51b",
+            "a52b",
+            "a53b",
+            "a54b",
+            "a55b"
+          ]
+        },
+        {
+          "choice": "gora",
+          "stages": [
+            "a51c",
+            "a52c",
+            "a53c",
+            "a54c",
+            "a55c"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s56",
+      "label": "合流",
+      "stages": [
+        "a56",
+        "a57"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "closing",
+      "dimension": "closing",
+      "title": "第58話",
+      "limbs": [
+        {
+          "choice": "axis",
+          "stages": [
+            "a58a",
+            "a59a",
+            "a60a"
+          ]
+        },
+        {
+          "choice": "angel",
+          "stages": [
+            "a58b",
+            "a59b",
+            "a60b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "s61",
+      "label": "終盤",
+      "stages": [
+        "a61",
+        "a62",
+        "a63",
+        "a64",
+        "a65"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "version",
+      "dimension": "version",
+      "title": "平台",
+      "limbs": [
+        {
+          "choice": "ps",
+          "blocks": [
+            {
+              "kind": "subfork",
+              "dimension": "skill",
+              "limbs": [
+                {
+                  "choice": "high",
+                  "stages": [
+                    "a66h",
+                    "a67h"
+                  ]
+                },
+                {
+                  "choice": "low",
+                  "stages": [
+                    "a66l",
+                    "a67l"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "dc",
+          "stages": [
+            "a66d",
+            "a67d",
+            "a68",
+            "a69",
+            "a70"
+          ]
+        }
+      ]
+    }
+  ]
+}

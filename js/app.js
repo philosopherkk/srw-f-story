@@ -18,8 +18,9 @@
   var readerNow = document.getElementById("reader-now");
   var rubyBtn = document.getElementById("ruby");
   var ROUTE = JSON.parse(configNode.textContent);
-  var CHOICE_KEY = "srw-f-route-choices";
-  var FOLD_KEY = "srw-f-route-folds";
+  var PAGE = ROUTE.page || "f";
+  var CHOICE_KEY = PAGE === "f" ? "srw-f-route-choices" : "srw-" + PAGE + "-route-choices";
+  var FOLD_KEY = PAGE === "f" ? "srw-f-route-folds" : "srw-" + PAGE + "-route-folds";
   var RUBY_KEY = "srw-f-show-ruby";
   var activeKind = "all";
   var choices = {};

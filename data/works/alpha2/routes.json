@@ -1,0 +1,743 @@
+{
+  "page": "alpha2",
+  "dimensions": [
+    {
+      "id": "hero",
+      "choices": [
+        {
+          "id": "sanger",
+          "label": "善格",
+          "tone": "super"
+        },
+        {
+          "id": "kusuha",
+          "label": "庫絲哈",
+          "tone": "earth"
+        },
+        {
+          "id": "arado",
+          "label": "亞拉多",
+          "tone": "real"
+        },
+        {
+          "id": "ibis",
+          "label": "艾比絲",
+          "tone": "space"
+        }
+      ],
+      "label": "主角",
+      "neutral": "全部"
+    },
+    {
+      "id": "chase",
+      "choices": [
+        {
+          "id": "vital",
+          "label": "生命網",
+          "tone": "accent"
+        },
+        {
+          "id": "zeon",
+          "label": "北美新吉翁",
+          "tone": "bad"
+        }
+      ],
+      "label": "第26話",
+      "neutral": "全部"
+    },
+    {
+      "id": "dest",
+      "choices": [
+        {
+          "id": "moon",
+          "label": "月球",
+          "tone": "space"
+        },
+        {
+          "id": "axis",
+          "label": "阿克西斯",
+          "tone": "earth"
+        }
+      ],
+      "label": "第34話",
+      "neutral": "全部"
+    },
+    {
+      "id": "region",
+      "choices": [
+        {
+          "id": "japan",
+          "label": "日本",
+          "tone": "earth"
+        },
+        {
+          "id": "mycenae",
+          "label": "邁錫尼",
+          "tone": "super"
+        }
+      ],
+      "label": "第46話",
+      "neutral": "全部"
+    },
+    {
+      "id": "haman",
+      "choices": [
+        {
+          "id": "reject",
+          "label": "拒絕",
+          "tone": "good"
+        },
+        {
+          "id": "truce",
+          "label": "休戰",
+          "tone": "accent"
+        }
+      ],
+      "label": "第49話，哈曼",
+      "neutral": "全部"
+    }
+  ],
+  "membership": {
+    "hero-sanger": [
+      "b01s",
+      "b02s",
+      "b03s",
+      "b04s",
+      "b05s",
+      "b06s",
+      "b07s",
+      "b08s",
+      "b09s",
+      "b10s",
+      "b11s",
+      "b12s",
+      "b13s",
+      "b14s",
+      "b15s",
+      "b16s",
+      "b17s",
+      "b18s",
+      "b19s",
+      "b20s",
+      "b31s",
+      "b37s",
+      "b57s"
+    ],
+    "hero-kusuha": [
+      "b01k",
+      "b02k",
+      "b03k",
+      "b04k",
+      "b05k",
+      "b06k",
+      "b07k",
+      "b08k",
+      "b09k",
+      "b10k",
+      "b11k",
+      "b12k",
+      "b13k",
+      "b14k",
+      "b15k",
+      "b16k",
+      "b17k",
+      "b18k",
+      "b19k",
+      "b20k",
+      "b31k",
+      "b37k",
+      "b57k"
+    ],
+    "hero-arado": [
+      "b01a",
+      "b02a",
+      "b03a",
+      "b04a",
+      "b05a",
+      "b06a",
+      "b07a",
+      "b08a",
+      "b09a",
+      "b10a",
+      "b11a",
+      "b12a",
+      "b13a",
+      "b14a",
+      "b15a",
+      "b16a",
+      "b17a",
+      "b18a",
+      "b19a",
+      "b20a",
+      "b31a",
+      "b37a",
+      "b57a"
+    ],
+    "hero-ibis": [
+      "b01i",
+      "b02i",
+      "b03i",
+      "b04i",
+      "b05i",
+      "b06i",
+      "b07i",
+      "b08i",
+      "b09i",
+      "b10i",
+      "b11i",
+      "b12i",
+      "b13i",
+      "b14i",
+      "b15i",
+      "b16i",
+      "b17i",
+      "b18i",
+      "b19i",
+      "b20i",
+      "b31i",
+      "b37i",
+      "b57i"
+    ],
+    "chase-vital": [
+      "b26v",
+      "b27v",
+      "b28v",
+      "b29v",
+      "b30v"
+    ],
+    "chase-zeon": [
+      "b26z",
+      "b27z",
+      "b28z",
+      "b29z",
+      "b30z"
+    ],
+    "dest-moon": [
+      "b34m",
+      "b35m",
+      "b36m"
+    ],
+    "dest-axis": [
+      "b34x",
+      "b35x",
+      "b36x"
+    ],
+    "region-japan": [
+      "b46j",
+      "b47j",
+      "b50rj",
+      "b51rj",
+      "b55tj",
+      "b56tj"
+    ],
+    "region-mycenae": [
+      "b46m",
+      "b47m",
+      "b50rm",
+      "b51rm",
+      "b55tm",
+      "b56tm"
+    ],
+    "haman-reject": [
+      "b50rm",
+      "b51rm",
+      "b50rj",
+      "b51rj",
+      "b52r",
+      "b53r",
+      "b54r",
+      "b55r",
+      "b56r"
+    ],
+    "haman-truce": [
+      "b50t",
+      "b51t",
+      "b52t",
+      "b53t",
+      "b54t",
+      "b55tm",
+      "b56tm",
+      "b55tj",
+      "b56tj"
+    ],
+    "super-pair": [
+      "b22s",
+      "b23s",
+      "b24s"
+    ],
+    "real-pair": [
+      "b22r",
+      "b23r",
+      "b24r"
+    ]
+  },
+  "hideWhen": [
+    {
+      "when": {
+        "hero": "arado"
+      },
+      "tokens": [
+        "super-pair"
+      ]
+    },
+    {
+      "when": {
+        "hero": "ibis"
+      },
+      "tokens": [
+        "super-pair"
+      ]
+    },
+    {
+      "when": {
+        "hero": "sanger"
+      },
+      "tokens": [
+        "real-pair"
+      ]
+    },
+    {
+      "when": {
+        "hero": "kusuha"
+      },
+      "tokens": [
+        "real-pair"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "kind": "fork",
+      "id": "hero1",
+      "dimension": "hero",
+      "title": "主角",
+      "limbs": [
+        {
+          "choice": "sanger",
+          "stages": [
+            "b01s",
+            "b02s",
+            "b03s",
+            "b04s",
+            "b05s",
+            "b06s",
+            "b07s",
+            "b08s",
+            "b09s",
+            "b10s",
+            "b11s",
+            "b12s",
+            "b13s",
+            "b14s",
+            "b15s",
+            "b16s",
+            "b17s",
+            "b18s",
+            "b19s",
+            "b20s"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "b01k",
+            "b02k",
+            "b03k",
+            "b04k",
+            "b05k",
+            "b06k",
+            "b07k",
+            "b08k",
+            "b09k",
+            "b10k",
+            "b11k",
+            "b12k",
+            "b13k",
+            "b14k",
+            "b15k",
+            "b16k",
+            "b17k",
+            "b18k",
+            "b19k",
+            "b20k"
+          ]
+        },
+        {
+          "choice": "arado",
+          "stages": [
+            "b01a",
+            "b02a",
+            "b03a",
+            "b04a",
+            "b05a",
+            "b06a",
+            "b07a",
+            "b08a",
+            "b09a",
+            "b10a",
+            "b11a",
+            "b12a",
+            "b13a",
+            "b14a",
+            "b15a",
+            "b16a",
+            "b17a",
+            "b18a",
+            "b19a",
+            "b20a"
+          ]
+        },
+        {
+          "choice": "ibis",
+          "stages": [
+            "b01i",
+            "b02i",
+            "b03i",
+            "b04i",
+            "b05i",
+            "b06i",
+            "b07i",
+            "b08i",
+            "b09i",
+            "b10i",
+            "b11i",
+            "b12i",
+            "b13i",
+            "b14i",
+            "b15i",
+            "b16i",
+            "b17i",
+            "b18i",
+            "b19i",
+            "b20i"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b21",
+      "label": "合流",
+      "stages": [
+        "b21"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b22s",
+      "label": "第22話 · 超級系",
+      "stages": [
+        "b22s",
+        "b23s",
+        "b24s"
+      ],
+      "tokens": [
+        "super-pair"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b22r",
+      "label": "第22話 · 即時系",
+      "stages": [
+        "b22r",
+        "b23r",
+        "b24r"
+      ],
+      "tokens": [
+        "real-pair"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b25",
+      "label": "合流",
+      "stages": [
+        "b25"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "chase",
+      "dimension": "chase",
+      "title": "第26話",
+      "limbs": [
+        {
+          "choice": "vital",
+          "stages": [
+            "b26v",
+            "b27v",
+            "b28v",
+            "b29v",
+            "b30v"
+          ]
+        },
+        {
+          "choice": "zeon",
+          "stages": [
+            "b26z",
+            "b27z",
+            "b28z",
+            "b29z",
+            "b30z"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero31",
+      "dimension": "hero",
+      "title": "第31話",
+      "limbs": [
+        {
+          "choice": "sanger",
+          "stages": [
+            "b31s"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "b31k"
+          ]
+        },
+        {
+          "choice": "arado",
+          "stages": [
+            "b31a"
+          ]
+        },
+        {
+          "choice": "ibis",
+          "stages": [
+            "b31i"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b32",
+      "label": "合流",
+      "stages": [
+        "b32",
+        "b33"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "dest",
+      "dimension": "dest",
+      "title": "第34話",
+      "limbs": [
+        {
+          "choice": "moon",
+          "stages": [
+            "b34m",
+            "b35m",
+            "b36m"
+          ]
+        },
+        {
+          "choice": "axis",
+          "stages": [
+            "b34x",
+            "b35x",
+            "b36x"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero37",
+      "dimension": "hero",
+      "title": "第37話",
+      "limbs": [
+        {
+          "choice": "sanger",
+          "stages": [
+            "b37s"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "b37k"
+          ]
+        },
+        {
+          "choice": "arado",
+          "stages": [
+            "b37a"
+          ]
+        },
+        {
+          "choice": "ibis",
+          "stages": [
+            "b37i"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b38",
+      "label": "合流",
+      "stages": [
+        "b38",
+        "b39",
+        "b40",
+        "b41",
+        "b42",
+        "b43",
+        "b44",
+        "b45"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "region46",
+      "dimension": "region",
+      "title": "第46話",
+      "limbs": [
+        {
+          "choice": "japan",
+          "stages": [
+            "b46j",
+            "b47j"
+          ]
+        },
+        {
+          "choice": "mycenae",
+          "stages": [
+            "b46m",
+            "b47m"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "b48",
+      "label": "合流",
+      "stages": [
+        "b48",
+        "b49"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "haman",
+      "dimension": "haman",
+      "title": "第49話",
+      "limbs": [
+        {
+          "choice": "reject",
+          "blocks": [
+            {
+              "kind": "subfork",
+              "dimension": "region",
+              "limbs": [
+                {
+                  "choice": "mycenae",
+                  "stages": [
+                    "b50rm",
+                    "b51rm"
+                  ]
+                },
+                {
+                  "choice": "japan",
+                  "stages": [
+                    "b50rj",
+                    "b51rj"
+                  ]
+                }
+              ]
+            },
+            {
+              "stages": [
+                "b52r",
+                "b53r",
+                "b54r",
+                "b55r",
+                "b56r"
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "truce",
+          "blocks": [
+            {
+              "stages": [
+                "b50t",
+                "b51t",
+                "b52t",
+                "b53t",
+                "b54t"
+              ]
+            },
+            {
+              "kind": "subfork",
+              "dimension": "region",
+              "limbs": [
+                {
+                  "choice": "mycenae",
+                  "stages": [
+                    "b55tm",
+                    "b56tm"
+                  ]
+                },
+                {
+                  "choice": "japan",
+                  "stages": [
+                    "b55tj",
+                    "b56tj"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero57",
+      "dimension": "hero",
+      "title": "最終話",
+      "limbs": [
+        {
+          "choice": "sanger",
+          "stages": [
+            "b57s"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "b57k"
+          ]
+        },
+        {
+          "choice": "arado",
+          "stages": [
+            "b57a"
+          ]
+        },
+        {
+          "choice": "ibis",
+          "stages": [
+            "b57i"
+          ]
+        }
+      ]
+    }
+  ],
+  "extra": [
+    "super-pair",
+    "real-pair"
+  ]
+}

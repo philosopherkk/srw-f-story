@@ -1,0 +1,449 @@
+{
+  "page": "alpha-gaiden",
+  "dimensions": [
+    {
+      "id": "moon",
+      "choices": [
+        {
+          "id": "lean",
+          "label": "去月球",
+          "tone": "space"
+        },
+        {
+          "id": "argama",
+          "label": "極東支部",
+          "tone": "earth"
+        }
+      ],
+      "label": "第4話",
+      "neutral": "全部"
+    },
+    {
+      "id": "fort",
+      "choices": [
+        {
+          "id": "direct",
+          "label": "直去塞文堡",
+          "tone": "good"
+        },
+        {
+          "id": "skip",
+          "label": "不直去",
+          "tone": "accent"
+        }
+      ],
+      "label": "第14話",
+      "neutral": "全部"
+    },
+    {
+      "id": "stay",
+      "choices": [
+        {
+          "id": "frieden",
+          "label": "弗里登",
+          "tone": "space"
+        },
+        {
+          "id": "iron",
+          "label": "鐵齒輪",
+          "tone": "earth"
+        }
+      ],
+      "label": "第18話",
+      "neutral": "全部"
+    },
+    {
+      "id": "skill",
+      "choices": [
+        {
+          "id": "high",
+          "label": "15 以上",
+          "tone": "good"
+        },
+        {
+          "id": "low",
+          "label": "14 以下",
+          "tone": "bad"
+        }
+      ],
+      "label": "第26話，熟練度",
+      "neutral": "全部"
+    },
+    {
+      "id": "moon2",
+      "choices": [
+        {
+          "id": "moon",
+          "label": "去月球",
+          "tone": "space"
+        },
+        {
+          "id": "x",
+          "label": "去 X 點",
+          "tone": "earth"
+        }
+      ],
+      "label": "第32話",
+      "neutral": "全部"
+    },
+    {
+      "id": "end",
+      "choices": [
+        {
+          "id": "hard",
+          "label": "難",
+          "tone": "good",
+          "hint": "正史"
+        },
+        {
+          "id": "normal",
+          "label": "普",
+          "tone": "accent"
+        },
+        {
+          "id": "easy",
+          "label": "易",
+          "tone": "bad"
+        }
+      ],
+      "label": "難度",
+      "neutral": "全部"
+    }
+  ],
+  "membership": {
+    "moon-lean": [
+      "g04a",
+      "g05a",
+      "g06a"
+    ],
+    "moon-argama": [
+      "g04b",
+      "g05b",
+      "g06b"
+    ],
+    "fort-direct": [
+      "g14a",
+      "g15a",
+      "g16a",
+      "g17a"
+    ],
+    "fort-skip": [
+      "g14b",
+      "g15b",
+      "g16b",
+      "g17b"
+    ],
+    "stay-frieden": [
+      "g18a",
+      "g19a",
+      "g20a"
+    ],
+    "stay-iron": [
+      "g18b",
+      "g19b",
+      "g20b"
+    ],
+    "skill-high": [
+      "g26h",
+      "g27h",
+      "g28h",
+      "g29h"
+    ],
+    "skill-low": [
+      "g26l",
+      "g27l",
+      "g28l",
+      "g29l"
+    ],
+    "moon2-moon": [
+      "g32a",
+      "g33a",
+      "g34a",
+      "g35a",
+      "g36a"
+    ],
+    "moon2-x": [
+      "g32b",
+      "g33b",
+      "g34b",
+      "g35b",
+      "g36b"
+    ],
+    "end-hard": [
+      "g42h",
+      "g43h",
+      "g44",
+      "g45"
+    ],
+    "end-normal": [
+      "g42n",
+      "g43n"
+    ],
+    "end-easy": [
+      "g41e",
+      "g42e",
+      "g43e"
+    ],
+    "black-history": [
+      "g41"
+    ]
+  },
+  "hideWhen": [
+    {
+      "when": {
+        "end": "easy"
+      },
+      "tokens": [
+        "black-history"
+      ]
+    },
+    {
+      "when": {
+        "skill": "low"
+      },
+      "tokens": [
+        "end-hard"
+      ]
+    },
+    {
+      "when": {
+        "end": "hard"
+      },
+      "tokens": [
+        "skill-low"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "kind": "spine",
+      "id": "gopen",
+      "label": "現代",
+      "stages": [
+        "g01",
+        "g02",
+        "g03"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "moon",
+      "dimension": "moon",
+      "title": "第4話",
+      "limbs": [
+        {
+          "choice": "lean",
+          "stages": [
+            "g04a",
+            "g05a",
+            "g06a"
+          ]
+        },
+        {
+          "choice": "argama",
+          "stages": [
+            "g04b",
+            "g05b",
+            "g06b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "g07",
+      "label": "現代",
+      "stages": [
+        "g07",
+        "g08",
+        "g09",
+        "g10",
+        "g11",
+        "g12",
+        "g13"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "fort",
+      "dimension": "fort",
+      "title": "第14話",
+      "limbs": [
+        {
+          "choice": "direct",
+          "stages": [
+            "g14a",
+            "g15a",
+            "g16a",
+            "g17a"
+          ]
+        },
+        {
+          "choice": "skip",
+          "stages": [
+            "g14b",
+            "g15b",
+            "g16b",
+            "g17b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "stay",
+      "dimension": "stay",
+      "title": "第18話",
+      "limbs": [
+        {
+          "choice": "frieden",
+          "stages": [
+            "g18a",
+            "g19a",
+            "g20a"
+          ]
+        },
+        {
+          "choice": "iron",
+          "stages": [
+            "g18b",
+            "g19b",
+            "g20b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "g21",
+      "label": "未來",
+      "stages": [
+        "g21",
+        "g22",
+        "g23",
+        "g24",
+        "g25"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "skill",
+      "dimension": "skill",
+      "title": "第26話",
+      "limbs": [
+        {
+          "choice": "high",
+          "stages": [
+            "g26h",
+            "g27h",
+            "g28h",
+            "g29h"
+          ]
+        },
+        {
+          "choice": "low",
+          "stages": [
+            "g26l",
+            "g27l",
+            "g28l",
+            "g29l"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "g30",
+      "label": "未來",
+      "stages": [
+        "g30",
+        "g31"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "moon2",
+      "dimension": "moon2",
+      "title": "第32話",
+      "limbs": [
+        {
+          "choice": "moon",
+          "stages": [
+            "g32a",
+            "g33a",
+            "g34a",
+            "g35a",
+            "g36a"
+          ]
+        },
+        {
+          "choice": "x",
+          "stages": [
+            "g32b",
+            "g33b",
+            "g34b",
+            "g35b",
+            "g36b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "g37",
+      "label": "未來",
+      "stages": [
+        "g37",
+        "g38",
+        "g39",
+        "g40"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "g41",
+      "label": "難和普共用",
+      "stages": [
+        "g41"
+      ],
+      "tokens": [
+        "black-history"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "end",
+      "dimension": "end",
+      "title": "結局的難度",
+      "limbs": [
+        {
+          "choice": "hard",
+          "stages": [
+            "g42h",
+            "g43h",
+            "g44",
+            "g45"
+          ]
+        },
+        {
+          "choice": "normal",
+          "stages": [
+            "g42n",
+            "g43n"
+          ]
+        },
+        {
+          "choice": "easy",
+          "stages": [
+            "g41e",
+            "g42e",
+            "g43e"
+          ]
+        }
+      ]
+    }
+  ],
+  "extra": [
+    "black-history"
+  ]
+}

@@ -1,8 +1,8 @@
-# 超級機器人大戰 F／F完結編 故事導讀
+# 超級機器人大戰故事導讀
 
-繁體中文的長文導讀。每一話的標題留下日文。角色、機體、勢力和地名在每一話第一次出現時附上日文，全表在「角色與機體」，資料在 `data/lexicon.json`。角色和機體的外形寫在 `data/looks.json`，是按公開畫面重寫的文字，不是遊戲圖。路線圖是一棵可切換的分岐樹，用來打開或收起話數：即時系與超級系、哥拉昂與古蘭加蘭、拉薩繞路、托德、宇宙與地上、EVA 壞結局，以及 DC 與蓋斯特／波賽達爾兩條最終篇。
+繁體中文的長文導讀。F／F完結編在 `index.html`。α、α外傳、第2次α、第3次α 在同目錄的 `alpha.html`、`alpha-gaiden.html`、`alpha2.html`、`alpha3.html`，頁首可以互跳。每一話的標題留下日文。角色、機體、勢力和地名在每一話第一次出現時附上日文，全表在「角色與機體」，資料在 `data/lexicon.json`，α 系列追加的名字在 `data/series-lexicon.json`。角色和機體的外形寫在 `data/looks.json` 和 `data/series-looks.json`，是按公開畫面重寫的文字，不是遊戲圖。路線圖是一棵可切換的分岐樹。
 
-正文寫在 `data/stages/*.json`，分岐寫在 `data/routes.json`。`tools/build.py` 把它編成單一的 `index.html`，瀏覽時不再向伺服器要資料，所以可以直接放上 Vercel。
+F 的正文寫在 `data/stages/*.json`，分岐寫在 `data/routes.json`。另外四部的話名和分岐在 `data/works/<作品>/`，各話正文在該目錄的 `stages/`。`tools/build.py` 把它們編成靜態 HTML，瀏覽時不再向伺服器要資料，所以可以直接放上 Vercel。話名還沒寫齊的作品會跳過，不影響 F 那一頁。
 
 ## 本地預覽
 

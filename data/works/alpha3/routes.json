@@ -1,0 +1,903 @@
+{
+  "page": "alpha3",
+  "dimensions": [
+    {
+      "id": "hero",
+      "choices": [
+        {
+          "id": "touma",
+          "label": "刀馬",
+          "tone": "super"
+        },
+        {
+          "id": "kusuha",
+          "label": "庫絲哈",
+          "tone": "earth"
+        },
+        {
+          "id": "quovre",
+          "label": "科布雷",
+          "tone": "real"
+        },
+        {
+          "id": "serena",
+          "label": "瑟蕾娜",
+          "tone": "space"
+        }
+      ],
+      "label": "主角",
+      "neutral": "全部"
+    },
+    {
+      "id": "fleet1",
+      "choices": [
+        {
+          "id": "ground",
+          "label": "地上 · 大天使",
+          "tone": "earth"
+        },
+        {
+          "id": "daiku",
+          "label": "星間 · 大空魔龍",
+          "tone": "super"
+        }
+      ],
+      "label": "第19話",
+      "neutral": "全部"
+    },
+    {
+      "id": "fleet2",
+      "choices": [
+        {
+          "id": "earth",
+          "label": "地球部隊",
+          "tone": "earth"
+        },
+        {
+          "id": "outer",
+          "label": "外宇宙",
+          "tone": "space"
+        }
+      ],
+      "label": "第30話",
+      "neutral": "全部"
+    },
+    {
+      "id": "fleet3",
+      "choices": [
+        {
+          "id": "solo",
+          "label": "索洛艦",
+          "tone": "accent"
+        },
+        {
+          "id": "battle",
+          "label": "Battle 7",
+          "tone": "space"
+        }
+      ],
+      "label": "第38話",
+      "neutral": "全部"
+    },
+    {
+      "id": "scatter",
+      "choices": [
+        {
+          "id": "ground",
+          "label": "地球 · 伊爾伊",
+          "tone": "earth"
+        },
+        {
+          "id": "zaft",
+          "label": "宇宙 · ZAFT",
+          "tone": "real"
+        },
+        {
+          "id": "barota",
+          "label": "巴羅塔",
+          "tone": "space"
+        },
+        {
+          "id": "boazan",
+          "label": "波阿贊",
+          "tone": "super"
+        }
+      ],
+      "label": "第45話",
+      "neutral": "全部"
+    },
+    {
+      "id": "cycle",
+      "choices": [
+        {
+          "id": "other",
+          "label": "另找路",
+          "tone": "accent"
+        },
+        {
+          "id": "fight",
+          "label": "選擇戰鬥",
+          "tone": "bad"
+        }
+      ],
+      "label": "第57話，第二周",
+      "neutral": "全部"
+    },
+    {
+      "id": "lastfleet",
+      "choices": [
+        {
+          "id": "buff",
+          "label": "對巴夫",
+          "tone": "earth"
+        },
+        {
+          "id": "kaiju",
+          "label": "對宇宙怪獸",
+          "tone": "super"
+        }
+      ],
+      "label": "另找路之後",
+      "neutral": "全部"
+    },
+    {
+      "id": "finale",
+      "choices": [
+        {
+          "id": "far",
+          "label": "遙遠的彼方",
+          "tone": "good"
+        },
+        {
+          "id": "fall",
+          "label": "終焉的銀河",
+          "tone": "accent"
+        }
+      ],
+      "label": "最終話",
+      "neutral": "全部"
+    }
+  ],
+  "membership": {
+    "hero-touma": [
+      "c01t",
+      "c02t",
+      "c06t",
+      "c07t",
+      "c08t",
+      "c09t",
+      "c10t",
+      "c11t",
+      "c12t",
+      "c34t",
+      "c35t",
+      "c43t",
+      "c44t"
+    ],
+    "hero-kusuha": [
+      "c01k",
+      "c02k",
+      "c06k",
+      "c07k",
+      "c08k",
+      "c09k",
+      "c10k",
+      "c11k",
+      "c12k",
+      "c34k",
+      "c35k",
+      "c43k",
+      "c44k"
+    ],
+    "hero-quovre": [
+      "c01q",
+      "c02q",
+      "c06q",
+      "c07q",
+      "c08q",
+      "c09q",
+      "c10q",
+      "c11q",
+      "c12q",
+      "c34q",
+      "c35q",
+      "c43q",
+      "c44q"
+    ],
+    "hero-serena": [
+      "c01e",
+      "c02e",
+      "c06e",
+      "c07e",
+      "c08e",
+      "c09e",
+      "c10e",
+      "c11e",
+      "c12e",
+      "c34e",
+      "c35e",
+      "c43e",
+      "c44e"
+    ],
+    "fleet1-ground": [
+      "c19g",
+      "c20g",
+      "c21g",
+      "c22g",
+      "c23g"
+    ],
+    "fleet1-daiku": [
+      "c19d",
+      "c20d",
+      "c21d",
+      "c22d",
+      "c23d"
+    ],
+    "fleet2-earth": [
+      "c30g",
+      "c31g",
+      "c32g",
+      "c33g"
+    ],
+    "fleet2-outer": [
+      "c30o",
+      "c31o",
+      "c32o",
+      "c33o"
+    ],
+    "fleet3-solo": [
+      "c38s",
+      "c39s",
+      "c40s"
+    ],
+    "fleet3-battle": [
+      "c38b",
+      "c39b",
+      "c40b"
+    ],
+    "scatter-ground": [
+      "c45g",
+      "c46g",
+      "c47g"
+    ],
+    "scatter-zaft": [
+      "c45z",
+      "c46z",
+      "c47z"
+    ],
+    "scatter-barota": [
+      "c45b",
+      "c46b",
+      "c47b"
+    ],
+    "scatter-boazan": [
+      "c45o",
+      "c46o",
+      "c47o"
+    ],
+    "cycle-other": [
+      "c57b",
+      "c58b",
+      "c57k",
+      "c58k"
+    ],
+    "cycle-fight": [
+      "c57f"
+    ],
+    "lastfleet-buff": [
+      "c57b",
+      "c58b"
+    ],
+    "lastfleet-kaiju": [
+      "c57k",
+      "c58k"
+    ],
+    "finale-far": [
+      "c60f"
+    ],
+    "finale-fall": [
+      "c60e"
+    ],
+    "requiem": [
+      "c48a"
+    ],
+    "galaxy-death": [
+      "c48b"
+    ]
+  },
+  "hideWhen": [
+    {
+      "when": {
+        "scatter": "barota"
+      },
+      "tokens": [
+        "requiem"
+      ]
+    },
+    {
+      "when": {
+        "scatter": "boazan"
+      },
+      "tokens": [
+        "requiem"
+      ]
+    },
+    {
+      "when": {
+        "scatter": "ground"
+      },
+      "tokens": [
+        "galaxy-death"
+      ]
+    },
+    {
+      "when": {
+        "scatter": "zaft"
+      },
+      "tokens": [
+        "galaxy-death"
+      ]
+    }
+  ],
+  "tree": [
+    {
+      "kind": "spine",
+      "id": "c00",
+      "label": "序",
+      "stages": [
+        "c00"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero1",
+      "dimension": "hero",
+      "title": "主角",
+      "limbs": [
+        {
+          "choice": "touma",
+          "stages": [
+            "c01t",
+            "c02t"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "c01k",
+            "c02k"
+          ]
+        },
+        {
+          "choice": "quovre",
+          "stages": [
+            "c01q",
+            "c02q"
+          ]
+        },
+        {
+          "choice": "serena",
+          "stages": [
+            "c01e",
+            "c02e"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c03",
+      "label": "合流",
+      "stages": [
+        "c03",
+        "c04",
+        "c05"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero6",
+      "dimension": "hero",
+      "title": "第6話",
+      "limbs": [
+        {
+          "choice": "touma",
+          "stages": [
+            "c06t",
+            "c07t",
+            "c08t",
+            "c09t",
+            "c10t",
+            "c11t",
+            "c12t"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "c06k",
+            "c07k",
+            "c08k",
+            "c09k",
+            "c10k",
+            "c11k",
+            "c12k"
+          ]
+        },
+        {
+          "choice": "quovre",
+          "stages": [
+            "c06q",
+            "c07q",
+            "c08q",
+            "c09q",
+            "c10q",
+            "c11q",
+            "c12q"
+          ]
+        },
+        {
+          "choice": "serena",
+          "stages": [
+            "c06e",
+            "c07e",
+            "c08e",
+            "c09e",
+            "c10e",
+            "c11e",
+            "c12e"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c13",
+      "label": "合流",
+      "stages": [
+        "c13"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs1",
+      "label": "副話",
+      "stages": [
+        "cs1"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c14",
+      "label": "合流",
+      "stages": [
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs2",
+      "label": "副話",
+      "stages": [
+        "cs2"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "fleet1",
+      "dimension": "fleet1",
+      "title": "第19話",
+      "limbs": [
+        {
+          "choice": "ground",
+          "stages": [
+            "c19g",
+            "c20g",
+            "c21g",
+            "c22g",
+            "c23g"
+          ]
+        },
+        {
+          "choice": "daiku",
+          "stages": [
+            "c19d",
+            "c20d",
+            "c21d",
+            "c22d",
+            "c23d"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c24",
+      "label": "合流",
+      "stages": [
+        "c24",
+        "c25",
+        "c26"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs3",
+      "label": "副話",
+      "stages": [
+        "cs3"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c27",
+      "label": "合流",
+      "stages": [
+        "c27"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs4",
+      "label": "副話",
+      "stages": [
+        "cs4"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c28",
+      "label": "合流",
+      "stages": [
+        "c28",
+        "c29"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "fleet2",
+      "dimension": "fleet2",
+      "title": "第30話",
+      "limbs": [
+        {
+          "choice": "earth",
+          "stages": [
+            "c30g",
+            "c31g",
+            "c32g",
+            "c33g"
+          ]
+        },
+        {
+          "choice": "outer",
+          "stages": [
+            "c30o",
+            "c31o",
+            "c32o",
+            "c33o"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero34",
+      "dimension": "hero",
+      "title": "第34話",
+      "limbs": [
+        {
+          "choice": "touma",
+          "stages": [
+            "c34t",
+            "c35t"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "c34k",
+            "c35k"
+          ]
+        },
+        {
+          "choice": "quovre",
+          "stages": [
+            "c34q",
+            "c35q"
+          ]
+        },
+        {
+          "choice": "serena",
+          "stages": [
+            "c34e",
+            "c35e"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c36",
+      "label": "合流",
+      "stages": [
+        "c36"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs5",
+      "label": "副話",
+      "stages": [
+        "cs5"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c37",
+      "label": "合流",
+      "stages": [
+        "c37"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "fleet3",
+      "dimension": "fleet3",
+      "title": "第38話",
+      "limbs": [
+        {
+          "choice": "solo",
+          "stages": [
+            "c38s",
+            "c39s",
+            "c40s"
+          ]
+        },
+        {
+          "choice": "battle",
+          "stages": [
+            "c38b",
+            "c39b",
+            "c40b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c41",
+      "label": "合流",
+      "stages": [
+        "c41",
+        "c42"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs6",
+      "label": "副話",
+      "stages": [
+        "cs6"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "hero43",
+      "dimension": "hero",
+      "title": "第43話",
+      "limbs": [
+        {
+          "choice": "touma",
+          "stages": [
+            "c43t",
+            "c44t"
+          ]
+        },
+        {
+          "choice": "kusuha",
+          "stages": [
+            "c43k",
+            "c44k"
+          ]
+        },
+        {
+          "choice": "quovre",
+          "stages": [
+            "c43q",
+            "c44q"
+          ]
+        },
+        {
+          "choice": "serena",
+          "stages": [
+            "c43e",
+            "c44e"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs7",
+      "label": "副話",
+      "stages": [
+        "cs7"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "scatter",
+      "dimension": "scatter",
+      "title": "第45話",
+      "limbs": [
+        {
+          "choice": "ground",
+          "stages": [
+            "c45g",
+            "c46g",
+            "c47g"
+          ]
+        },
+        {
+          "choice": "zaft",
+          "stages": [
+            "c45z",
+            "c46z",
+            "c47z"
+          ]
+        },
+        {
+          "choice": "barota",
+          "stages": [
+            "c45b",
+            "c46b",
+            "c47b"
+          ]
+        },
+        {
+          "choice": "boazan",
+          "stages": [
+            "c45o",
+            "c46o",
+            "c47o"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c48a",
+      "label": "第48話 · 地球與宇宙",
+      "stages": [
+        "c48a"
+      ],
+      "tokens": [
+        "requiem"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c48b",
+      "label": "第48話 · 巴羅塔與波阿贊",
+      "stages": [
+        "c48b"
+      ],
+      "tokens": [
+        "galaxy-death"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c49",
+      "label": "合流",
+      "stages": [
+        "c49"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "cs8",
+      "label": "副話",
+      "stages": [
+        "cs8"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c50",
+      "label": "合流",
+      "stages": [
+        "c50",
+        "c51",
+        "c52",
+        "c53",
+        "c54",
+        "c55",
+        "c56"
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "csp",
+      "label": "副話",
+      "stages": [
+        "csp"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "cycle",
+      "dimension": "cycle",
+      "title": "第57話",
+      "limbs": [
+        {
+          "choice": "other",
+          "blocks": [
+            {
+              "kind": "subfork",
+              "dimension": "lastfleet",
+              "limbs": [
+                {
+                  "choice": "buff",
+                  "stages": [
+                    "c57b",
+                    "c58b"
+                  ]
+                },
+                {
+                  "choice": "kaiju",
+                  "stages": [
+                    "c57k",
+                    "c58k"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "fight",
+          "stages": [
+            "c57f"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "c59",
+      "label": "合流",
+      "stages": [
+        "c59"
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "finale",
+      "dimension": "finale",
+      "title": "最終話",
+      "limbs": [
+        {
+          "choice": "far",
+          "stages": [
+            "c60f"
+          ]
+        },
+        {
+          "choice": "fall",
+          "stages": [
+            "c60e"
+          ]
+        }
+      ]
+    }
+  ],
+  "extra": [
+    "requiem",
+    "galaxy-death"
+  ]
+}

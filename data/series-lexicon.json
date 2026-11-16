@@ -1,0 +1,25 @@
+{
+  "blocks": [],
+  "entries": [
+    {"id": "ryusei", "zh": ["龍勢·達特", "龍勢"], "ja": "リュウセイ・ダテ", "kind": "person"},
+    {"id": "raidiese", "zh": ["萊迪斯·F·布朗斯坦", "萊迪斯"], "ja": "ライディース・F・ブランシュタイン", "kind": "person"},
+    {"id": "aya", "zh": ["亞伊·小林", "亞伊"], "ja": "アヤ・コバヤシ", "kind": "person"},
+    {"id": "ingram", "zh": ["英格拉姆·普里斯肯", "英格拉姆"], "ja": "イングラム・プリスケン", "kind": "person"},
+    {"id": "viletta", "zh": ["維蕾塔·巴迪姆", "維蕾塔"], "ja": "ヴィレッタ・バディム", "kind": "person"},
+    {"id": "levi", "zh": ["蕾比·托拉", "蕾比"], "ja": "レビ・トーラー", "kind": "person"},
+    {"id": "irui", "zh": ["伊爾伊"], "ja": "イルイ", "kind": "person"},
+    {"id": "sanger", "zh": ["善格·宗格", "善格"], "ja": "ゼンガー・ゾンボルト", "kind": "person"},
+    {"id": "kusuha", "zh": ["庫絲哈·米茲哈", "庫絲哈"], "ja": "クスハ・ミズハ", "kind": "person"},
+    {"id": "arado", "zh": ["亞拉多·巴爾蘭加", "亞拉多"], "ja": "アラド・バランガ", "kind": "person"},
+    {"id": "ibis", "zh": ["艾比絲·道格拉斯", "艾比絲"], "ja": "アイビス・ダグラス", "kind": "person"},
+    {"id": "touma", "zh": ["刀馬·神威", "刀馬"], "ja": "トウマ・カノウ", "kind": "person"},
+    {"id": "quovre", "zh": ["科布雷·戈登", "科布雷"], "ja": "クォヴレー・ゴードン", "kind": "person"},
+    {"id": "serena", "zh": ["瑟蕾娜·雷雪菲爾", "瑟蕾娜"], "ja": "セレーナ・レシフェール", "kind": "person"},
+    {"id": "srx", "zh": ["SRX"], "ja": "SRX", "kind": "unit"},
+    {"id": "r1", "zh": ["R-1"], "ja": "R-1", "kind": "unit"},
+    {"id": "hagane", "zh": ["鋼號"], "ja": "ハガネ", "kind": "unit"},
+    {"id": "hiryu", "zh": ["飛龍號"], "ja": "ヒリュウ", "kind": "unit"},
+    {"id": "liger", "zh": ["利加·米利迪亞"], "ja": "リガ・ミリティア", "kind": "org"},
+    {"id": "balmar", "zh": ["巴爾馬"], "ja": "バルマー", "kind": "org"}
+  ]
+}
