@@ -19,6 +19,7 @@
   --ink: #2c241c;
   --measure: 40rem;
   --nav: 17.5rem;
+  --sticky-top: 8rem;
   --serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", PMingLiU, serif;
   --sans: "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 }
@@ -268,7 +269,10 @@ body.hide-ruby .term i { display: none; }
   font-weight: 600;
   font-size: 1.7rem;
   margin: 2.4rem 0 0.8rem;
-  scroll-margin-top: 8rem;
+  scroll-margin-top: calc(var(--sticky-top) + 0.75rem);
+}
+section[id] {
+  scroll-margin-top: calc(var(--sticky-top) + 0.75rem);
 }
 .note, .thin {
   max-width: var(--measure);
@@ -514,7 +518,7 @@ body.hide-ruby .term i { display: none; }
   border-radius: 16px;
   padding: 1.35rem 1.5rem 0.6rem;
   margin: 1.15rem 0;
-  scroll-margin-top: 8rem;
+  scroll-margin-top: calc(var(--sticky-top) + 0.75rem);
   box-shadow: 0 10px 28px rgba(70, 42, 16, 0.06);
 }
 .stage header h3 {
@@ -645,34 +649,130 @@ footer.colophon {
   margin-top: 3rem;
 }
 
+.nav-close, .nav-backdrop { display: none; }
+
 @media (max-width: 860px) {
+  html { scroll-padding-bottom: calc(5.2rem + env(safe-area-inset-bottom)); }
   .layout { grid-template-columns: 1fr; }
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    border: 0;
+    padding: 0;
+    background: rgba(36, 28, 20, 0.48);
+  }
+  .nav-backdrop[hidden] { display: none !important; }
+  body.nav-open { overflow: hidden; }
   .nav {
     position: fixed;
     z-index: 30;
     transform: translateX(-105%);
     transition: transform 0.2s ease;
-    width: min(18rem, 86vw);
+    width: min(17.5rem, 82vw);
+    height: 100vh;
+    height: 100dvh;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
     box-shadow: 8px 0 30px rgba(0,0,0,0.4);
   }
   .nav.open { transform: none; }
-  .menu-btn { display: inline-block; }
-  .page { padding: 1.1rem 1rem 6rem; }
-  .count { display: none; }
-  .topbar-row { flex-wrap: wrap; align-items: center; }
-  .search { flex: 1 1 100%; order: 3; }
-  .ruby-btn { margin-left: auto; }
-  .reader { left: 0.55rem; width: calc(100% - 1.1rem); }
-  body.reading .totop { bottom: 5.3rem; right: 0.7rem; }
-  .reader button { padding: 0.42rem 0.7rem; font-size: 0.9rem; }
+  .nav-close {
+    display: block;
+    margin: 0 0.2rem 0.7rem auto;
+    background: transparent;
+    color: #fff8f1;
+    border: 1px solid #e7d3bf;
+    border-radius: 999px;
+    min-height: 2.75rem;
+    padding: 0.3rem 0.95rem;
+    font: inherit;
+    font-weight: 600;
+  }
+  .menu-btn { display: inline-flex; align-items: center; }
+  .page {
+    padding: 0.85rem 0.9rem calc(5.6rem + env(safe-area-inset-bottom));
+  }
+  .topbar {
+    gap: 0.4rem;
+    padding: 0.45rem 0.7rem calc(0.4rem + env(safe-area-inset-top));
+  }
+  .topbar-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "menu count ruby" "search search search";
+    gap: 0.4rem 0.45rem;
+    align-items: center;
+  }
+  .menu-btn { grid-area: menu; min-height: 2.75rem; }
+  .count {
+    grid-area: count;
+    display: block;
+    width: auto;
+    text-align: center;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ruby-btn { grid-area: ruby; margin-left: 0; min-height: 2.75rem; padding: 0.35rem 0.7rem; }
+  .search { grid-area: search; width: 100%; min-width: 0; flex: none; min-height: 2.75rem; }
+  .works {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    gap: 0.35rem;
+    padding: 0 0.15rem 0.05rem 0;
+  }
+  .works::-webkit-scrollbar { display: none; }
+  .works.can-scroll {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.6rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 1.6rem), transparent);
+  }
+  .works.scrolled {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.6rem);
+    mask-image: linear-gradient(to right, transparent, #000 1.6rem);
+  }
+  .works.can-scroll.scrolled {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.6rem, #000 calc(100% - 1.6rem), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 1.6rem, #000 calc(100% - 1.6rem), transparent);
+  }
+  .works a {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.88rem;
+    scroll-snap-align: start;
+  }
+  .hero { padding: 1.1rem 1rem 1rem; border-radius: 16px; }
+  .hero .ja-line, .stage .ja, .ep-ja { overflow-wrap: anywhere; }
+  .fork-bar { flex-direction: column; align-items: stretch; }
+  .choices { width: 100%; }
+  .choice, .fold, .start a, .limb-pick {
+    min-height: 2.75rem;
+  }
+  .choice, .fold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fold { margin-left: 0; align-self: flex-start; }
+  .reader {
+    left: 0.45rem;
+    width: calc(100% - 0.9rem);
+    bottom: calc(0.4rem + env(safe-area-inset-bottom));
+  }
+  .reader button { min-height: 2.6rem; padding: 0.4rem 0.7rem; font-size: 0.9rem; }
   .reader a { font-size: 0.82rem; }
-  .ruby-btn { padding: 0.4rem 0.65rem; }
+  .totop { display: none; }
   body { font-size: 1.0625rem; }
-  .stage { padding: 1.05rem 1rem 0.4rem; }
-  .menu-btn { min-height: 2.6rem; }
+  .stage { padding: 1.05rem 0.95rem 0.35rem; }
   .name-grid { grid-template-columns: 1fr; }
-  .totop { right: 0.7rem; bottom: 0.7rem; }
-  .fold { margin-left: 0; }
 }
 
 @media (min-width: 960px) {

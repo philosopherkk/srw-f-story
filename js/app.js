@@ -28,13 +28,32 @@
   var currentId = "";
   var markedId = "";
 
+  var backdrop = document.createElement("button");
+  backdrop.type = "button";
+  backdrop.className = "nav-backdrop";
+  backdrop.setAttribute("aria-label", "關閉目錄");
+  backdrop.hidden = true;
+  document.body.appendChild(backdrop);
+  var closer = document.createElement("button");
+  closer.type = "button";
+  closer.className = "nav-close";
+  closer.textContent = "關閉";
+  nav.insertBefore(closer, nav.firstChild);
+
   function setOpen(open) {
     nav.classList.toggle("open", open);
     btn.setAttribute("aria-expanded", open ? "true" : "false");
+    backdrop.hidden = !open;
+    document.body.classList.toggle("nav-open", open);
   }
 
   btn.addEventListener("click", function () {
     setOpen(!nav.classList.contains("open"));
+  });
+  backdrop.addEventListener("click", function () { setOpen(false); });
+  closer.addEventListener("click", function () { setOpen(false); });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && nav.classList.contains("open")) setOpen(false);
   });
 
   nav.addEventListener("click", function (event) {
@@ -493,13 +512,32 @@
   if (openingStage) openingStage.scrollIntoView({ block: "start" });
 
   var scrollFrame = 0;
+  function syncSticky() {
+    var bar = document.querySelector(".topbar");
+    if (!bar) return;
+    document.documentElement.style.setProperty(
+      "--sticky-top",
+      Math.ceil(bar.getBoundingClientRect().height) + "px"
+    );
+  }
+
+  var works = document.querySelector(".works");
+  function syncWorks() {
+    if (!works) return;
+    var more = works.scrollWidth - works.clientWidth - works.scrollLeft > 4;
+    works.classList.toggle("can-scroll", more);
+    works.classList.toggle("scrolled", works.scrollLeft > 4);
+  }
+
   function pickCurrent() {
-    var line = 150;
+    var bar = document.querySelector(".topbar");
+    var line = bar ? bar.getBoundingClientRect().bottom + 100 : 150;
     var best = "";
     var bestTop = -Infinity;
     stages.forEach(function (stage) {
       if (stage.classList.contains("hidden")) return;
-      var top = stage.getBoundingClientRect().top;
+      var marker = stage.querySelector("h3") || stage;
+      var top = marker.getBoundingClientRect().top;
       if (top <= line && top > bestTop) {
         bestTop = top;
         best = stage.id;
@@ -517,7 +555,18 @@
       mark();
     });
   }
+  syncSticky();
+  syncWorks();
+  if (works) works.addEventListener("scroll", syncWorks, { passive: true });
+  if (window.ResizeObserver) {
+    var topbar = document.querySelector(".topbar");
+    if (topbar) new ResizeObserver(function () { syncSticky(); syncWorks(); }).observe(topbar);
+  }
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
+  window.addEventListener("resize", function () {
+    syncSticky();
+    syncWorks();
+    onScroll();
+  });
   onScroll();
 })();
