@@ -85,6 +85,12 @@ a:hover { color: #0e3f5e; }
   line-height: 1.35;
 }
 .nav-group { margin: 0.85rem 0 0.2rem; padding: 0 0.45rem; color: #d7c4ae; font-size: 0.75rem; letter-spacing: 0.08em; }
+.nav-hint {
+  margin: 0.15rem 0.45rem 0.55rem;
+  color: #e7d3bf;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
 .nav a.item {
   display: block;
   color: #f3e7d8;
@@ -129,7 +135,66 @@ a:hover { color: #0e3f5e; }
   min-height: 2.6rem;
 }
 .search::placeholder { color: var(--faint); }
-.count { color: var(--faint); font-size: 0.85rem; white-space: nowrap; }
+.ruby-btn {
+  background: var(--bg-raise);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.ruby-btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff8f3;
+  border-color: var(--accent);
+}
+.count { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
+.reader {
+  position: fixed;
+  z-index: 7;
+  left: calc(var(--nav) + 1rem);
+  bottom: 0.75rem;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  width: min(44rem, calc(100% - var(--nav) - 2rem));
+  background: var(--ink);
+  color: #fff8f1;
+  border-radius: 999px;
+  padding: 0.35rem;
+  box-shadow: 0 12px 32px rgba(44, 36, 28, 0.28);
+}
+.reader[hidden] { display: none !important; }
+.reader button {
+  background: #fff8f1;
+  color: var(--ink);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.reader button:disabled { opacity: 0.35; cursor: default; }
+.reader a {
+  flex: 1;
+  min-width: 0;
+  color: #fff8f1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;
+}
+body.reading { padding-bottom: 0; }
+body.hide-ruby .term i { display: none; }
+.howto { margin: 0.2rem 0 1rem; padding-left: 1.2rem; }
+.howto li { margin: 0.35rem 0; }
 
 .page { padding: 1.4rem 1.4rem 4rem; max-width: 76rem; }
 .hero {
@@ -279,10 +344,11 @@ a:hover { color: #0e3f5e; }
 .choice {
   border: 1px solid var(--line);
   background: transparent;
-  color: var(--muted);
+  color: var(--text);
   border-radius: 999px;
-  padding: 0.32rem 0.75rem;
+  padding: 0.48rem 0.95rem;
   font: inherit;
+  font-weight: 600;
   cursor: pointer;
 }
 .choice { background: var(--bg-raise); color: var(--text); }
@@ -515,6 +581,7 @@ a:hover { color: #0e3f5e; }
   font-size: 0.84rem;
   line-height: 1.45;
 }
+body.reading .totop { bottom: 5.1rem; }
 .totop {
   position: fixed;
   right: 1rem;
@@ -556,8 +623,16 @@ footer.colophon {
   }
   .nav.open { transform: none; }
   .menu-btn { display: inline-block; }
-  .page { padding: 1.1rem 1rem 4.5rem; }
+  .page { padding: 1.1rem 1rem 6rem; }
   .count { display: none; }
+  .topbar { flex-wrap: wrap; align-items: center; }
+  .search { flex: 1 1 100%; order: 3; }
+  .ruby-btn { margin-left: auto; }
+  .reader { left: 0.55rem; width: calc(100% - 1.1rem); }
+  body.reading .totop { bottom: 5.3rem; right: 0.7rem; }
+  .reader button { padding: 0.42rem 0.7rem; font-size: 0.9rem; }
+  .reader a { font-size: 0.82rem; }
+  .ruby-btn { padding: 0.4rem 0.65rem; }
   body { font-size: 1.0625rem; }
   .stage { padding: 1.05rem 1rem 0.4rem; }
   .menu-btn { min-height: 2.6rem; }

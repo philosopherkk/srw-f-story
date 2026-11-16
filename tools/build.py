@@ -550,10 +550,10 @@ def render_fork(node, by_id, routes):
         f"<h3>{esc(node['title'])}</h3>"
         f'<div class="choices" role="group" aria-label="{esc(node["title"])}">'
         f"{render_choices(dim)}</div>"
-        f'<button type="button" class="fold" aria-expanded="true" aria-controls="{esc(panel)}" '
-        f'aria-label="收合{esc(node["title"])}的話數">收合話數</button>'
+        f'<button type="button" class="fold" aria-expanded="false" aria-controls="{esc(panel)}" '
+        f'aria-label="展開{esc(node["title"])}的話數">展開話數</button>'
         f"</div>"
-        f'<div class="limbs" id="{esc(panel)}">{limbs}</div>'
+        f'<div class="limbs" id="{esc(panel)}" hidden>{limbs}</div>'
         f"</div></li>"
     )
 
@@ -687,7 +687,7 @@ TEMPLATE_HEAD = r"""<!DOCTYPE html>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="hide-ruby">
 <a class="skip" href="#content">跳到正文</a>
 <div class="layout">
 <nav class="nav" id="nav" aria-label="章節">
@@ -698,29 +698,35 @@ TEMPLATE_HEAD = r"""<!DOCTYPE html>
   <a class="item" href="#names">角色與機體</a>
   <a class="item" href="#endings">結局</a>
   <a class="item" href="#sources">出典</a>
-  <div class="nav-group">F</div>
-  <a class="item" href="#f-r01">即時系開幕</a>
-  <a class="item" href="#f-s01">超級系開幕</a>
-  <a class="item" href="#f-07">合流之後</a>
-  <a class="item" href="#f-14g">哥拉昂／古蘭加蘭</a>
-  <a class="item" href="#f-17">繞路與否</a>
-  <a class="item" href="#f-34r">F 的收束</a>
-  <div class="nav-group">F完結編</div>
-  <a class="item" href="#ff-r35">完結編開幕</a>
-  <a class="item" href="#ff-45r">托德與超鬥士</a>
-  <a class="item" href="#ff-61">天空或大地</a>
-  <a class="item" href="#ff-sp62">宇宙篇</a>
-  <a class="item" href="#ff-ea62">地上篇</a>
-  <a class="item" href="#ff-eva64">EVA 壞結局</a>
-  <a class="item" href="#ff-67">再會</a>
-  <a class="item" href="#ff-dc69">DC 篇</a>
-  <a class="item" href="#ff-g69">蓋斯特・波賽達爾篇</a>
+  <div id="path-nav">
+    <div class="nav-group">從哪一段讀</div>
+    <p class="nav-hint">選好路線後，這裡改成那一條路的話，由上到下。</p>
+    <a class="item" href="#f-r01">即時系開幕</a>
+    <a class="item" href="#f-s01">超級系開幕</a>
+    <a class="item" href="#f-07">合流之後</a>
+    <a class="item" href="#f-14g">哥拉昂／古蘭加蘭</a>
+    <a class="item" href="#f-17">繞路與否</a>
+    <a class="item" href="#f-34r">F 的收束</a>
+    <a class="item" href="#ff-r35">完結編開幕</a>
+    <a class="item" href="#ff-45r">托德與超鬥士</a>
+    <a class="item" href="#ff-61">天空或大地</a>
+    <a class="item" href="#ff-eva64">EVA 壞結局</a>
+    <a class="item" href="#ff-67">再會</a>
+    <a class="item" href="#ff-dc69">DC 篇</a>
+    <a class="item" href="#ff-g69">蓋斯特・波賽達爾篇</a>
+  </div>
 </nav>
 <div class="main">
   <div class="topbar">
     <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">目錄</button>
     <input class="search" id="q" type="search" placeholder="搜尋話名、角色、機體或日文" aria-label="搜尋話數與名字">
+    <button class="ruby-btn" id="ruby" type="button" aria-pressed="false">括號日文</button>
     <span class="count" id="count" aria-live="polite"></span>
+  </div>
+  <div class="reader" id="reader" hidden>
+    <button type="button" id="reader-prev">上一話</button>
+    <a id="reader-now" href="#stages"></a>
+    <button type="button" id="reader-next">下一話</button>
   </div>
   <div class="page" id="content">
 """
@@ -747,7 +753,12 @@ TEMPLATE_INTRO = r"""
 <section id="flow" class="block">
   <h2>路線圖</h2>
   <div class="prose">
-    <p>這張圖就是話數的開關。選一側，只屬於另一側的話會從下面收起，兩邊都走得到的話留著。還沒選的分歧停在「兩邊」或「全部」。點某一話會跳到正文；若那一話正被收起，會先把路線撥過去。每一叉可以收起話數，選擇會留在這一頁。</p>
+    <ol class="howto">
+      <li>先在每一叉選一邊。沒選的留在「兩邊」或「全部」，兩邊都走得到的話會留著。</li>
+      <li>話數先收著。要看標題再按「展開話數」，免得一頁塞滿。</li>
+      <li>點標題就進正文。讀的時候用下方的上一話、下一話，左邊目錄會改成這一條路。</li>
+    </ol>
+    <p>點到一話若正被收起，會先把路線撥過去。選擇會留在這一頁。</p>
   </div>
   <!--ROUTE_TREE-->
 </section>

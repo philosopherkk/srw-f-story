@@ -9,12 +9,23 @@
   var stages = Array.prototype.slice.call(document.querySelectorAll(".stage"));
   var groups = Array.prototype.slice.call(document.querySelectorAll(".name-group"));
   var nameChips = Array.prototype.slice.call(document.querySelectorAll(".name-chip"));
+  var pathNav = document.getElementById("path-nav");
+  var pathNavDefault = pathNav.innerHTML;
+  var pathNavCustom = false;
+  var reader = document.getElementById("reader");
+  var readerPrev = document.getElementById("reader-prev");
+  var readerNext = document.getElementById("reader-next");
+  var readerNow = document.getElementById("reader-now");
+  var rubyBtn = document.getElementById("ruby");
   var ROUTE = JSON.parse(configNode.textContent);
   var CHOICE_KEY = "srw-f-route-choices";
   var FOLD_KEY = "srw-f-route-folds";
+  var RUBY_KEY = "srw-f-show-ruby";
   var activeKind = "all";
   var choices = {};
   var folds = {};
+  var currentId = "";
+  var markedId = "";
 
   function setOpen(open) {
     nav.classList.toggle("open", open);
@@ -100,8 +111,7 @@
       stage.classList.toggle("hidden", !ok);
       if (ok) shown += 1;
     });
-    count.textContent = shown + " 話";
-
+    var nameCount = 0;
     groups.forEach(function (group) {
       var kind = group.getAttribute("data-kind") || "";
       var kindOk = activeKind === "all" || kind === activeKind;
@@ -113,8 +123,100 @@
         card.classList.toggle("hidden", !ok);
         if (ok) visible += 1;
       });
+      nameCount += visible;
       group.classList.toggle("hidden", visible === 0);
     });
+    if (q || activeKind !== "all") count.textContent = shown + " 話 · " + nameCount + " 個名字";
+    else count.textContent = shown + " 話";
+    renderPathNav();
+    paintReader();
+    mark();
+  }
+
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function stageTitle(stage) {
+    var clone = stage.querySelector("h3").cloneNode(true);
+    var notes = clone.querySelectorAll("i");
+    for (var i = 0; i < notes.length; i += 1) notes[i].remove();
+    return clone.textContent.replace(/\s+/g, " ").trim();
+  }
+
+  function stageGame(stage) {
+    var kicker = stage.querySelector(".kicker");
+    if (!kicker) return "";
+    return kicker.textContent.split("·")[0].trim();
+  }
+
+  function visibleStages() {
+    return stages.filter(function (stage) {
+      return !stage.classList.contains("hidden");
+    });
+  }
+
+  function renderPathNav() {
+    var list = visibleStages();
+    if (list.length === stages.length) {
+      if (pathNavCustom) {
+        pathNav.innerHTML = pathNavDefault;
+        pathNavCustom = false;
+      }
+      return;
+    }
+    var html = "";
+    var game = "";
+    list.forEach(function (stage) {
+      var nextGame = stageGame(stage);
+      if (nextGame !== game) {
+        game = nextGame;
+        html += '<div class="nav-group">' + escapeHtml(game) + "</div>";
+      }
+      html += '<a class="item" href="#' + stage.id + '">' + escapeHtml(stageTitle(stage)) + "</a>";
+    });
+    pathNav.innerHTML = html;
+    pathNavCustom = true;
+  }
+
+  function paintReader() {
+    var list = visibleStages();
+    var index = -1;
+    for (var i = 0; i < list.length; i += 1) {
+      if (list[i].id === currentId) index = i;
+    }
+    var on = index >= 0;
+    reader.hidden = !on;
+    document.body.classList.toggle("reading", on);
+    if (!on) return;
+    var stage = list[index];
+    readerNow.textContent = (index + 1) + " / " + list.length + "  " + stageTitle(stage);
+    readerNow.href = "#" + stage.id;
+    readerPrev.disabled = index === 0;
+    readerNext.disabled = index === list.length - 1;
+  }
+
+  function step(delta) {
+    var list = visibleStages();
+    var index = -1;
+    for (var i = 0; i < list.length; i += 1) {
+      if (list[i].id === currentId) index = i;
+    }
+    if (index < 0) return;
+    var next = list[index + delta];
+    if (!next) return;
+    if (location.hash === "#" + next.id) next.scrollIntoView({ block: "start" });
+    else location.hash = next.id;
+  }
+
+  function setRuby(on) {
+    document.body.classList.toggle("hide-ruby", !on);
+    rubyBtn.setAttribute("aria-pressed", on ? "true" : "false");
+    rubyBtn.textContent = on ? "隱藏日文" : "顯示日文";
   }
 
   function summaryText() {
@@ -327,18 +429,28 @@
   });
 
   function mark() {
-    var id = (location.hash || "#overview").slice(1);
+    var id = currentId || (location.hash || "#overview").slice(1);
     var links = nav.querySelectorAll("a.item");
     links.forEach(function (link) {
       var href = (link.getAttribute("href") || "").slice(1);
       link.classList.toggle("active", href === id);
     });
     markTree();
+    if (id === markedId) return;
+    markedId = id;
+    var active = pathNav.querySelector('a.item[href="#' + id + '"]');
+    if (!active) return;
+    var top = active.offsetTop;
+    var bottom = top + active.offsetHeight;
+    if (top < nav.scrollTop) nav.scrollTop = Math.max(0, top - 12);
+    else if (bottom > nav.scrollTop + nav.clientHeight) nav.scrollTop = bottom - nav.clientHeight + 12;
   }
 
   window.addEventListener("hashchange", function () {
-    mark();
     var stage = stageFromHash();
+    if (stage) currentId = stage.id;
+    mark();
+    paintReader();
     if (!stage) return;
     revealStage(stage, true);
     window.requestAnimationFrame(function () {
@@ -346,16 +458,64 @@
     });
   });
 
+  readerPrev.addEventListener("click", function () { step(-1); });
+  readerNext.addEventListener("click", function () { step(1); });
+  rubyBtn.addEventListener("click", function () {
+    var on = document.body.classList.contains("hide-ruby");
+    setRuby(on);
+    try { sessionStorage.setItem(RUBY_KEY, on ? "1" : "0"); } catch (err) { return; }
+  });
+  try {
+    if (sessionStorage.getItem(RUBY_KEY) === "1") setRuby(true);
+    else setRuby(false);
+  } catch (err) {
+    setRuby(false);
+  }
+
   choices = loadChoices();
   folds = loadFolds();
-  tree.querySelectorAll("[data-fork]").forEach(function (fork) {
-    var id = fork.getAttribute("data-fork");
-    setFold(fork, !!folds[id]);
+  var foldSaved = false;
+  try { foldSaved = sessionStorage.getItem(FOLD_KEY) !== null; } catch (err) { foldSaved = false; }
+  Array.prototype.forEach.call(tree.querySelectorAll("[data-fork]"), function (fork, index) {
+    var collapsed = foldSaved ? !!folds[fork.getAttribute("data-fork")] : index !== 0;
+    setFold(fork, collapsed);
   });
+  if (!foldSaved) persist();
   var openingStage = stageFromHash();
-  if (openingStage) revealStage(openingStage, false);
+  if (openingStage) {
+    currentId = openingStage.id;
+    revealStage(openingStage, false);
+  }
   paint();
   apply();
-  mark();
   if (openingStage) openingStage.scrollIntoView({ block: "start" });
+
+  var scrollFrame = 0;
+  function pickCurrent() {
+    var line = 150;
+    var best = "";
+    var bestTop = -Infinity;
+    stages.forEach(function (stage) {
+      if (stage.classList.contains("hidden")) return;
+      var top = stage.getBoundingClientRect().top;
+      if (top <= line && top > bestTop) {
+        bestTop = top;
+        best = stage.id;
+      }
+    });
+    return best;
+  }
+  function onScroll() {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(function () {
+      scrollFrame = 0;
+      var next = pickCurrent();
+      currentId = next || "";
+      paintReader();
+      mark();
+    });
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
 })();
