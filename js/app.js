@@ -196,6 +196,7 @@
     var stage = list[index];
     readerNow.textContent = (index + 1) + " / " + list.length + "  " + stageTitle(stage);
     readerNow.href = "#" + stage.id;
+    readerNow.title = stage.getAttribute("data-summary") || "";
     readerPrev.disabled = index === 0;
     readerNext.disabled = index === list.length - 1;
   }

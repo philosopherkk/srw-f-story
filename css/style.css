@@ -497,7 +497,13 @@ body.hide-ruby .term i { display: none; }
   margin: 0.2rem 0 0.15rem;
 }
 .kicker { color: var(--accent); font-size: 0.82rem; letter-spacing: 0.04em; margin: 0; }
-.stage .ja { color: var(--muted); margin: 0 0 0.9rem; font-size: 0.98rem; }
+.stage .ja { color: var(--muted); margin: 0 0 0.35rem; font-size: 0.98rem; }
+.stage .summary {
+  margin: 0 0 0.85rem;
+  font-weight: 600;
+  line-height: 1.65;
+  color: #3d2b1c;
+}
 .stage h4 {
   font-size: 0.82rem;
   letter-spacing: 0.14em;

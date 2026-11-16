@@ -152,6 +152,7 @@ def load_lexicon():
 
 FORMS, ENTRIES, BLOCKS = load_lexicon()
 LOOKS = json.loads((ROOT / "data" / "looks.json").read_text(encoding="utf-8"))
+SUMMARIES = json.loads((ROOT / "data" / "summaries.json").read_text(encoding="utf-8"))
 _LOOK_IDS = {entry["id"] for entry in ENTRIES if entry["kind"] in ("person", "unit")}
 _MISSING_LOOKS = sorted(_LOOK_IDS - set(LOOKS))
 _EXTRA_LOOKS = sorted(set(LOOKS) - {entry["id"] for entry in ENTRIES})
@@ -636,14 +637,17 @@ def render_stage(stage, routes):
             " ".join(stage.get("after") or []),
         ]
     )
+    summary = SUMMARIES[stage["id"]]
+    plain = summary + " " + plain
     search = plain + " " + " ".join(matched_names(plain))
     route = esc(" ".join(tokens_for(stage["id"], routes)))
     return f"""
-<article class="stage" id="{esc(stage["id"])}" data-group="{esc(stage["group"])}" data-route="{route}" data-search="{esc(search)}">
+<article class="stage" id="{esc(stage["id"])}" data-group="{esc(stage["group"])}" data-route="{route}" data-search="{esc(search)}" data-summary="{esc(summary)}">
   <header>
     <p class="kicker">{esc(stage["game"])} · {esc(stage["route"])}</p>
     <h3>{annotate(stage["titleZh"], seen)}</h3>
     <p class="ja" lang="ja">{esc(ja)}</p>
+    <p class="summary">{esc(summary)}</p>
   </header>
   {meta}
   {thin}
@@ -666,6 +670,22 @@ def check(stages):
     if missing:
         raise SystemExit("missing titles:\n" + "\n".join(missing))
     ids = [stage["id"] for stage in stages]
+    missing = [i for i in ids if not SUMMARIES.get(i)]
+    extra = sorted(set(SUMMARIES) - set(ids))
+    broken = [
+        i
+        for i in ids
+        if i in SUMMARIES and ("\n" in SUMMARIES[i] or not SUMMARIES[i].endswith("。"))
+    ]
+    if missing or extra or broken:
+        raise SystemExit(
+            "summaries.json mismatch\nmissing: "
+            + ", ".join(missing)
+            + "\nextra: "
+            + ", ".join(extra)
+            + "\nnot one sentence: "
+            + ", ".join(broken)
+        )
     dupes = {i for i in ids if ids.count(i) > 1}
     if dupes:
         raise SystemExit("duplicate ids: " + ", ".join(sorted(dupes)))
