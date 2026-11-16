@@ -1,0 +1,317 @@
+{
+  "dimensions": [
+    {
+      "id": "opening",
+      "label": "開幕類型",
+      "neutral": "兩邊",
+      "choices": [
+        {"id": "real", "label": "即時系", "tone": "real"},
+        {"id": "super", "label": "超級系", "tone": "super"}
+      ]
+    },
+    {
+      "id": "rescue",
+      "label": "先救哪一邊",
+      "neutral": "兩邊",
+      "choices": [
+        {"id": "goraon", "label": "哥拉昂", "tone": "accent"},
+        {"id": "grangalan", "label": "古蘭加蘭", "tone": "earth"}
+      ]
+    },
+    {
+      "id": "detour",
+      "label": "拉薩繞路",
+      "neutral": "兩邊",
+      "choices": [
+        {"id": "direct", "label": "直走", "tone": "good"},
+        {"id": "detour", "label": "繞路", "tone": "super"}
+      ]
+    },
+    {
+      "id": "todd",
+      "label": "托德",
+      "neutral": "兩邊",
+      "choices": [
+        {"id": "success", "label": "說服成功", "tone": "good"},
+        {"id": "fail", "label": "旗標未齊", "tone": "bad"}
+      ]
+    },
+    {
+      "id": "split",
+      "label": "宇宙或地上",
+      "neutral": "全部",
+      "choices": [
+        {"id": "space", "label": "宇宙", "tone": "space"},
+        {"id": "earth", "label": "地上", "tone": "earth"},
+        {"id": "eva", "label": "EVA 壞結局", "tone": "bad"}
+      ]
+    },
+    {
+      "id": "finale",
+      "label": "最終篇",
+      "neutral": "兩邊",
+      "choices": [
+        {"id": "dc", "label": "DC", "tone": "accent"},
+        {"id": "guest", "label": "蓋斯特・波賽達爾", "tone": "super"}
+      ]
+    }
+  ],
+  "hideWhen": [
+    {
+      "when": {"split": "eva"},
+      "tokens": ["reunion", "finale-dc", "finale-guest"]
+    }
+  ],
+  "membership": {
+    "opening-real": [
+      "f-r01", "f-r02", "f-r03", "f-r04", "f-r05", "f-r06",
+      "f-r08", "f-16gr", "f-14kr", "f-23r", "f-26r", "f-34r",
+      "ff-r35", "ff-r36", "ff-45r", "ff-56"
+    ],
+    "opening-super": [
+      "f-s01", "f-s02", "f-s03", "f-s04", "f-s05", "f-s06",
+      "f-s08", "f-16gs", "f-14ks", "f-23s", "f-26s", "f-34s",
+      "ff-s35", "ff-s36", "ff-45s", "ff-56s"
+    ],
+    "rescue-goraon": ["f-14g", "f-15g", "f-16gr", "f-16gs"],
+    "rescue-grangalan": ["f-14kr", "f-14ks", "f-15k", "f-16k"],
+    "detour-direct": ["f-17", "f-18j"],
+    "detour-detour": ["f-18p"],
+    "todd-success": ["ff-55a"],
+    "todd-fail": ["ff-55b"],
+    "split-space": ["ff-sp62", "ff-sp63", "ff-sp64", "ff-sp65", "ff-sp66"],
+    "split-earth": ["ff-ea62", "ff-ea63", "ff-ea64", "ff-ea65", "ff-ea66"],
+    "split-eva": ["ff-eva64", "ff-eva65"],
+    "finale-dc": [
+      "ff-dc69", "ff-dc70", "ff-dc71", "ff-dc72", "ff-dc73", "ff-dc74",
+      "ff-dc75", "ff-dc76", "ff-dc77", "ff-dc78", "ff-dc79", "ff-dc80"
+    ],
+    "finale-guest": [
+      "ff-g69", "ff-g70", "ff-g71", "ff-g72", "ff-g73", "ff-g74",
+      "ff-g75", "ff-g76", "ff-g77", "ff-g78", "ff-g79"
+    ],
+    "reunion": ["ff-67", "ff-68"]
+  },
+  "tree": [
+    {
+      "kind": "fork",
+      "id": "opening",
+      "dimension": "opening",
+      "title": "開幕",
+      "limbs": [
+        {"choice": "real", "stages": ["f-r01", "f-r02", "f-r03", "f-r04", "f-r05", "f-r06"]},
+        {"choice": "super", "stages": ["f-s01", "f-s02", "f-s03", "f-s04", "f-s05", "f-s06"]}
+      ]
+    },
+    {"kind": "spine", "id": "join", "label": "兩系合流", "stages": ["f-07"]},
+    {
+      "kind": "fork",
+      "id": "beasts",
+      "dimension": "opening",
+      "title": "獸戰機隊",
+      "limbs": [
+        {"choice": "real", "stages": ["f-r08"]},
+        {"choice": "super", "stages": ["f-s08"]}
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "south",
+      "label": "往南之前",
+      "stages": ["f-09", "f-10", "f-11", "f-12", "f-13"]
+    },
+    {
+      "kind": "fork",
+      "id": "rescue",
+      "dimension": "rescue",
+      "title": "先救哪一邊",
+      "limbs": [
+        {
+          "choice": "goraon",
+          "blocks": [
+            {"stages": ["f-14g", "f-15g"]},
+            {
+              "kind": "subfork",
+              "dimension": "opening",
+              "limbs": [
+                {"choice": "real", "stages": ["f-16gr"]},
+                {"choice": "super", "stages": ["f-16gs"]}
+              ]
+            }
+          ]
+        },
+        {
+          "choice": "grangalan",
+          "blocks": [
+            {
+              "kind": "subfork",
+              "dimension": "opening",
+              "limbs": [
+                {"choice": "real", "stages": ["f-14kr"]},
+                {"choice": "super", "stages": ["f-14ks"]}
+              ]
+            },
+            {"stages": ["f-15k", "f-16k"]}
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "detour",
+      "dimension": "detour",
+      "title": "拉薩",
+      "limbs": [
+        {"choice": "direct", "stages": ["f-17", "f-18j"]},
+        {"choice": "detour", "stages": ["f-18p"]}
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "f-late",
+      "label": "F 後半",
+      "stages": ["f-19", "f-20", "f-21", "f-22"]
+    },
+    {
+      "kind": "fork",
+      "id": "dancouga",
+      "dimension": "opening",
+      "title": "超獸機神",
+      "limbs": [
+        {"choice": "real", "stages": ["f-23r"]},
+        {"choice": "super", "stages": ["f-23s"]}
+      ]
+    },
+    {"kind": "spine", "id": "after-beast", "label": "共通", "stages": ["f-24", "f-25"]},
+    {
+      "kind": "fork",
+      "id": "asia",
+      "dimension": "opening",
+      "title": "東方不敗",
+      "limbs": [
+        {"choice": "real", "stages": ["f-26r"]},
+        {"choice": "super", "stages": ["f-26s"]}
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "to-space",
+      "label": "走向宇宙",
+      "stages": ["f-27", "f-28", "f-29", "f-30", "f-31", "f-32", "f-33"]
+    },
+    {
+      "kind": "fork",
+      "id": "f-end",
+      "dimension": "opening",
+      "title": "F 的收束",
+      "limbs": [
+        {"choice": "real", "stages": ["f-34r"]},
+        {"choice": "super", "stages": ["f-34s"]}
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "ff-open",
+      "dimension": "opening",
+      "title": "完結編開幕",
+      "limbs": [
+        {"choice": "real", "stages": ["ff-r35", "ff-r36"]},
+        {"choice": "super", "stages": ["ff-s35", "ff-s36"]}
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "ff-common",
+      "label": "完結編共通",
+      "stages": ["ff-37", "ff-38", "ff-39", "ff-40", "ff-41", "ff-42", "ff-43", "ff-44"]
+    },
+    {
+      "kind": "fork",
+      "id": "ff-mid",
+      "dimension": "opening",
+      "title": "中段分歧",
+      "limbs": [
+        {"choice": "real", "stages": ["ff-45r"]},
+        {"choice": "super", "stages": ["ff-45s"]}
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "before-todd",
+      "label": "托德之前",
+      "stages": ["ff-46", "ff-47", "ff-48", "ff-49", "ff-50", "ff-51", "ff-52", "ff-53", "ff-54"]
+    },
+    {
+      "kind": "fork",
+      "id": "todd",
+      "dimension": "todd",
+      "title": "托德",
+      "limbs": [
+        {"choice": "success", "stages": ["ff-55a"]},
+        {"choice": "fail", "stages": ["ff-55b"]}
+      ]
+    },
+    {
+      "kind": "fork",
+      "id": "new-power",
+      "dimension": "opening",
+      "title": "新的力量",
+      "limbs": [
+        {"choice": "real", "stages": ["ff-56"]},
+        {"choice": "super", "stages": ["ff-56s"]}
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "before-split",
+      "label": "分道之前",
+      "stages": ["ff-57", "ff-58", "ff-59", "ff-60", "ff-61"]
+    },
+    {
+      "kind": "fork",
+      "id": "split",
+      "dimension": "split",
+      "title": "宇宙或地上",
+      "limbs": [
+        {"choice": "space", "stages": ["ff-sp62", "ff-sp63", "ff-sp64", "ff-sp65", "ff-sp66"]},
+        {"choice": "earth", "stages": ["ff-ea62", "ff-ea63", "ff-ea64", "ff-ea65", "ff-ea66"]},
+        {
+          "choice": "eva",
+          "stages": ["ff-eva64", "ff-eva65"],
+          "end": "到此為止，不接後面的話。"
+        }
+      ]
+    },
+    {
+      "kind": "spine",
+      "id": "reunion",
+      "label": "正常路線會合",
+      "afterSplit": true,
+      "tokens": ["reunion"],
+      "stages": ["ff-67", "ff-68"]
+    },
+    {
+      "kind": "fork",
+      "id": "finale",
+      "dimension": "finale",
+      "title": "最終篇",
+      "afterSplit": true,
+      "limbs": [
+        {
+          "choice": "dc",
+          "stages": [
+            "ff-dc69", "ff-dc70", "ff-dc71", "ff-dc72", "ff-dc73", "ff-dc74",
+            "ff-dc75", "ff-dc76", "ff-dc77", "ff-dc78", "ff-dc79", "ff-dc80"
+          ]
+        },
+        {
+          "choice": "guest",
+          "stages": [
+            "ff-g69", "ff-g70", "ff-g71", "ff-g72", "ff-g73", "ff-g74",
+            "ff-g75", "ff-g76", "ff-g77", "ff-g78", "ff-g79"
+          ]
+        }
+      ]
+    }
+  ]
+}

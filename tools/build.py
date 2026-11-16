@@ -317,7 +317,296 @@ def titles_of(stage):
     return names
 
 
-def render_stage(stage):
+ROUTES_PATH = ROOT / "data" / "routes.json"
+
+EXPECTED_ROUTES = {
+    "opening-real": [
+        "f-r01", "f-r02", "f-r03", "f-r04", "f-r05", "f-r06",
+        "f-r08", "f-16gr", "f-14kr", "f-23r", "f-26r", "f-34r",
+        "ff-r35", "ff-r36", "ff-45r", "ff-56",
+    ],
+    "opening-super": [
+        "f-s01", "f-s02", "f-s03", "f-s04", "f-s05", "f-s06",
+        "f-s08", "f-16gs", "f-14ks", "f-23s", "f-26s", "f-34s",
+        "ff-s35", "ff-s36", "ff-45s", "ff-56s",
+    ],
+    "rescue-goraon": ["f-14g", "f-15g", "f-16gr", "f-16gs"],
+    "rescue-grangalan": ["f-14kr", "f-14ks", "f-15k", "f-16k"],
+    "detour-direct": ["f-17", "f-18j"],
+    "detour-detour": ["f-18p"],
+    "todd-success": ["ff-55a"],
+    "todd-fail": ["ff-55b"],
+    "split-space": ["ff-sp62", "ff-sp63", "ff-sp64", "ff-sp65", "ff-sp66"],
+    "split-earth": ["ff-ea62", "ff-ea63", "ff-ea64", "ff-ea65", "ff-ea66"],
+    "split-eva": ["ff-eva64", "ff-eva65"],
+    "finale-dc": [
+        "ff-dc69", "ff-dc70", "ff-dc71", "ff-dc72", "ff-dc73", "ff-dc74",
+        "ff-dc75", "ff-dc76", "ff-dc77", "ff-dc78", "ff-dc79", "ff-dc80",
+    ],
+    "finale-guest": [
+        "ff-g69", "ff-g70", "ff-g71", "ff-g72", "ff-g73", "ff-g74",
+        "ff-g75", "ff-g76", "ff-g77", "ff-g78", "ff-g79",
+    ],
+    "reunion": ["ff-67", "ff-68"],
+}
+
+
+def load_routes():
+    return json.loads(ROUTES_PATH.read_text(encoding="utf-8"))
+
+
+def token_order(routes):
+    order = []
+    for dim in routes["dimensions"]:
+        for choice in dim["choices"]:
+            order.append(f"{dim['id']}-{choice['id']}")
+    order.append("reunion")
+    return order
+
+
+def tokens_for(stage_id, routes):
+    membership = routes["membership"]
+    return [token for token in token_order(routes) if stage_id in membership[token]]
+
+
+def choice_meta(routes, dimension_id, choice_id):
+    for dim in routes["dimensions"]:
+        if dim["id"] != dimension_id:
+            continue
+        for choice in dim["choices"]:
+            if choice["id"] == choice_id:
+                return dim, choice
+    raise SystemExit(f"unknown choice {dimension_id}/{choice_id}")
+
+
+def place_tokens(tree):
+    placed = {}
+
+    def add(stage_id, tokens):
+        if stage_id in placed:
+            raise SystemExit(f"stage {stage_id} appears twice in the route tree")
+        placed[stage_id] = set(tokens)
+
+    for node in tree:
+        if node["kind"] == "spine":
+            extra = set(node.get("tokens") or [])
+            for stage_id in node["stages"]:
+                add(stage_id, extra)
+            continue
+        if node["kind"] != "fork":
+            raise SystemExit(f"unknown tree node {node.get('kind')}")
+        dimension = node["dimension"]
+        for limb in node["limbs"]:
+            limb_tokens = {f"{dimension}-{limb['choice']}"}
+            for stage_id in limb.get("stages") or []:
+                add(stage_id, limb_tokens)
+            for block in limb.get("blocks") or []:
+                if block.get("kind") == "subfork":
+                    subdimension = block["dimension"]
+                    for sub in block["limbs"]:
+                        sub_tokens = limb_tokens | {f"{subdimension}-{sub['choice']}"}
+                        for stage_id in sub.get("stages") or []:
+                            add(stage_id, sub_tokens)
+                else:
+                    for stage_id in block.get("stages") or []:
+                        add(stage_id, limb_tokens)
+    return placed
+
+
+def check_routes(stages, routes):
+    ids = [stage["id"] for stage in stages]
+    idset = set(ids)
+    if len(ids) != 119:
+        raise SystemExit(f"expected 119 stages, got {len(ids)}")
+    membership = routes["membership"]
+    if list(membership) != list(EXPECTED_ROUTES):
+        raise SystemExit("route membership key order drifted from the build check")
+    if set(membership) != set(token_order(routes)):
+        raise SystemExit("route membership keys do not match dimensions")
+    for token, expected in EXPECTED_ROUTES.items():
+        got = membership.get(token)
+        if got != expected:
+            raise SystemExit(f"{token} does not match the stage list in tools/build.py")
+        unknown = [stage_id for stage_id in got if stage_id not in idset]
+        if unknown:
+            raise SystemExit(f"{token} cites unknown stages: {', '.join(unknown)}")
+    for dim in routes["dimensions"]:
+        seen = {}
+        for choice in dim["choices"]:
+            token = f"{dim['id']}-{choice['id']}"
+            for stage_id in membership[token]:
+                if stage_id in seen:
+                    raise SystemExit(f"{stage_id} is on both {seen[stage_id]} and {token}")
+                seen[stage_id] = token
+    known = set(EXPECTED_ROUTES)
+    for rule in routes["hideWhen"]:
+        for token in rule["tokens"]:
+            if token not in known:
+                raise SystemExit(f"hideWhen cites unknown token {token}")
+        for dim_id, choice_id in rule["when"].items():
+            choice_meta(routes, dim_id, choice_id)
+    fork_ids = []
+    for node in routes["tree"]:
+        if node["kind"] == "fork":
+            fork_ids.append(node["id"])
+            choice_meta(routes, node["dimension"], node["limbs"][0]["choice"])
+    if len(fork_ids) != len(set(fork_ids)):
+        raise SystemExit("duplicate fork ids in the route tree")
+    placed = place_tokens(routes["tree"])
+    if set(placed) != idset:
+        missing = sorted(idset - set(placed))
+        extra = sorted(set(placed) - idset)
+        raise SystemExit(f"tree coverage missing={missing} extra={extra}")
+    for stage in stages:
+        got = set(tokens_for(stage["id"], routes))
+        if placed[stage["id"]] != got:
+            raise SystemExit(
+                f"{stage['id']} tree tokens {sorted(placed[stage['id']])} "
+                f"!= membership {sorted(got)}"
+            )
+
+
+def render_episodes(stage_ids, by_id):
+    parts = []
+    for stage_id in stage_ids:
+        stage = by_id[stage_id]
+        ja = "／".join(titles_of(stage))
+        parts.append(
+            f'<a class="ep" href="#{esc(stage_id)}">'
+            f'<span class="ep-zh">{esc(stage["titleZh"])}</span>'
+            f'<small class="ep-ja" lang="ja">{esc(ja)}</small>'
+            f"</a>"
+        )
+    return "".join(parts)
+
+
+def render_limb_body(limb, by_id, routes):
+    chunks = []
+    if limb.get("stages"):
+        chunks.append(f'<div class="limb-nodes">{render_episodes(limb["stages"], by_id)}</div>')
+    for block in limb.get("blocks") or []:
+        if block.get("kind") == "subfork":
+            chunks.append(render_subfork(block, by_id, routes))
+        else:
+            chunks.append(
+                f'<div class="limb-nodes">{render_episodes(block["stages"], by_id)}</div>'
+            )
+    if limb.get("end"):
+        chunks.append(f'<p class="dead-end">{esc(limb["end"])}</p>')
+    return "".join(chunks)
+
+
+def render_limb(limb, dimension, by_id, routes):
+    _dim, choice = choice_meta(routes, dimension, limb["choice"])
+    body = render_limb_body(limb, by_id, routes)
+    return (
+        f'<div class="limb open" data-dim="{esc(dimension)}" data-choice="{esc(choice["id"])}" '
+        f'data-tone="{esc(choice["tone"])}">'
+        f'<button type="button" class="limb-pick" data-dim="{esc(dimension)}" '
+        f'data-choice="{esc(choice["id"])}" data-tone="{esc(choice["tone"])}" aria-pressed="false">'
+        f'{esc(choice["label"])}</button>'
+        f"{body}</div>"
+    )
+
+
+def render_subfork(block, by_id, routes):
+    limbs = "".join(
+        render_limb(limb, block["dimension"], by_id, routes) for limb in block["limbs"]
+    )
+    return f'<div class="subfork">{limbs}</div>'
+
+
+def render_choices(dim):
+    buttons = [
+        f'<button type="button" class="choice is-on" data-dim="{esc(dim["id"])}" '
+        f'data-choice="" aria-pressed="true">{esc(dim["neutral"])}</button>'
+    ]
+    for choice in dim["choices"]:
+        buttons.append(
+            f'<button type="button" class="choice" data-dim="{esc(dim["id"])}" '
+            f'data-choice="{esc(choice["id"])}" data-tone="{esc(choice["tone"])}" '
+            f'aria-pressed="false">{esc(choice["label"])}</button>'
+        )
+    return "".join(buttons)
+
+
+def render_fork(node, by_id, routes):
+    dim, _choice = choice_meta(routes, node["dimension"], node["limbs"][0]["choice"])
+    limbs = "".join(
+        render_limb(limb, node["dimension"], by_id, routes) for limb in node["limbs"]
+    )
+    extra = " after-split" if node.get("afterSplit") else ""
+    note = (
+        '<p class="cut-note">EVA 壞結局在上一叉結束，這裡不會發生。</p>'
+        if node.get("afterSplit")
+        else ""
+    )
+    panel = f'fork-panel-{node["id"]}'
+    return (
+        f'<li class="spine-stop tree-fork{extra}" data-fork="{esc(node["id"])}" '
+        f'data-title="{esc(node["title"])}">'
+        f'<div class="fork-card">{note}'
+        f'<div class="fork-bar">'
+        f"<h3>{esc(node['title'])}</h3>"
+        f'<div class="choices" role="group" aria-label="{esc(node["title"])}">'
+        f"{render_choices(dim)}</div>"
+        f'<button type="button" class="fold" aria-expanded="true" aria-controls="{esc(panel)}" '
+        f'aria-label="收合{esc(node["title"])}的話數">收合話數</button>'
+        f"</div>"
+        f'<div class="limbs" id="{esc(panel)}">{limbs}</div>'
+        f"</div></li>"
+    )
+
+
+def render_spine(node, by_id):
+    extra = " after-split" if node.get("afterSplit") else ""
+    note = (
+        '<p class="cut-note">EVA 壞結局在上一叉結束，這裡不會發生。</p>'
+        if node.get("afterSplit")
+        else ""
+    )
+    label = f'<p class="stop-label">{esc(node["label"])}</p>' if node.get("label") else ""
+    episodes = render_episodes(node["stages"], by_id)
+    return (
+        f'<li class="spine-stop{extra}"><div class="stop-card">{note}{label}'
+        f'<div class="limb-nodes">{episodes}</div></div></li>'
+    )
+
+
+def render_route_tree(routes, by_id):
+    stops = []
+    for node in routes["tree"]:
+        if node["kind"] == "spine":
+            stops.append(render_spine(node, by_id))
+        else:
+            stops.append(render_fork(node, by_id, routes))
+    config = {
+        "dimensions": [
+            {
+                "id": dim["id"],
+                "label": dim["label"],
+                "neutral": dim["neutral"],
+                "choices": [{"id": choice["id"], "label": choice["label"]} for choice in dim["choices"]],
+            }
+            for dim in routes["dimensions"]
+        ],
+        "hideWhen": routes["hideWhen"],
+    }
+    blob = json.dumps(config, ensure_ascii=False).replace("<", "\\u003c")
+    return (
+        '<div class="route-tree" id="route-tree">'
+        '<div class="tree-tools">'
+        '<button type="button" class="tree-reset" id="route-reset">顯示全部路線</button>'
+        '<p class="route-summary" id="route-summary" aria-live="polite">目前顯示全部路線。</p>'
+        "</div>"
+        '<ol class="spine" aria-label="路線分岐">'
+        f'{"".join(stops)}'
+        "</ol></div>"
+        f'<script type="application/json" id="route-config">{blob}</script>'
+    )
+
+
+def render_stage(stage, routes):
     seen = set()
     bits = []
     for key in ("joins", "leaves", "flags"):
@@ -348,8 +637,9 @@ def render_stage(stage):
         ]
     )
     search = plain + " " + " ".join(matched_names(plain))
+    route = esc(" ".join(tokens_for(stage["id"], routes)))
     return f"""
-<article class="stage" id="{esc(stage["id"])}" data-group="{esc(stage["group"])}" data-search="{esc(search)}">
+<article class="stage" id="{esc(stage["id"])}" data-group="{esc(stage["group"])}" data-route="{route}" data-search="{esc(search)}">
   <header>
     <p class="kicker">{esc(stage["game"])} · {esc(stage["route"])}</p>
     <h3>{annotate(stage["titleZh"], seen)}</h3>
@@ -430,220 +720,36 @@ TEMPLATE_HEAD = r"""<!DOCTYPE html>
   <div class="topbar">
     <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">目錄</button>
     <input class="search" id="q" type="search" placeholder="搜尋話名、角色、機體或日文" aria-label="搜尋話數與名字">
-    <span class="count" id="count"></span>
+    <span class="count" id="count" aria-live="polite"></span>
   </div>
   <div class="page" id="content">
 """
 
 TEMPLATE_INTRO = r"""
-<section id="overview" class="prose">
+<section id="overview">
   <div class="hero">
+    <p class="eyebrow">故事導讀</p>
     <h1>超級機器人大戰 F／F完結編</h1>
     <p class="ja-line">スーパーロボット大戦F／スーパーロボット大戦F完結編</p>
+    <nav class="start" aria-label="從這裡開始">
+      <a href="#flow">用分岐樹選話</a>
+      <a href="#names">角色與機體</a>
+      <a href="#f-r01">從第一話讀起</a>
+    </nav>
   </div>
+  <div class="prose">
   <p class="lede">這是一部給長文閱讀用的故事導讀。正文是重新寫過的繁體中文，不錄遊戲對白。每一話的標題、以及正文裡第一次需要對上原文的角色，都同時留下日文。路線以官方全話表為骨架：F 單周目 33 至 34 話，F完結編 45 至 46 話，兩作通算 78 至 80 話。多出來的那些標題不是灌水關卡，而是你沒有走上的另一邊。</p>
   <p>時間點接在 DC 戰爭和拉·吉亞斯事件之後。隆德貝爾曾經是地球的治安部隊，人卻被捲離地表；回來時聯邦已經換了做法。賈米托夫推動的泰坦斯收編 DC 殘黨，殖民衛星被重稅逼向反聯邦。彭塔戈納的波賽達爾軍、自稱蓋斯特的外星勢力、拜斯頓·威爾浮上的聖戰士、以及使徒，幾乎同時壓到地球圈。神聖十字軍（DC）沒有因為比安之死而消失，哈曼與薩比家的名字稍後會重新把它撐起來。</p>
   <p>開局先選主角的類型。即時系走宇宙與機動戰士的入口，後期機是休凱拜因；超級系走光子力研究所與超機的入口，後期機是古倫加斯特。兩條線在「福音戰士，始動」之後不斷交會，但有幾話的標題、參戰時機和隱藏條件仍然分開。中盤要先救哥拉昂還是古蘭加蘭，再決定要不要繞過拉薩。完結編則在「天空與大地的野獸」分成宇宙與地上，地上還藏著一條看到「未完的使者」就結束的 EVA 壞結局；正常打完之後，再選擇先打 DC，或先打蓋斯特與波賽達爾。</p>
-  <div class="chips" role="toolbar" aria-label="篩選路線">
-    <button class="chip on" type="button" data-group="all">全部</button>
-    <button class="chip" type="button" data-group="real-open">F 即時系開幕</button>
-    <button class="chip" type="button" data-group="super-open">F 超級系開幕</button>
-    <button class="chip" type="button" data-group="f-common">F 共通</button>
-    <button class="chip" type="button" data-group="f-branch">F 分岐</button>
-    <button class="chip" type="button" data-group="ff-early">完結編前半</button>
-    <button class="chip" type="button" data-group="split">宇宙／地上／壞結局</button>
-    <button class="chip" type="button" data-group="final">最終分岐</button>
   </div>
 </section>
 
 <section id="flow" class="block">
   <h2>路線圖</h2>
   <div class="prose">
-    <p>下面按官方全話表排，不按某一本攻略自己編的話數。點標題可跳到該話。實心邊色只是方便掃讀：藍邊是即時系專用標題，暖色是超級系專用標題，紅邊是會把遊戲停掉的壞結局。</p>
+    <p>這張圖就是話數的開關。選一側，只屬於另一側的話會從下面收起，兩邊都走得到的話留著。還沒選的分歧停在「兩邊」或「全部」。點某一話會跳到正文；若那一話正被收起，會先把路線撥過去。每一叉可以收起話數，選擇會留在這一頁。</p>
   </div>
-  <div class="flow" aria-label="F 與 F完結編分岐">
-    <div class="fork">
-      <div class="fork-col">
-        <h3>F · 即時系開幕</h3>
-        <ol>
-          <li><a href="#f-r01">低垂的暗雲</a></li>
-          <li><a href="#f-r02">異鄉人</a></li>
-          <li><a href="#f-r03">香格里拉的孩子們</a></li>
-          <li><a href="#f-r04">無情的恐怖份子</a></li>
-          <li><a href="#f-r05">希羅與莉莉娜</a></li>
-          <li><a href="#f-r06">使徒，出現</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>F · 超級系開幕</h3>
-        <ol>
-          <li><a href="#f-s01">對決！？魔神Z對蓋特機器人G</a></li>
-          <li><a href="#f-s02">自空而降的衝擊</a></li>
-          <li><a href="#f-s03">特訓！大雪山嵐</a></li>
-          <li><a href="#f-s04">波賽達爾來襲</a></li>
-          <li><a href="#f-s05">謎之刺客！敵人是高達！？</a></li>
-          <li><a href="#f-s06">使徒來襲</a></li>
-        </ol>
-      </div>
-    </div>
-    <div class="flow-row">
-      <div class="flow-label">合流</div>
-      <div class="flow-track">
-        <a class="node" href="#f-07">福音戰士，始動<small>エヴァンゲリオン、始動</small></a>
-        <a class="node real" href="#f-r08">獸戰機隊出擊</a>
-        <a class="node super" href="#f-s08">熱血！！獸戰機隊合流</a>
-        <a class="node" href="#f-09">南海死鬥</a>
-        <a class="node" href="#f-10">背叛</a>
-        <a class="node" href="#f-11">使徒，再現</a>
-        <a class="node" href="#f-12">孔巴特拉V無法合體</a>
-        <a class="node" href="#f-13">浮上</a>
-      </div>
-    </div>
-    <div class="fork">
-      <div class="fork-col">
-        <h3>先去南美（哥拉昂）</h3>
-        <ol>
-          <li><a href="#f-14g">哥拉昂救出</a></li>
-          <li><a href="#f-15g">目標是隆德貝爾</a></li>
-          <li>即時系 <a href="#f-16gr">驚異的魔鬼高達</a>／超級系 <a href="#f-16gs">魔鬼高達再現</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>先去基輔（古蘭加蘭）</h3>
-        <ol>
-          <li>即時系 <a href="#f-14kr">魔鬼高達出現</a>／超級系 <a href="#f-14ks">救出古蘭加蘭</a></li>
-          <li><a href="#f-15k">瞄準隆德貝爾的刺客</a></li>
-          <li><a href="#f-16k">哥拉昂的危機</a></li>
-        </ol>
-      </div>
-    </div>
-    <div class="fork">
-      <div class="fork-col">
-        <h3>不繞路（34 話的來源）</h3>
-        <ol>
-          <li><a href="#f-17">突破敵方包圍網</a></li>
-          <li><a href="#f-18j">噴射飛行翼千鈞一髮！！</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>繞路（33 話）</h3>
-        <ol>
-          <li><a href="#f-18p">被鎖定的光子力研究所</a></li>
-        </ol>
-      </div>
-    </div>
-    <div class="flow-row">
-      <div class="flow-label">F 後半</div>
-      <div class="flow-track">
-        <a class="node" href="#f-19">襲擊 NERV</a>
-        <a class="node" href="#f-20">斷空我的野心</a>
-        <a class="node" href="#f-21">侵入加布羅（前）</a>
-        <a class="node" href="#f-22">侵入加布羅（後）</a>
-        <a class="node real" href="#f-23r">覺醒吧，超獸機神</a>
-        <a class="node super" href="#f-23s">合體！！超獸機神斷空我</a>
-        <a class="node" href="#f-24">米亞的決意</a>
-        <a class="node" href="#f-25">大將軍加魯達的悲劇</a>
-        <a class="node real" href="#f-26r">其名為東方不敗</a>
-        <a class="node super" href="#f-26s">流派東方不敗</a>
-        <a class="node" href="#f-27">DC 的陰謀</a>
-        <a class="node" href="#f-28">奪回阿德萊德（前）</a>
-        <a class="node" href="#f-29">奪回阿德萊德（後）</a>
-        <a class="node" href="#f-30">收復作戰</a>
-        <a class="node" href="#f-31">殖民衛星的反叛</a>
-        <a class="node" href="#f-32">隆德貝爾，前往宇宙</a>
-        <a class="node" href="#f-33">和平成立</a>
-        <a class="node real" href="#f-34r">桑克王國的再會</a>
-        <a class="node super" href="#f-34s">哈曼的影子</a>
-      </div>
-    </div>
-    <div class="fork">
-      <div class="fork-col">
-        <h3>完結編 · 即時系</h3>
-        <ol>
-          <li><a href="#ff-r35">漩渦般的惡意（前）（後）</a></li>
-          <li>中段分歧：<a href="#ff-45r">泰坦斯的追擊</a></li>
-          <li>新機：<a href="#ff-56">新的力量</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>完結編 · 超級系</h3>
-        <ol>
-          <li><a href="#ff-s35">開拓4號的危機（前）（後）</a></li>
-          <li>中段分歧：<a href="#ff-45s">絆</a></li>
-          <li>新機：<a href="#ff-56s">完成！超鬥士</a></li>
-        </ol>
-      </div>
-    </div>
-    <div class="flow-row">
-      <div class="flow-label">托德旗標</div>
-      <div class="flow-track">
-        <a class="node good" href="#ff-55a">波士頓的日落<small>前三段說服都成立</small></a>
-        <a class="node bad" href="#ff-55b">比永·扎·托德<small>旗標未齊，托德戰死</small></a>
-      </div>
-    </div>
-    <div class="fork">
-      <div class="fork-col">
-        <h3>宇宙篇</h3>
-        <ol>
-          <li><a href="#ff-sp62">逃亡的索羅艦</a></li>
-          <li><a href="#ff-sp63">背叛的月面基地／月面都市</a></li>
-          <li><a href="#ff-sp64">無限力伊迪傳說</a></li>
-          <li><a href="#ff-sp65">燈火化為烈焰</a></li>
-          <li><a href="#ff-sp66">出擊，頂點戰士</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>地上篇（通常）</h3>
-        <ol>
-          <li><a href="#ff-ea62">被解開的封印</a></li>
-          <li><a href="#ff-ea63">決戰，第二新東京市</a></li>
-          <li><a href="#ff-ea64">紡織命運的人們</a></li>
-          <li><a href="#ff-ea65">被稱為惡魔的高達</a></li>
-          <li><a href="#ff-ea66">前往光輝閃爍的宇宙</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>地上 · EVA 壞結局</h3>
-        <ol>
-          <li>第二新東京市裡零號機自爆</li>
-          <li><a href="#ff-eva64">我作為我而誕生的理由</a></li>
-          <li><a href="#ff-eva65">未完的使者</a>（遊戲結束，不接後面的話）</li>
-        </ol>
-      </div>
-    </div>
-    <div class="flow-row">
-      <div class="flow-label">正常路線會合</div>
-      <div class="flow-track">
-        <a class="node" href="#ff-67">清算過往，然後……</a>
-        <a class="node" href="#ff-68">卡特爾的悲傷</a>
-      </div>
-    </div>
-    <div class="fork">
-      <div class="fork-col">
-        <h3>先打 DC</h3>
-        <ol>
-          <li><a href="#ff-dc69">錯綜的心意</a> → <a href="#ff-dc70">理想與現實</a></li>
-          <li><a href="#ff-dc71">斬斷光芒的劍</a> → <a href="#ff-dc72">染血的御手</a></li>
-          <li><a href="#ff-dc73">虛構的偶像</a> → <a href="#ff-dc74">復仇之刃</a></li>
-          <li><a href="#ff-dc75">翻飛的叛旗</a> → <a href="#ff-dc76">雙重虛假</a></li>
-          <li><a href="#ff-dc77">恐怖與恐慌之間</a>（梅基博斯生死）</li>
-          <li><a href="#ff-dc78">激震的紅色大地</a></li>
-          <li><a href="#ff-dc79">最終作戰</a> → <a href="#ff-dc80">最終作戰－完結－</a></li>
-        </ol>
-      </div>
-      <div class="fork-col">
-        <h3>先打蓋斯特／波賽達爾</h3>
-        <ol>
-          <li><a href="#ff-g69">彷徨的命運之光</a> → <a href="#ff-g70">砂上之樓閣</a></li>
-          <li><a href="#ff-g71">名為愛的自我</a> → <a href="#ff-g72">崩壞序曲</a></li>
-          <li><a href="#ff-g73">被改寫的地圖</a> → <a href="#ff-g74">時刻開始轉動之時</a></li>
-          <li><a href="#ff-g75">虛假的協定</a> → <a href="#ff-g76">不速之客</a></li>
-          <li><a href="#ff-g77">在命運的火焰之中</a> → <a href="#ff-g78">給敗者的凱歌</a></li>
-          <li><a href="#ff-g79">開始與終結聚集之處</a></li>
-        </ol>
-      </div>
-    </div>
-  </div>
+  <!--ROUTE_TREE-->
 </section>
 
 <section id="names" class="block">
@@ -652,12 +758,6 @@ TEMPLATE_INTRO = r"""
   <!--NAME_INDEX-->
 </section>
 """
-
-# The flow HTML above has a typo I need to avoid. I'll fix in the string... I see I accidentally wrote `</a        <a` missing closing. Let me fix that in the file after write... I'll fix the template in this write by being careful.
-
-# Wait I already have a bug in TEMPLATE_INTRO:
-# <a class="node" href="#f-29">奪回阿德萊德（後）</a        <a class="node" href="#f-30">收復作戰</a>
-# I need to fix that. I'll fix with search_replace after if the write includes it. Let me correct it before writing... I'm in the write contents now. I should fix the string.
 
 TEMPLATE_END = r"""
 <section id="endings" class="prose">
@@ -714,10 +814,14 @@ TEMPLATE_TAIL = r"""
 
 def main():
     stages = load_stages()
+    routes = load_routes()
     check(stages)
+    check_routes(stages, routes)
+    by_id = {stage["id"]: stage for stage in stages}
     intro = annotate_html(TEMPLATE_INTRO).replace("<!--NAME_INDEX-->", render_names())
+    intro = intro.replace("<!--ROUTE_TREE-->", render_route_tree(routes, by_id))
     body = [TEMPLATE_HEAD, intro, '<section id="stages" class="block"><h2>全話</h2>']
-    body.append("".join(render_stage(stage) for stage in stages))
+    body.append("".join(render_stage(stage, routes) for stage in stages))
     body.append("</section>")
     body.append(annotate_html(TEMPLATE_END))
     body.append(TEMPLATE_TAIL)
