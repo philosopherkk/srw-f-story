@@ -151,6 +151,17 @@ def load_lexicon():
 
 
 FORMS, ENTRIES, BLOCKS = load_lexicon()
+LOOKS = json.loads((ROOT / "data" / "looks.json").read_text(encoding="utf-8"))
+_LOOK_IDS = {entry["id"] for entry in ENTRIES if entry["kind"] in ("person", "unit")}
+_MISSING_LOOKS = sorted(_LOOK_IDS - set(LOOKS))
+_EXTRA_LOOKS = sorted(set(LOOKS) - {entry["id"] for entry in ENTRIES})
+if _MISSING_LOOKS or _EXTRA_LOOKS:
+    raise SystemExit(
+        "looks.json mismatch\nmissing: "
+        + ", ".join(_MISSING_LOOKS)
+        + "\nextra: "
+        + ", ".join(_EXTRA_LOOKS)
+    )
 
 
 def covered_by_block(text, start, length):
@@ -273,13 +284,16 @@ def render_names():
             if entry["ja"] == entry["zh"][0] and not note:
                 note = "日文用同一組漢字。"
             note_html = f'<p class="aside">{esc(note)}</p>' if note else ""
-            blob = " ".join(entry["zh"] + [entry["ja"], note, label])
+            look = LOOKS.get(entry["id"]) or ""
+            look_html = f'<p class="look">{esc(look)}</p>' if look else ""
+            blob = " ".join(entry["zh"] + [entry["ja"], note, look, label])
             cards.append(
                 f'''<article class="name-card" data-kind="{kind}" data-search="{esc(blob)}">
   <p class="kind">{label}</p>
   <h3>{esc(entry["zh"][0])}</h3>
   {alias}
   <p class="ja" lang="ja">{esc(entry["ja"])}</p>
+  {look_html}
   {note_html}
 </article>'''
             )
@@ -634,7 +648,7 @@ TEMPLATE_INTRO = r"""
 
 <section id="names" class="block">
   <h2>角色與機體</h2>
-  <p class="prose">正文用香港通行的中文。每一話第一次寫到的角色、機體、勢力和地名，後面附上日文；同一話裡再出現就只留中文，避免括號把長句切斷。下面可以按類別看，頁首的搜尋框也認日文。</p>
+  <p class="prose">正文用香港通行的中文。每一話第一次寫到的角色、機體、勢力和地名，後面附上日文；同一話裡再出現就只留中文，避免括號把長句切斷。下面可以按類別看，頁首的搜尋框也認日文。角色和機體各有一行外形：髮色、衣服、裝甲和輪廓，按公開畫面能對上的特徵重寫，不放遊戲圖。</p>
   <!--NAME_INDEX-->
 </section>
 """

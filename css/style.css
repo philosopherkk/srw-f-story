@@ -291,6 +291,12 @@ a:hover { color: #d5ebfa; }
   letter-spacing: 0.08em;
 }
 .name-card .ja { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+.name-card .look {
+  margin: 0.45rem 0 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
 .name-card .alias, .name-card .aside {
   margin: 0.25rem 0 0;
   color: var(--faint);
