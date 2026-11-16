@@ -1,2 +1,27 @@
-# srw-f-story
-Super Robot Wars F &amp; F Final story page: Traditional Chinese episode summaries with Japanese titles, all branches and endings.
+# 超級機器人大戰 F／F完結編 故事導讀
+
+繁體中文的長文導讀。每一話的標題，以及需要對上原文的角色，都同時留下日文。路線涵蓋即時系、超級系、哥拉昂與古蘭加蘭、拉薩繞路、托德、宇宙與地上、EVA 壞結局，以及 DC 與蓋斯特／波賽達爾兩條最終篇。
+
+正文寫在 `data/stages/*.json`。`tools/build.py` 把它編成單一的 `index.html`，瀏覽時不再向伺服器要資料，所以可以直接放上 Vercel。
+
+## 本地預覽
+
+用瀏覽器打開倉庫根目錄的 `index.html` 即可。若要走本機伺服器：
+
+```bash
+python3 -m http.server 8000
+```
+
+改完話數資料之後，重新產生頁面：
+
+```bash
+python3 tools/gen_f_open.py
+python3 tools/gen_f_rest.py
+python3 tools/gen_ff_early.py
+python3 tools/gen_ff_late.py
+python3 tools/build.py
+```
+
+## Vercel
+
+`vercel.json` 把 framework 留空，不設定建置指令。Vercel 直接用倉庫根目錄的 `index.html`、`css/` 和 `js/`。不需要安裝套件，也不需要伺服端程式。
