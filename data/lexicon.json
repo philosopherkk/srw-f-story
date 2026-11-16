@@ -1,0 +1,2693 @@
+{
+  "blocks": [
+    "漂亮",
+    "月亮",
+    "亮起",
+    "暴露",
+    "露出",
+    "修行",
+    "修理",
+    "零件",
+    "內容",
+    "容易",
+    "容忍",
+    "因忍",
+    "凱歌",
+    "凱旋",
+    "地獄平原",
+    "歸零",
+    "古倫高達",
+    "修好",
+    "維修",
+    "修正",
+    "修機",
+    "在修",
+    "來修",
+    "都修",
+    "局部修",
+    "露面",
+    "阿修拉"
+  ],
+  "entries": [
+    {
+      "id": "amuro",
+      "zh": [
+        "阿姆羅·雷",
+        "阿姆羅"
+      ],
+      "ja": "アムロ・レイ",
+      "kind": "person"
+    },
+    {
+      "id": "bright",
+      "zh": [
+        "布萊特·諾亞",
+        "布萊特"
+      ],
+      "ja": "ブライト・ノア",
+      "kind": "person"
+    },
+    {
+      "id": "char",
+      "zh": [
+        "夏亞"
+      ],
+      "ja": "シャア・アズナブル",
+      "kind": "person"
+    },
+    {
+      "id": "quattro",
+      "zh": [
+        "卡多·巴吉納",
+        "卡多"
+      ],
+      "ja": "クワトロ・バジーナ",
+      "kind": "person",
+      "note": "夏亞用過的另一個名字。"
+    },
+    {
+      "id": "heero",
+      "zh": [
+        "希羅"
+      ],
+      "ja": "ヒイロ・ユイ",
+      "kind": "person"
+    },
+    {
+      "id": "relena",
+      "zh": [
+        "莉莉娜"
+      ],
+      "ja": "リリーナ・ピースクラフト",
+      "kind": "person"
+    },
+    {
+      "id": "quatre",
+      "zh": [
+        "卡特爾"
+      ],
+      "ja": "カトル・ラバーバ・ウィナー",
+      "kind": "person",
+      "note": "不是卡多。"
+    },
+    {
+      "id": "treize",
+      "zh": [
+        "托雷茲"
+      ],
+      "ja": "トレーズ・クシュリナーダ",
+      "kind": "person"
+    },
+    {
+      "id": "duo",
+      "zh": [
+        "杜奧"
+      ],
+      "ja": "デュオ・マックスウェル",
+      "kind": "person"
+    },
+    {
+      "id": "trowa",
+      "zh": [
+        "特洛瓦"
+      ],
+      "ja": "トロワ・バートン",
+      "kind": "person"
+    },
+    {
+      "id": "wufei",
+      "zh": [
+        "張五飛",
+        "五飛"
+      ],
+      "ja": "チャン・ウーフェイ",
+      "kind": "person"
+    },
+    {
+      "id": "zeke",
+      "zh": [
+        "積古斯"
+      ],
+      "ja": "ゼクス・マーキス",
+      "kind": "person"
+    },
+    {
+      "id": "milliardo",
+      "zh": [
+        "米利亞多"
+      ],
+      "ja": "ミリアルド・ピースクラフト",
+      "kind": "person",
+      "note": "積古斯的真名。"
+    },
+    {
+      "id": "noin",
+      "zh": [
+        "諾因"
+      ],
+      "ja": "ルクレツィア・ノイン",
+      "kind": "person"
+    },
+    {
+      "id": "dorothy",
+      "zh": [
+        "多蘿西"
+      ],
+      "ja": "ドロシー・カタロニア",
+      "kind": "person"
+    },
+    {
+      "id": "wong",
+      "zh": [
+        "王雲發"
+      ],
+      "ja": "ウォン・ユンファ",
+      "kind": "person"
+    },
+    {
+      "id": "ulube",
+      "zh": [
+        "烏爾貝"
+      ],
+      "ja": "ウルベ・イシカワ",
+      "kind": "person"
+    },
+    {
+      "id": "lady",
+      "zh": [
+        "烏妮女士",
+        "烏妮",
+        "蕾蒂"
+      ],
+      "ja": "レディ・アン",
+      "kind": "person"
+    },
+    {
+      "id": "haman",
+      "zh": [
+        "哈曼"
+      ],
+      "ja": "ハマーン・カーン",
+      "kind": "person"
+    },
+    {
+      "id": "gato",
+      "zh": [
+        "嘉斯特"
+      ],
+      "ja": "アナベル・ガトー",
+      "kind": "person",
+      "note": "所羅門的惡夢。不是蓋斯特。"
+    },
+    {
+      "id": "carius",
+      "zh": [
+        "卡里烏斯"
+      ],
+      "ja": "カリウス",
+      "kind": "person"
+    },
+    {
+      "id": "kelly",
+      "zh": [
+        "凱利"
+      ],
+      "ja": "ケリー・レズナー",
+      "kind": "person"
+    },
+    {
+      "id": "kamille",
+      "zh": [
+        "卡繆"
+      ],
+      "ja": "カミーユ・ビダン",
+      "kind": "person"
+    },
+    {
+      "id": "four",
+      "zh": [
+        "芙歐"
+      ],
+      "ja": "フォウ・ムラサメ",
+      "kind": "person"
+    },
+    {
+      "id": "henken",
+      "zh": [
+        "漢肯"
+      ],
+      "ja": "ヘンケン・ベッケナー",
+      "kind": "person"
+    },
+    {
+      "id": "roux",
+      "zh": [
+        "露·露卡",
+        "露"
+      ],
+      "ja": "ルー・ルカ",
+      "kind": "person"
+    },
+    {
+      "id": "judau",
+      "zh": [
+        "朱度"
+      ],
+      "ja": "ジュドー・アーシタ",
+      "kind": "person"
+    },
+    {
+      "id": "elle",
+      "zh": [
+        "艾露"
+      ],
+      "ja": "エル・ビアンノ",
+      "kind": "person"
+    },
+    {
+      "id": "beecha",
+      "zh": [
+        "比查"
+      ],
+      "ja": "ビーチャ・オーレグ",
+      "kind": "person"
+    },
+    {
+      "id": "katz",
+      "zh": [
+        "卡茲"
+      ],
+      "ja": "カツ・コバヤシ",
+      "kind": "person"
+    },
+    {
+      "id": "pletwo",
+      "zh": [
+        "普露二世"
+      ],
+      "ja": "プルツー",
+      "kind": "person"
+    },
+    {
+      "id": "ple",
+      "zh": [
+        "普露"
+      ],
+      "ja": "エルピー・プル",
+      "kind": "person"
+    },
+    {
+      "id": "rosamia",
+      "zh": [
+        "羅莎美亞",
+        "羅薩米"
+      ],
+      "ja": "ロザミア・バダム",
+      "kind": "person"
+    },
+    {
+      "id": "buran",
+      "zh": [
+        "布蘭"
+      ],
+      "ja": "ブラン・ブルターク",
+      "kind": "person"
+    },
+    {
+      "id": "gates",
+      "zh": [
+        "蓋茨"
+      ],
+      "ja": "ゲーツ",
+      "kind": "person"
+    },
+    {
+      "id": "seabook",
+      "zh": [
+        "西布克"
+      ],
+      "ja": "シーブック・アノー",
+      "kind": "person"
+    },
+    {
+      "id": "cecily",
+      "zh": [
+        "塞西莉"
+      ],
+      "ja": "セシリー・フェアチャイルド",
+      "kind": "person"
+    },
+    {
+      "id": "birgit",
+      "zh": [
+        "碧姬"
+      ],
+      "ja": "ビルギット・ピリヨ",
+      "kind": "person"
+    },
+    {
+      "id": "emma",
+      "zh": [
+        "愛瑪"
+      ],
+      "ja": "エマ・シーン",
+      "kind": "person"
+    },
+    {
+      "id": "nina",
+      "zh": [
+        "妮娜"
+      ],
+      "ja": "ニナ・パープルトン",
+      "kind": "person"
+    },
+    {
+      "id": "keith",
+      "zh": [
+        "基斯"
+      ],
+      "ja": "チャック・キース",
+      "kind": "person"
+    },
+    {
+      "id": "berta",
+      "zh": [
+        "貝托蒂嘉"
+      ],
+      "ja": "ベルトーチカ・イルマ",
+      "kind": "person"
+    },
+    {
+      "id": "frau",
+      "zh": [
+        "芙勞"
+      ],
+      "ja": "フラウ・コバヤシ",
+      "kind": "person"
+    },
+    {
+      "id": "hayato_k",
+      "zh": [
+        "小林隼人"
+      ],
+      "ja": "ハヤト・コバヤシ",
+      "kind": "person"
+    },
+    {
+      "id": "hathaway",
+      "zh": [
+        "哈薩維"
+      ],
+      "ja": "ハサウェイ・ノア",
+      "kind": "person"
+    },
+    {
+      "id": "kai",
+      "zh": [
+        "凱"
+      ],
+      "ja": "カイ・シデン",
+      "kind": "person"
+    },
+    {
+      "id": "sleggar",
+      "zh": [
+        "史萊格"
+      ],
+      "ja": "スレッガー・ロウ",
+      "kind": "person"
+    },
+    {
+      "id": "sayla",
+      "zh": [
+        "雪拉"
+      ],
+      "ja": "セイラ・マス",
+      "kind": "person"
+    },
+    {
+      "id": "bernie",
+      "zh": [
+        "巴尼"
+      ],
+      "ja": "バーナード・ワイズマン",
+      "kind": "person"
+    },
+    {
+      "id": "chris",
+      "zh": [
+        "克莉絲"
+      ],
+      "ja": "クリスチーナ・マッケンジー",
+      "kind": "person"
+    },
+    {
+      "id": "bask",
+      "zh": [
+        "巴斯克"
+      ],
+      "ja": "バスク・オム",
+      "kind": "person"
+    },
+    {
+      "id": "jamitov",
+      "zh": [
+        "賈米托夫"
+      ],
+      "ja": "ジャミトフ・ハイマン",
+      "kind": "person"
+    },
+    {
+      "id": "scirocco",
+      "zh": [
+        "西羅克"
+      ],
+      "ja": "パプテマス・シロッコ",
+      "kind": "person"
+    },
+    {
+      "id": "jerid",
+      "zh": [
+        "傑利德"
+      ],
+      "ja": "ジェリド・メサ",
+      "kind": "person"
+    },
+    {
+      "id": "mouar",
+      "zh": [
+        "莫亞"
+      ],
+      "ja": "マウアー・ファラオ",
+      "kind": "person"
+    },
+    {
+      "id": "lila",
+      "zh": [
+        "莉拉"
+      ],
+      "ja": "ライラ・ミラ・ライラ",
+      "kind": "person"
+    },
+    {
+      "id": "kacricon",
+      "zh": [
+        "卡克里康"
+      ],
+      "ja": "カクリコン・カクーラー",
+      "kind": "person"
+    },
+    {
+      "id": "yazan",
+      "zh": [
+        "亞贊"
+      ],
+      "ja": "ヤザン・ゲーブル",
+      "kind": "person"
+    },
+    {
+      "id": "jamaican",
+      "zh": [
+        "賈邁坎"
+      ],
+      "ja": "ジャマイカン・ダニンガン",
+      "kind": "person"
+    },
+    {
+      "id": "gady",
+      "zh": [
+        "加迪"
+      ],
+      "ja": "ガディ・キンゼー",
+      "kind": "person"
+    },
+    {
+      "id": "gillen",
+      "zh": [
+        "基連"
+      ],
+      "ja": "ギレン・ザビ",
+      "kind": "person"
+    },
+    {
+      "id": "dozle",
+      "zh": [
+        "德茲爾"
+      ],
+      "ja": "ドズル・ザビ",
+      "kind": "person"
+    },
+    {
+      "id": "kycilia",
+      "zh": [
+        "琪西莉亞"
+      ],
+      "ja": "キシリア・ザビ",
+      "kind": "person"
+    },
+    {
+      "id": "mineva",
+      "zh": [
+        "米奈娃"
+      ],
+      "ja": "ミネバ・ラオ・ザビ",
+      "kind": "person"
+    },
+    {
+      "id": "kube",
+      "zh": [
+        "馬·古比"
+      ],
+      "ja": "マ・クベ",
+      "kind": "person"
+    },
+    {
+      "id": "cima",
+      "zh": [
+        "茜瑪"
+      ],
+      "ja": "シーマ・ガラハウ",
+      "kind": "person"
+    },
+    {
+      "id": "mashymre",
+      "zh": [
+        "馬殊馬"
+      ],
+      "ja": "マシュマー・セロ",
+      "kind": "person"
+    },
+    {
+      "id": "gaia",
+      "zh": [
+        "蓋亞"
+      ],
+      "ja": "ガイア",
+      "kind": "person",
+      "note": "黑色三連星之一。機體蓋亞·加林格是另一個名字。"
+    },
+    {
+      "id": "mash",
+      "zh": [
+        "馬修"
+      ],
+      "ja": "マッシュ",
+      "kind": "person"
+    },
+    {
+      "id": "ortega",
+      "zh": [
+        "奧特加"
+      ],
+      "ja": "オルテガ",
+      "kind": "person"
+    },
+    {
+      "id": "ral",
+      "zh": [
+        "蘭巴·拉爾"
+      ],
+      "ja": "ランバ・ラル",
+      "kind": "person"
+    },
+    {
+      "id": "blex",
+      "zh": [
+        "布雷克斯"
+      ],
+      "ja": "ブレックス・フォーラ",
+      "kind": "person"
+    },
+    {
+      "id": "shinji",
+      "zh": [
+        "真嗣"
+      ],
+      "ja": "碇シンジ",
+      "kind": "person"
+    },
+    {
+      "id": "rei",
+      "zh": [
+        "綾波零",
+        "綾波"
+      ],
+      "ja": "綾波レイ",
+      "kind": "person"
+    },
+    {
+      "id": "asuka",
+      "zh": [
+        "明日香"
+      ],
+      "ja": "惣流・アスカ・ラングレー",
+      "kind": "person"
+    },
+    {
+      "id": "misato",
+      "zh": [
+        "美里"
+      ],
+      "ja": "葛城ミサト",
+      "kind": "person"
+    },
+    {
+      "id": "gendo",
+      "zh": [
+        "源堂"
+      ],
+      "ja": "碇ゲンドウ",
+      "kind": "person"
+    },
+    {
+      "id": "ritsuko",
+      "zh": [
+        "律子"
+      ],
+      "ja": "赤木リツコ",
+      "kind": "person"
+    },
+    {
+      "id": "kaji",
+      "zh": [
+        "加持"
+      ],
+      "ja": "加持リョウジ",
+      "kind": "person"
+    },
+    {
+      "id": "fuyutsuki",
+      "zh": [
+        "冬月"
+      ],
+      "ja": "冬月コウゾウ",
+      "kind": "person"
+    },
+    {
+      "id": "kaworu",
+      "zh": [
+        "渚薰"
+      ],
+      "ja": "渚カヲル",
+      "kind": "person"
+    },
+    {
+      "id": "domon",
+      "zh": [
+        "多蒙·卡遜",
+        "多蒙"
+      ],
+      "ja": "ドモン・カッシュ",
+      "kind": "person"
+    },
+    {
+      "id": "rain",
+      "zh": [
+        "玲"
+      ],
+      "ja": "レイン・ミカムラ",
+      "kind": "person"
+    },
+    {
+      "id": "kyoji",
+      "zh": [
+        "京二"
+      ],
+      "ja": "キョウジ・カッシュ",
+      "kind": "person"
+    },
+    {
+      "id": "kasshu",
+      "zh": [
+        "卡修博士",
+        "卡修"
+      ],
+      "ja": "カッシュ博士",
+      "kind": "person",
+      "note": "玲、京二和多蒙的父親。"
+    },
+    {
+      "id": "mikino",
+      "zh": [
+        "美紀野"
+      ],
+      "ja": "ミキノ・カッシュ",
+      "kind": "person"
+    },
+    {
+      "id": "master",
+      "zh": [
+        "亞洲大師",
+        "東方不敗"
+      ],
+      "ja": "マスター・アジア",
+      "kind": "person",
+      "note": "流派東方不敗的前代掌門。"
+    },
+    {
+      "id": "schwarz",
+      "zh": [
+        "舒瓦茲"
+      ],
+      "ja": "シュバルツ・ブルーダー",
+      "kind": "person"
+    },
+    {
+      "id": "allenby",
+      "zh": [
+        "阿倫比"
+      ],
+      "ja": "アレンビー・ビアズリー",
+      "kind": "person"
+    },
+    {
+      "id": "michelo",
+      "zh": [
+        "米克羅"
+      ],
+      "ja": "ミケロ・チャリオット",
+      "kind": "person"
+    },
+    {
+      "id": "chapman",
+      "zh": [
+        "查普曼"
+      ],
+      "ja": "ジェントル・チャップマン",
+      "kind": "person"
+    },
+    {
+      "id": "kouji",
+      "zh": [
+        "兜甲兒",
+        "甲兒"
+      ],
+      "ja": "兜甲児",
+      "kind": "person"
+    },
+    {
+      "id": "sayaka",
+      "zh": [
+        "沙也加"
+      ],
+      "ja": "弓さやか",
+      "kind": "person"
+    },
+    {
+      "id": "yumi",
+      "zh": [
+        "弓教授",
+        "弓"
+      ],
+      "ja": "弓弦之助",
+      "kind": "person"
+    },
+    {
+      "id": "boss",
+      "zh": [
+        "波羅斯"
+      ],
+      "ja": "ボス",
+      "kind": "person"
+    },
+    {
+      "id": "tetsuya",
+      "zh": [
+        "鐵也"
+      ],
+      "ja": "剣鉄也",
+      "kind": "person"
+    },
+    {
+      "id": "jun",
+      "zh": [
+        "炎淳"
+      ],
+      "ja": "炎ジュン",
+      "kind": "person",
+      "note": "大魔神的搭檔。正文有時只寫淳。"
+    },
+    {
+      "id": "ryoma",
+      "zh": [
+        "流龍馬",
+        "龍馬"
+      ],
+      "ja": "流竜馬",
+      "kind": "person"
+    },
+    {
+      "id": "hayato_g",
+      "zh": [
+        "神隼人"
+      ],
+      "ja": "神隼人",
+      "kind": "person"
+    },
+    {
+      "id": "musashi",
+      "zh": [
+        "巴武藏"
+      ],
+      "ja": "巴武蔵",
+      "kind": "person"
+    },
+    {
+      "id": "saotome",
+      "zh": [
+        "早乙女博士",
+        "早乙女"
+      ],
+      "ja": "早乙女博士",
+      "kind": "person"
+    },
+    {
+      "id": "hell",
+      "zh": [
+        "地獄博士"
+      ],
+      "ja": "ドクターヘル",
+      "kind": "person"
+    },
+    {
+      "id": "ashura",
+      "zh": [
+        "阿修羅男爵",
+        "阿修羅"
+      ],
+      "ja": "あしゅら男爵",
+      "kind": "person"
+    },
+    {
+      "id": "brocken",
+      "zh": [
+        "布羅肯"
+      ],
+      "ja": "ブロッケン伯爵",
+      "kind": "person"
+    },
+    {
+      "id": "general",
+      "zh": [
+        "黑暗大將軍"
+      ],
+      "ja": "暗黒大将軍",
+      "kind": "person"
+    },
+    {
+      "id": "jack",
+      "zh": [
+        "傑克"
+      ],
+      "ja": "ジャック・キング",
+      "kind": "person"
+    },
+    {
+      "id": "hyoma",
+      "zh": [
+        "豹馬"
+      ],
+      "ja": "葵豹馬",
+      "kind": "person"
+    },
+    {
+      "id": "kosuke",
+      "zh": [
+        "小介"
+      ],
+      "ja": "北小介",
+      "kind": "person"
+    },
+    {
+      "id": "yotsuya",
+      "zh": [
+        "四谷博士",
+        "四谷"
+      ],
+      "ja": "四谷博士",
+      "kind": "person"
+    },
+    {
+      "id": "mia",
+      "zh": [
+        "米亞"
+      ],
+      "ja": "ミーア",
+      "kind": "person"
+    },
+    {
+      "id": "garuda",
+      "zh": [
+        "加魯達"
+      ],
+      "ja": "ガルーダ",
+      "kind": "person"
+    },
+    {
+      "id": "oreana",
+      "zh": [
+        "奧莉安娜"
+      ],
+      "ja": "オレアナ",
+      "kind": "person"
+    },
+    {
+      "id": "shinobu",
+      "zh": [
+        "忍"
+      ],
+      "ja": "藤原忍",
+      "kind": "person"
+    },
+    {
+      "id": "sara",
+      "zh": [
+        "沙羅"
+      ],
+      "ja": "結城沙羅",
+      "kind": "person"
+    },
+    {
+      "id": "ryo",
+      "zh": [
+        "亮"
+      ],
+      "ja": "司馬亮",
+      "kind": "person"
+    },
+    {
+      "id": "masato",
+      "zh": [
+        "雅人"
+      ],
+      "ja": "式部雅人",
+      "kind": "person"
+    },
+    {
+      "id": "shapiro",
+      "zh": [
+        "夏皮羅"
+      ],
+      "ja": "シャピロ・キーツ",
+      "kind": "person"
+    },
+    {
+      "id": "alan",
+      "zh": [
+        "阿倫"
+      ],
+      "ja": "アラン・イゴール",
+      "kind": "person",
+      "note": "斷空我的駕駛。不是阿倫比。"
+    },
+    {
+      "id": "igor",
+      "zh": [
+        "伊戈爾"
+      ],
+      "ja": "イゴール",
+      "kind": "person",
+      "note": "本站用這個字指限制斷空我合體的參謀。"
+    },
+    {
+      "id": "egor",
+      "zh": [
+        "艾戈爾"
+      ],
+      "ja": "イゴール",
+      "kind": "person",
+      "note": "本站用這個字指阿倫的父親。日文與伊戈爾相同。"
+    },
+    {
+      "id": "hazuki",
+      "zh": [
+        "葉月博士",
+        "葉月"
+      ],
+      "ja": "葉月博士",
+      "kind": "person"
+    },
+    {
+      "id": "banjo",
+      "zh": [
+        "破嵐萬丈",
+        "萬丈"
+      ],
+      "ja": "破嵐万丈",
+      "kind": "person"
+    },
+    {
+      "id": "garrison",
+      "zh": [
+        "加里森"
+      ],
+      "ja": "ギャリソン時田",
+      "kind": "person"
+    },
+    {
+      "id": "beauty",
+      "zh": [
+        "美女"
+      ],
+      "ja": "ビューティ",
+      "kind": "person"
+    },
+    {
+      "id": "shou",
+      "zh": [
+        "翔·薩馬",
+        "翔"
+      ],
+      "ja": "ショウ・ザマ",
+      "kind": "person"
+    },
+    {
+      "id": "cham",
+      "zh": [
+        "查姆"
+      ],
+      "ja": "チャム・ファウ",
+      "kind": "person"
+    },
+    {
+      "id": "todd",
+      "zh": [
+        "托德·吉尼斯",
+        "托德"
+      ],
+      "ja": "トッド・ギネス",
+      "kind": "person"
+    },
+    {
+      "id": "shot",
+      "zh": [
+        "肖特"
+      ],
+      "ja": "ショット・ウェポン",
+      "kind": "person"
+    },
+    {
+      "id": "drake",
+      "zh": [
+        "德瑞克"
+      ],
+      "ja": "ドレイク・ルフト",
+      "kind": "person"
+    },
+    {
+      "id": "luza",
+      "zh": [
+        "魯扎"
+      ],
+      "ja": "ルーザ・ルフト",
+      "kind": "person"
+    },
+    {
+      "id": "bishot",
+      "zh": [
+        "比肖特"
+      ],
+      "ja": "ビショット・ハッタ",
+      "kind": "person"
+    },
+    {
+      "id": "burn",
+      "zh": [
+        "伯恩"
+      ],
+      "ja": "バーン・バニングス",
+      "kind": "person"
+    },
+    {
+      "id": "jeril",
+      "zh": [
+        "潔莉爾"
+      ],
+      "ja": "ジェリル・クチビ",
+      "kind": "person"
+    },
+    {
+      "id": "marvel",
+      "zh": [
+        "瑪貝爾"
+      ],
+      "ja": "マーベル・フローズン",
+      "kind": "person"
+    },
+    {
+      "id": "elleham",
+      "zh": [
+        "艾蕾娜"
+      ],
+      "ja": "エレ・ハンム",
+      "kind": "person"
+    },
+    {
+      "id": "shiela",
+      "zh": [
+        "希拉"
+      ],
+      "ja": "シーラ・ラパーナ",
+      "kind": "person"
+    },
+    {
+      "id": "knight",
+      "zh": [
+        "黑騎士"
+      ],
+      "ja": "黒騎士",
+      "kind": "person"
+    },
+    {
+      "id": "music",
+      "zh": [
+        "繆吉"
+      ],
+      "ja": "ミュージィ・ポー",
+      "kind": "person",
+      "note": "丹拜因的角色。不是美緒。"
+    },
+    {
+      "id": "daba",
+      "zh": [
+        "達巴"
+      ],
+      "ja": "ダバ・マイロード",
+      "kind": "person"
+    },
+    {
+      "id": "amu",
+      "zh": [
+        "艾姆"
+      ],
+      "ja": "ファンネリア・アム",
+      "kind": "person"
+    },
+    {
+      "id": "kyao",
+      "zh": [
+        "卡奧"
+      ],
+      "ja": "ミラウー・キャオ",
+      "kind": "person"
+    },
+    {
+      "id": "lilith",
+      "zh": [
+        "莉莉絲"
+      ],
+      "ja": "リリス・ファウ",
+      "kind": "person"
+    },
+    {
+      "id": "leccee",
+      "zh": [
+        "蕾希"
+      ],
+      "ja": "ガウ・ハ・レッシィ",
+      "kind": "person"
+    },
+    {
+      "id": "nei",
+      "zh": [
+        "涅"
+      ],
+      "ja": "ネイ・モー・ハン",
+      "kind": "person"
+    },
+    {
+      "id": "gabrey",
+      "zh": [
+        "加布雷"
+      ],
+      "ja": "ギャブレット・ギャブレー",
+      "kind": "person"
+    },
+    {
+      "id": "giwaza",
+      "zh": [
+        "基瓦扎"
+      ],
+      "ja": "ギワザ・ロワウ",
+      "kind": "person"
+    },
+    {
+      "id": "full",
+      "zh": [
+        "芙拉特"
+      ],
+      "ja": "フル・フラット",
+      "kind": "person"
+    },
+    {
+      "id": "amanda",
+      "zh": [
+        "阿曼達拉"
+      ],
+      "ja": "アマンダラ・カマンダラ",
+      "kind": "person"
+    },
+    {
+      "id": "olive",
+      "zh": [
+        "夸桑·奧利芙",
+        "奧利芙"
+      ],
+      "ja": "クワサン・オリビー",
+      "kind": "person"
+    },
+    {
+      "id": "anton",
+      "zh": [
+        "安東"
+      ],
+      "ja": "アントン・ランドー",
+      "kind": "person"
+    },
+    {
+      "id": "heckler",
+      "zh": [
+        "赫凱勒"
+      ],
+      "ja": "ヘッケラー・マウザー",
+      "kind": "person"
+    },
+    {
+      "id": "bes",
+      "zh": [
+        "百士"
+      ],
+      "ja": "ジョーダン・ベス",
+      "kind": "person"
+    },
+    {
+      "id": "hatari",
+      "zh": [
+        "哈塔利"
+      ],
+      "ja": "ナブール・ハタリ",
+      "kind": "person"
+    },
+    {
+      "id": "karala",
+      "zh": [
+        "卡拉拉"
+      ],
+      "ja": "カララ・アジバ",
+      "kind": "person"
+    },
+    {
+      "id": "joliva",
+      "zh": [
+        "喬利巴"
+      ],
+      "ja": "イラ・ジョリバ",
+      "kind": "person"
+    },
+    {
+      "id": "cosmo",
+      "zh": [
+        "科斯莫"
+      ],
+      "ja": "コスモ・ユウキ",
+      "kind": "person"
+    },
+    {
+      "id": "kasha",
+      "zh": [
+        "卡莎"
+      ],
+      "ja": "カーシャ",
+      "kind": "person"
+    },
+    {
+      "id": "gije",
+      "zh": [
+        "基傑"
+      ],
+      "ja": "ギジェ・ザラル",
+      "kind": "person"
+    },
+    {
+      "id": "daram",
+      "zh": [
+        "達拉姆"
+      ],
+      "ja": "ダラム・ズバ",
+      "kind": "person"
+    },
+    {
+      "id": "haruru",
+      "zh": [
+        "哈魯魯"
+      ],
+      "ja": "ハルル・アジバ",
+      "kind": "person"
+    },
+    {
+      "id": "sheryl",
+      "zh": [
+        "謝麗爾"
+      ],
+      "ja": "シェル",
+      "kind": "person"
+    },
+    {
+      "id": "hannibal",
+      "zh": [
+        "漢尼拔"
+      ],
+      "ja": "ハンニバル・ゲン",
+      "kind": "person"
+    },
+    {
+      "id": "moera",
+      "zh": [
+        "莫埃拉"
+      ],
+      "ja": "モエラ",
+      "kind": "person"
+    },
+    {
+      "id": "luu",
+      "zh": [
+        "露露"
+      ],
+      "ja": "パイパー・ルウ",
+      "kind": "person"
+    },
+    {
+      "id": "ide_will",
+      "zh": [
+        "伊迪"
+      ],
+      "ja": "イデ",
+      "kind": "person",
+      "note": "驅使伊迪安的意志。機體見伊迪安。"
+    },
+    {
+      "id": "noriko",
+      "zh": [
+        "法子"
+      ],
+      "ja": "タカヤ・ノリコ",
+      "kind": "person"
+    },
+    {
+      "id": "kazumi",
+      "zh": [
+        "一之瀬"
+      ],
+      "ja": "アマノ・カズミ",
+      "kind": "person",
+      "note": "遊戲登記名是天野和美。本站正文寫一之瀬。"
+    },
+    {
+      "id": "tashiro",
+      "zh": [
+        "田代"
+      ],
+      "ja": "タシロ",
+      "kind": "person"
+    },
+    {
+      "id": "jung",
+      "zh": [
+        "容·弗洛伊德"
+      ],
+      "ja": "ユング・フロイト",
+      "kind": "person"
+    },
+    {
+      "id": "masaki",
+      "zh": [
+        "正木"
+      ],
+      "ja": "マサキ・アンドー",
+      "kind": "person"
+    },
+    {
+      "id": "lune",
+      "zh": [
+        "琉妮"
+      ],
+      "ja": "リューネ・ゾルダーク",
+      "kind": "person"
+    },
+    {
+      "id": "shu",
+      "zh": [
+        "修·白河",
+        "修"
+      ],
+      "ja": "シュウ・シラカワ",
+      "kind": "person"
+    },
+    {
+      "id": "saphine",
+      "zh": [
+        "莎菲妮"
+      ],
+      "ja": "サフィーネ・グレイス",
+      "kind": "person"
+    },
+    {
+      "id": "mio",
+      "zh": [
+        "美緒"
+      ],
+      "ja": "ミオ・サスガ",
+      "kind": "person",
+      "note": "魔裝機神的角色。不是繆吉。"
+    },
+    {
+      "id": "tutti",
+      "zh": [
+        "圖蒂"
+      ],
+      "ja": "テュッティ・ノールバック",
+      "kind": "person"
+    },
+    {
+      "id": "yanlong",
+      "zh": [
+        "炎龍"
+      ],
+      "ja": "ホワン・ヤンロン",
+      "kind": "person"
+    },
+    {
+      "id": "gilliam",
+      "zh": [
+        "吉利亞姆"
+      ],
+      "ja": "ギリアム・イェーガー",
+      "kind": "person"
+    },
+    {
+      "id": "loff",
+      "zh": [
+        "洛夫"
+      ],
+      "ja": "グロフィス・ラクレイン",
+      "kind": "person",
+      "note": "通稱ロフ。"
+    },
+    {
+      "id": "seti",
+      "zh": [
+        "塞蒂"
+      ],
+      "ja": "ジュスティヌ・シャフラワース",
+      "kind": "person",
+      "note": "通稱セティ。"
+    },
+    {
+      "id": "zeb",
+      "zh": [
+        "澤布"
+      ],
+      "ja": "ゼブリーズ・フルシュワ",
+      "kind": "person",
+      "note": "通稱ゼブ。"
+    },
+    {
+      "id": "zeze",
+      "zh": [
+        "澤澤南"
+      ],
+      "ja": "テイニクェット・ゼゼーナン",
+      "kind": "person"
+    },
+    {
+      "id": "mekibos",
+      "zh": [
+        "梅基博斯"
+      ],
+      "ja": "メキボス・ボルクェーデ",
+      "kind": "person"
+    },
+    {
+      "id": "gundam",
+      "zh": [
+        "高達"
+      ],
+      "ja": "ガンダム",
+      "kind": "unit",
+      "note": "不寫成鋼彈。各機的專名另外標出。"
+    },
+    {
+      "id": "nu",
+      "zh": [
+        "ν 高達",
+        "ν高達"
+      ],
+      "ja": "νガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "zeta",
+      "zh": [
+        "Z 高達"
+      ],
+      "ja": "Ζガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "hyaku",
+      "zh": [
+        "百式"
+      ],
+      "ja": "百式",
+      "kind": "unit"
+    },
+    {
+      "id": "rick",
+      "zh": [
+        "靈·格斯"
+      ],
+      "ja": "リック・ディアス",
+      "kind": "unit"
+    },
+    {
+      "id": "sazabi",
+      "zh": [
+        "沙薩比"
+      ],
+      "ja": "サザビー",
+      "kind": "unit"
+    },
+    {
+      "id": "qubeley",
+      "zh": [
+        "丘貝雷"
+      ],
+      "ja": "キュベレイ",
+      "kind": "unit"
+    },
+    {
+      "id": "psycho2",
+      "zh": [
+        "精神感應高達 Mk-II"
+      ],
+      "ja": "サイコガンダムMk-II",
+      "kind": "unit"
+    },
+    {
+      "id": "psycho",
+      "zh": [
+        "精神感應高達"
+      ],
+      "ja": "サイコガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "gp02",
+      "zh": [
+        "GP-02"
+      ],
+      "ja": "ガンダム試作2号機",
+      "kind": "unit"
+    },
+    {
+      "id": "gp03",
+      "zh": [
+        "GP-03"
+      ],
+      "ja": "ガンダム試作3号機",
+      "kind": "unit"
+    },
+    {
+      "id": "f91",
+      "zh": [
+        "F91"
+      ],
+      "ja": "ガンダムF91",
+      "kind": "unit"
+    },
+    {
+      "id": "methuss",
+      "zh": [
+        "梅塔斯"
+      ],
+      "ja": "メタス",
+      "kind": "unit"
+    },
+    {
+      "id": "jegan",
+      "zh": [
+        "傑剛"
+      ],
+      "ja": "ジェガン",
+      "kind": "unit"
+    },
+    {
+      "id": "zaku",
+      "zh": [
+        "薩克"
+      ],
+      "ja": "ザク",
+      "kind": "unit"
+    },
+    {
+      "id": "dom",
+      "zh": [
+        "德姆Ⅱ"
+      ],
+      "ja": "ドム",
+      "kind": "unit"
+    },
+    {
+      "id": "gerbera",
+      "zh": [
+        "加貝拉·特特拉"
+      ],
+      "ja": "ガーベラ・テトラ",
+      "kind": "unit"
+    },
+    {
+      "id": "doga",
+      "zh": [
+        "雅克·多加"
+      ],
+      "ja": "ヤクト・ドーガ",
+      "kind": "unit"
+    },
+    {
+      "id": "qmansa",
+      "zh": [
+        "昆曼莎"
+      ],
+      "ja": "クィン・マンサ",
+      "kind": "unit"
+    },
+    {
+      "id": "theo",
+      "zh": [
+        "The-O"
+      ],
+      "ja": "ジ・O",
+      "kind": "unit"
+    },
+    {
+      "id": "dogos",
+      "zh": [
+        "多哥斯·吉爾"
+      ],
+      "ja": "ドゴス・ギア",
+      "kind": "unit"
+    },
+    {
+      "id": "alexan",
+      "zh": [
+        "亞歷山大"
+      ],
+      "ja": "アレキサンドリア",
+      "kind": "unit"
+    },
+    {
+      "id": "ra",
+      "zh": [
+        "拉·凱拉姆"
+      ],
+      "ja": "ラー・カイラム",
+      "kind": "unit"
+    },
+    {
+      "id": "nahel",
+      "zh": [
+        "拿哈爾·亞加瑪"
+      ],
+      "ja": "ネェル・アーガマ",
+      "kind": "unit"
+    },
+    {
+      "id": "argama",
+      "zh": [
+        "亞加瑪"
+      ],
+      "ja": "アーガマ",
+      "kind": "unit"
+    },
+    {
+      "id": "audhumla",
+      "zh": [
+        "奧德胡姆拉"
+      ],
+      "ja": "アウドムラ",
+      "kind": "unit"
+    },
+    {
+      "id": "medea",
+      "zh": [
+        "米迪亞"
+      ],
+      "ja": "ミデア",
+      "kind": "unit"
+    },
+    {
+      "id": "core",
+      "zh": [
+        "核心推進器"
+      ],
+      "ja": "コア・ブースター",
+      "kind": "unit"
+    },
+    {
+      "id": "wingzero_c",
+      "zh": [
+        "飛翼零式改"
+      ],
+      "ja": "ウイングガンダムゼロ改",
+      "kind": "unit"
+    },
+    {
+      "id": "wingzero",
+      "zh": [
+        "飛翼零式"
+      ],
+      "ja": "ウイングガンダムゼロ",
+      "kind": "unit"
+    },
+    {
+      "id": "wing",
+      "zh": [
+        "飛翼高達",
+        "飛翼"
+      ],
+      "ja": "ウイングガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "dhell",
+      "zh": [
+        "死神高達地獄"
+      ],
+      "ja": "ガンダムデスサイズヘル",
+      "kind": "unit"
+    },
+    {
+      "id": "death",
+      "zh": [
+        "死神高達",
+        "死神"
+      ],
+      "ja": "ガンダムデスサイズ",
+      "kind": "unit"
+    },
+    {
+      "id": "shenlong",
+      "zh": [
+        "神龍高達"
+      ],
+      "ja": "シェンロンガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "sandrock",
+      "zh": [
+        "沙漠高達"
+      ],
+      "ja": "ガンダムサンドロック",
+      "kind": "unit"
+    },
+    {
+      "id": "sandrock_k",
+      "zh": [
+        "沙漠改"
+      ],
+      "ja": "ガンダムサンドロック改",
+      "kind": "unit"
+    },
+    {
+      "id": "heavy",
+      "zh": [
+        "重炮高達"
+      ],
+      "ja": "ガンダムヘビーアームズ",
+      "kind": "unit"
+    },
+    {
+      "id": "heavy_k",
+      "zh": [
+        "重炮改"
+      ],
+      "ja": "ガンダムヘビーアームズ改",
+      "kind": "unit"
+    },
+    {
+      "id": "tallgeese",
+      "zh": [
+        "托爾吉斯"
+      ],
+      "ja": "トールギス",
+      "kind": "unit"
+    },
+    {
+      "id": "taurus",
+      "zh": [
+        "白羊座"
+      ],
+      "ja": "トーラス",
+      "kind": "unit",
+      "note": "諾因所用的機體。"
+    },
+    {
+      "id": "epyon",
+      "zh": [
+        "艾比安"
+      ],
+      "ja": "ガンダムエピオン",
+      "kind": "unit"
+    },
+    {
+      "id": "shining",
+      "zh": [
+        "閃光高達"
+      ],
+      "ja": "シャイニングガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "godg",
+      "zh": [
+        "神高達"
+      ],
+      "ja": "ゴッドガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "masterg",
+      "zh": [
+        "大師高達"
+      ],
+      "ja": "マスターガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "devil",
+      "zh": [
+        "魔鬼高達"
+      ],
+      "ja": "デビルガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "ultimate",
+      "zh": [
+        "究極大高達"
+      ],
+      "ja": "アルティメットガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "spiegel",
+      "zh": [
+        "鏡影高達"
+      ],
+      "ja": "ガンダムシュピーゲル",
+      "kind": "unit"
+    },
+    {
+      "id": "rising",
+      "zh": [
+        "崛起高達"
+      ],
+      "ja": "ライジングガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "nobel",
+      "zh": [
+        "諾貝爾高達 B",
+        "諾貝爾高達"
+      ],
+      "ja": "ノーベルガンダム",
+      "kind": "unit"
+    },
+    {
+      "id": "heaven",
+      "zh": [
+        "天劍高達"
+      ],
+      "ja": "ガンダムヘブンズソード",
+      "kind": "unit"
+    },
+    {
+      "id": "grand",
+      "zh": [
+        "大高達"
+      ],
+      "ja": "グランドガンダム",
+      "kind": "unit",
+      "note": "查普曼的機體。究極大高達是另一台。"
+    },
+    {
+      "id": "eva0",
+      "zh": [
+        "初號機"
+      ],
+      "ja": "エヴァンゲリオン初号機",
+      "kind": "unit"
+    },
+    {
+      "id": "eva00",
+      "zh": [
+        "零號機"
+      ],
+      "ja": "エヴァンゲリオン零号機",
+      "kind": "unit"
+    },
+    {
+      "id": "eva02",
+      "zh": [
+        "二號機"
+      ],
+      "ja": "エヴァンゲリオン弐号機",
+      "kind": "unit"
+    },
+    {
+      "id": "eva03",
+      "zh": [
+        "三號機"
+      ],
+      "ja": "エヴァンゲリオン参号機",
+      "kind": "unit"
+    },
+    {
+      "id": "eva",
+      "zh": [
+        "EVA",
+        "福音戰士"
+      ],
+      "ja": "エヴァンゲリオン",
+      "kind": "unit"
+    },
+    {
+      "id": "mazinger_k",
+      "zh": [
+        "魔神凱撒",
+        "凱撒"
+      ],
+      "ja": "マジンカイザー",
+      "kind": "unit"
+    },
+    {
+      "id": "greatm",
+      "zh": [
+        "大魔神"
+      ],
+      "ja": "グレートマジンガー",
+      "kind": "unit"
+    },
+    {
+      "id": "mazinger",
+      "zh": [
+        "魔神 Z",
+        "魔神Z",
+        "魔神"
+      ],
+      "ja": "マジンガーZ",
+      "kind": "unit"
+    },
+    {
+      "id": "venus",
+      "zh": [
+        "維納斯 A"
+      ],
+      "ja": "ビューナスA",
+      "kind": "unit"
+    },
+    {
+      "id": "aphrodite",
+      "zh": [
+        "愛神 A"
+      ],
+      "ja": "アフロダイA",
+      "kind": "unit"
+    },
+    {
+      "id": "diana",
+      "zh": [
+        "戴安娜 A",
+        "戴安娜A"
+      ],
+      "ja": "ダイアナンA",
+      "kind": "unit"
+    },
+    {
+      "id": "borot",
+      "zh": [
+        "波羅斯號"
+      ],
+      "ja": "ボスボロット",
+      "kind": "unit"
+    },
+    {
+      "id": "jet",
+      "zh": [
+        "噴射飛行翼"
+      ],
+      "ja": "ジェットスクランダー",
+      "kind": "unit"
+    },
+    {
+      "id": "godsigma",
+      "zh": [
+        "神西格瑪"
+      ],
+      "ja": "ゴッドシグマ",
+      "kind": "unit"
+    },
+    {
+      "id": "getter1",
+      "zh": [
+        "蓋特1"
+      ],
+      "ja": "ゲッター1",
+      "kind": "unit"
+    },
+    {
+      "id": "getterg",
+      "zh": [
+        "蓋特 G"
+      ],
+      "ja": "ゲッターロボG",
+      "kind": "unit"
+    },
+    {
+      "id": "shingetter",
+      "zh": [
+        "真蓋特"
+      ],
+      "ja": "真・ゲッター1",
+      "kind": "unit"
+    },
+    {
+      "id": "getter",
+      "zh": [
+        "蓋特機器人",
+        "蓋特"
+      ],
+      "ja": "ゲッターロボ",
+      "kind": "unit"
+    },
+    {
+      "id": "texas",
+      "zh": [
+        "德州麥克"
+      ],
+      "ja": "テキサスマック",
+      "kind": "unit"
+    },
+    {
+      "id": "goshogun",
+      "zh": [
+        "戈修剛"
+      ],
+      "ja": "ゴーショーグン",
+      "kind": "unit"
+    },
+    {
+      "id": "combattler",
+      "zh": [
+        "孔巴特拉 V",
+        "孔巴特拉V",
+        "孔巴特拉"
+      ],
+      "ja": "コン・バトラーV",
+      "kind": "unit"
+    },
+    {
+      "id": "daitarn",
+      "zh": [
+        "戴坦 3",
+        "戴坦3"
+      ],
+      "ja": "ダイターン3",
+      "kind": "unit"
+    },
+    {
+      "id": "dancouga",
+      "zh": [
+        "斷空我"
+      ],
+      "ja": "ダンクーガ",
+      "kind": "unit"
+    },
+    {
+      "id": "cybuster",
+      "zh": [
+        "賽巴斯塔"
+      ],
+      "ja": "サイバスター",
+      "kind": "unit"
+    },
+    {
+      "id": "granzon",
+      "zh": [
+        "古蘭森"
+      ],
+      "ja": "グランゾン",
+      "kind": "unit"
+    },
+    {
+      "id": "valsione",
+      "zh": [
+        "瓦爾西昂"
+      ],
+      "ja": "ヴァルシオーネ",
+      "kind": "unit"
+    },
+    {
+      "id": "gaddess",
+      "zh": [
+        "加迪斯"
+      ],
+      "ja": "ガッデス",
+      "kind": "unit"
+    },
+    {
+      "id": "huckebein",
+      "zh": [
+        "休凱拜因"
+      ],
+      "ja": "ヒュッケバイン",
+      "kind": "unit"
+    },
+    {
+      "id": "grungust",
+      "zh": [
+        "古倫加斯特"
+      ],
+      "ja": "グルンガスト",
+      "kind": "unit"
+    },
+    {
+      "id": "gespenst2",
+      "zh": [
+        "格斯潘斯特 Mk-II"
+      ],
+      "ja": "ゲシュペンストMk-II",
+      "kind": "unit"
+    },
+    {
+      "id": "gespenst",
+      "zh": [
+        "格斯潘斯特"
+      ],
+      "ja": "ゲシュペンスト",
+      "kind": "unit"
+    },
+    {
+      "id": "goraon",
+      "zh": [
+        "哥拉昂"
+      ],
+      "ja": "ゴラオン",
+      "kind": "unit"
+    },
+    {
+      "id": "grangalan",
+      "zh": [
+        "古蘭加蘭"
+      ],
+      "ja": "グランガラン",
+      "kind": "unit"
+    },
+    {
+      "id": "billbine",
+      "zh": [
+        "比魯拜因"
+      ],
+      "ja": "ビルバイン",
+      "kind": "unit"
+    },
+    {
+      "id": "dunbine",
+      "zh": [
+        "丹拜因"
+      ],
+      "ja": "ダンバイン",
+      "kind": "unit"
+    },
+    {
+      "id": "leineck",
+      "zh": [
+        "萊內克"
+      ],
+      "ja": "ライネック",
+      "kind": "unit"
+    },
+    {
+      "id": "willwisp",
+      "zh": [
+        "威爾·維普斯"
+      ],
+      "ja": "ウィル・ウィプス",
+      "kind": "unit"
+    },
+    {
+      "id": "lgaim",
+      "zh": [
+        "艾爾蓋姆"
+      ],
+      "ja": "エルガイム",
+      "kind": "unit"
+    },
+    {
+      "id": "dizard",
+      "zh": [
+        "新沙漠"
+      ],
+      "ja": "ヌーベルディザード",
+      "kind": "unit"
+    },
+    {
+      "id": "soloship",
+      "zh": [
+        "索羅艦"
+      ],
+      "ja": "ソロシップ",
+      "kind": "unit"
+    },
+    {
+      "id": "exelion",
+      "zh": [
+        "艾克西利昂"
+      ],
+      "ja": "エクセリオン",
+      "kind": "unit"
+    },
+    {
+      "id": "buster",
+      "zh": [
+        "頂點戰士"
+      ],
+      "ja": "ガンバスター",
+      "kind": "unit"
+    },
+    {
+      "id": "ideon",
+      "zh": [
+        "伊迪安"
+      ],
+      "ja": "イデオン",
+      "kind": "unit"
+    },
+    {
+      "id": "auge",
+      "zh": [
+        "奧傑"
+      ],
+      "ja": "オージェ",
+      "kind": "unit"
+    },
+    {
+      "id": "atholl",
+      "zh": [
+        "阿托爾 V",
+        "阿托爾V",
+        "阿托爾"
+      ],
+      "ja": "アトール",
+      "kind": "unit"
+    },
+    {
+      "id": "gonaguru",
+      "zh": [
+        "戈納古爾"
+      ],
+      "ja": "ゴナグル",
+      "kind": "unit"
+    },
+    {
+      "id": "galva",
+      "zh": [
+        "加爾博·吉克"
+      ],
+      "ja": "ガルバ・ジック",
+      "kind": "unit"
+    },
+    {
+      "id": "dorowa",
+      "zh": [
+        "多羅瓦·贊"
+      ],
+      "ja": "ドロワ・ザン",
+      "kind": "unit"
+    },
+    {
+      "id": "gadmore",
+      "zh": [
+        "加德莫爾·贊",
+        "加德莫爾"
+      ],
+      "ja": "ガドモア・ザン",
+      "kind": "unit"
+    },
+    {
+      "id": "zwarth",
+      "zh": [
+        "茲瓦斯"
+      ],
+      "ja": "ズワァース",
+      "kind": "unit"
+    },
+    {
+      "id": "bialess",
+      "zh": [
+        "比亞雷斯"
+      ],
+      "ja": "ビアレス",
+      "kind": "unit"
+    },
+    {
+      "id": "reig",
+      "zh": [
+        "萊格奧斯"
+      ],
+      "ja": "ライグ＝ゲイオス",
+      "kind": "unit"
+    },
+    {
+      "id": "byudo",
+      "zh": [
+        "比尤德利法"
+      ],
+      "ja": "ビュードリファー",
+      "kind": "unit"
+    },
+    {
+      "id": "zeidram",
+      "zh": [
+        "傑德朗"
+      ],
+      "ja": "ゼイドラム",
+      "kind": "unit"
+    },
+    {
+      "id": "augvalue",
+      "zh": [
+        "奧格瓦柳"
+      ],
+      "ja": "オーグバリュー",
+      "kind": "unit"
+    },
+    {
+      "id": "orpus",
+      "zh": [
+        "浪潮球體"
+      ],
+      "ja": "サージェ・オーパス",
+      "kind": "unit"
+    },
+    {
+      "id": "greater",
+      "zh": [
+        "格雷特金 II",
+        "格雷特金II"
+      ],
+      "ja": "グレイターキンII",
+      "kind": "unit"
+    },
+    {
+      "id": "balan",
+      "zh": [
+        "巴蘭·施奈爾"
+      ],
+      "ja": "バラン・シュナイル",
+      "kind": "unit",
+      "note": "機體，不是人名。"
+    },
+    {
+      "id": "beast",
+      "zh": [
+        "機械獸"
+      ],
+      "ja": "機械獣",
+      "kind": "unit"
+    },
+    {
+      "id": "aura",
+      "zh": [
+        "聖戰士"
+      ],
+      "ja": "オーラバトラー",
+      "kind": "unit"
+    },
+    {
+      "id": "gaiagear",
+      "zh": [
+        "蓋亞·加林格"
+      ],
+      "ja": "ガイア・ギア",
+      "kind": "unit"
+    },
+    {
+      "id": "londo",
+      "zh": [
+        "隆德貝爾"
+      ],
+      "ja": "ロンド・ベル",
+      "kind": "org"
+    },
+    {
+      "id": "titans",
+      "zh": [
+        "泰坦斯"
+      ],
+      "ja": "ティターンズ",
+      "kind": "org"
+    },
+    {
+      "id": "dc",
+      "zh": [
+        "神聖十字軍",
+        "DC"
+      ],
+      "ja": "ディバイン・クルセイダーズ",
+      "kind": "org"
+    },
+    {
+      "id": "guest",
+      "zh": [
+        "蓋斯特"
+      ],
+      "ja": "ゲスト",
+      "kind": "org",
+      "note": "外星勢力。不是嘉斯特。"
+    },
+    {
+      "id": "poseidal",
+      "zh": [
+        "波賽達爾"
+      ],
+      "ja": "ポセイダル",
+      "kind": "org",
+      "note": "彭塔戈納的軍方，也是首領的通稱。"
+    },
+    {
+      "id": "seele",
+      "zh": [
+        "澤勒"
+      ],
+      "ja": "ゼーレ",
+      "kind": "org"
+    },
+    {
+      "id": "aeg",
+      "zh": [
+        "幽谷"
+      ],
+      "ja": "エゥーゴ",
+      "kind": "org"
+    },
+    {
+      "id": "karaba",
+      "zh": [
+        "卡拉巴"
+      ],
+      "ja": "カラバ",
+      "kind": "org"
+    },
+    {
+      "id": "axis",
+      "zh": [
+        "阿克西斯"
+      ],
+      "ja": "アクシズ",
+      "kind": "org"
+    },
+    {
+      "id": "neozeon",
+      "zh": [
+        "新吉翁"
+      ],
+      "ja": "ノイエ・ジール",
+      "kind": "org"
+    },
+    {
+      "id": "zeon",
+      "zh": [
+        "吉翁"
+      ],
+      "ja": "ジオン",
+      "kind": "org"
+    },
+    {
+      "id": "zovorg",
+      "zh": [
+        "佐沃克"
+      ],
+      "ja": "ゾヴォーク",
+      "kind": "org"
+    },
+    {
+      "id": "nerv",
+      "zh": [
+        "NERV"
+      ],
+      "ja": "ネルフ",
+      "kind": "org"
+    },
+    {
+      "id": "apostle",
+      "zh": [
+        "使徒"
+      ],
+      "ja": "使徒",
+      "kind": "org"
+    },
+    {
+      "id": "buff",
+      "zh": [
+        "巴夫氏族"
+      ],
+      "ja": "バフ・クラン",
+      "kind": "org"
+    },
+    {
+      "id": "pentagona",
+      "zh": [
+        "彭塔戈納"
+      ],
+      "ja": "ペンタゴナ",
+      "kind": "org"
+    },
+    {
+      "id": "byston",
+      "zh": [
+        "拜斯頓·威爾",
+        "拜斯頓"
+      ],
+      "ja": "バイストン・ウェル",
+      "kind": "place"
+    },
+    {
+      "id": "sanc",
+      "zh": [
+        "桑克王國",
+        "桑克"
+      ],
+      "ja": "サンクキングダム",
+      "kind": "place"
+    },
+    {
+      "id": "luna2",
+      "zh": [
+        "月神二號"
+      ],
+      "ja": "ルナツー",
+      "kind": "place"
+    },
+    {
+      "id": "londennion",
+      "zh": [
+        "隆迪尼恩"
+      ],
+      "ja": "ロンデニオン",
+      "kind": "place"
+    },
+    {
+      "id": "shangri",
+      "zh": [
+        "香格里拉"
+      ],
+      "ja": "シャングリラ",
+      "kind": "place"
+    },
+    {
+      "id": "jaburo",
+      "zh": [
+        "加布羅"
+      ],
+      "ja": "ジャブロー",
+      "kind": "place"
+    },
+    {
+      "id": "adelaide",
+      "zh": [
+        "阿德萊德"
+      ],
+      "ja": "アデレード",
+      "kind": "place"
+    },
+    {
+      "id": "solomon",
+      "zh": [
+        "所羅門"
+      ],
+      "ja": "ソロモン",
+      "kind": "place"
+    },
+    {
+      "id": "aobao",
+      "zh": [
+        "阿·巴瓦·庫"
+      ],
+      "ja": "ア・バオア・クー",
+      "kind": "place"
+    },
+    {
+      "id": "photon",
+      "zh": [
+        "光子力研究所"
+      ],
+      "ja": "光子力研究所",
+      "kind": "place"
+    },
+    {
+      "id": "tesla",
+      "zh": [
+        "特斯拉·萊希"
+      ],
+      "ja": "テスラ・ライヒ",
+      "kind": "place"
+    },
+    {
+      "id": "yashima",
+      "zh": [
+        "八島作戰"
+      ],
+      "ja": "ヤシマ作戦",
+      "kind": "place"
+    },
+    {
+      "id": "pagan",
+      "zh": [
+        "帕根"
+      ],
+      "ja": "パーガン",
+      "kind": "place"
+    },
+    {
+      "id": "tristar",
+      "zh": [
+        "黑色三連星"
+      ],
+      "ja": "黒い三連星",
+      "kind": "org"
+    }
+  ]
+}

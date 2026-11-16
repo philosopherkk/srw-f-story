@@ -136,8 +136,158 @@ def esc(text):
     return html.escape(text, quote=True)
 
 
-def paras(items):
-    return "\n".join(f"<p>{esc(p)}</p>" for p in items)
+LEX_PATH = ROOT / "data" / "lexicon.json"
+
+
+def load_lexicon():
+    raw = json.loads(LEX_PATH.read_text(encoding="utf-8"))
+    blocks = tuple(sorted(raw["blocks"], key=len, reverse=True))
+    flat = []
+    for entry in raw["entries"]:
+        for form in entry["zh"]:
+            flat.append((form, entry))
+    flat.sort(key=lambda item: len(item[0]), reverse=True)
+    return tuple(flat), raw["entries"], blocks
+
+
+FORMS, ENTRIES, BLOCKS = load_lexicon()
+
+
+def covered_by_block(text, start, length):
+    end = start + length
+    lo = max(0, start - 8)
+    for block in BLOCKS:
+        pos = text.find(block, lo, end + len(block))
+        while pos != -1 and pos < end:
+            if pos + len(block) > start:
+                return True
+            pos = text.find(block, pos + 1, end + len(block))
+    return False
+
+
+def _match_at(text, index):
+    for form, entry in FORMS:
+        if text.startswith(form, index) and not covered_by_block(text, index, len(form)):
+            return form, entry
+    return None
+
+
+def annotate(text, seen):
+    if not text:
+        return ""
+    out = []
+    i = 0
+    n = len(text)
+    while i < n:
+        hit = _match_at(text, i)
+        if hit is None:
+            out.append(esc(text[i]))
+            i += 1
+            continue
+        form, entry = hit
+        show = form != entry["ja"] and entry["id"] not in seen
+        if show:
+            out.append(
+                f'<span class="term">{esc(form)}<i lang="ja">{esc(entry["ja"])}</i></span>'
+            )
+            seen.add(entry["id"])
+        else:
+            out.append(esc(form))
+        i += len(form)
+    return "".join(out)
+
+
+def paras(items, seen):
+    return "\n".join(f"<p>{annotate(p, seen)}</p>" for p in items)
+
+
+def annotate_html(source):
+    seen = set()
+    out = []
+    i = 0
+    n = len(source)
+    while i < n:
+        if source[i] == "<":
+            j = source.find(">", i)
+            if j < 0:
+                out.append(source[i:])
+                break
+            out.append(source[i : j + 1])
+            i = j + 1
+            continue
+        j = source.find("<", i)
+        if j < 0:
+            j = n
+        out.append(annotate(source[i:j], seen))
+        i = j
+    return "".join(out)
+
+
+def matched_names(text):
+    found = []
+    seen = set()
+    i = 0
+    n = len(text)
+    while i < n:
+        hit = _match_at(text, i)
+        if hit is None:
+            i += 1
+            continue
+        form, entry = hit
+        if entry["id"] not in seen:
+            seen.add(entry["id"])
+            found.append(entry["ja"])
+            found.extend(entry["zh"])
+        i += len(form)
+    return found
+
+
+KIND_LABEL = (
+    ("person", "角色"),
+    ("unit", "機體"),
+    ("org", "勢力"),
+    ("place", "地名"),
+)
+
+
+def render_names():
+    groups = {kind: [] for kind, _label in KIND_LABEL}
+    for entry in ENTRIES:
+        groups[entry["kind"]].append(entry)
+    chips = ['<div class="name-filters">']
+    chips.append('<button type="button" class="name-chip on" data-kind="all">全部</button>')
+    for kind, label in KIND_LABEL:
+        chips.append(
+            f'<button type="button" class="name-chip" data-kind="{kind}">{label}</button>'
+        )
+    chips.append("</div>")
+    parts = ["".join(chips)]
+    for kind, label in KIND_LABEL:
+        cards = []
+        for entry in sorted(groups[kind], key=lambda item: item["zh"][0]):
+            alias = ""
+            if len(entry["zh"]) > 1:
+                rest = "、".join(esc(name) for name in entry["zh"][1:])
+                alias = f'<p class="alias">亦作 {rest}</p>'
+            note = entry.get("note") or ""
+            if entry["ja"] == entry["zh"][0] and not note:
+                note = "日文用同一組漢字。"
+            note_html = f'<p class="aside">{esc(note)}</p>' if note else ""
+            blob = " ".join(entry["zh"] + [entry["ja"], note, label])
+            cards.append(
+                f'''<article class="name-card" data-kind="{kind}" data-search="{esc(blob)}">
+  <p class="kind">{label}</p>
+  <h3>{esc(entry["zh"][0])}</h3>
+  {alias}
+  <p class="ja" lang="ja">{esc(entry["ja"])}</p>
+  {note_html}
+</article>'''
+            )
+        parts.append(
+            f'<div class="name-group" data-kind="{kind}"><h3>{label}</h3>'
+            f'<div class="name-grid">{"".join(cards)}</div></div>'
+        )
+    return "".join(parts)
 
 
 def load_stages():
@@ -154,44 +304,51 @@ def titles_of(stage):
 
 
 def render_stage(stage):
+    seen = set()
     bits = []
     for key in ("joins", "leaves", "flags"):
         for item in stage.get(key) or []:
-            bits.append(f'<span class="tag">{esc(item)}</span>')
+            bits.append(f'<span class="tag">{annotate(item, seen)}</span>')
     meta = f'<div class="meta">{"".join(bits)}</div>' if bits else ""
     thin = ""
     if stage.get("thin"):
-        thin = f'<p class="thin">{esc(stage["thin"])}</p>'
+        thin = f'<p class="thin">{annotate(stage["thin"], seen)}</p>'
     note = ""
     if stage.get("note"):
-        note = f'<p class="note">{esc(stage["note"])}</p>'
+        note = f'<p class="note">{annotate(stage["note"], seen)}</p>'
     ja = "／".join(titles_of(stage))
-    search = " ".join(
+    plain = " ".join(
         [
             stage["titleZh"],
             ja,
             stage.get("route", ""),
             stage.get("game", ""),
+            " ".join(stage.get("joins") or []),
+            " ".join(stage.get("leaves") or []),
+            " ".join(stage.get("flags") or []),
+            stage.get("thin") or "",
+            stage.get("note") or "",
             " ".join(stage.get("before") or []),
             " ".join(stage.get("during") or []),
             " ".join(stage.get("after") or []),
         ]
     )
+    search = plain + " " + " ".join(matched_names(plain))
     return f"""
 <article class="stage" id="{esc(stage["id"])}" data-group="{esc(stage["group"])}" data-search="{esc(search)}">
   <header>
     <p class="kicker">{esc(stage["game"])} · {esc(stage["route"])}</p>
-    <h3>{esc(stage["titleZh"])}</h3>
-    <p class="ja">{esc(ja)}</p>
+    <h3>{annotate(stage["titleZh"], seen)}</h3>
+    <p class="ja" lang="ja">{esc(ja)}</p>
   </header>
   {meta}
   {thin}
   <h4>戰前</h4>
-  {paras(stage["before"])}
+  {paras(stage["before"], seen)}
   <h4>戰鬥中的轉折</h4>
-  {paras(stage["during"])}
+  {paras(stage["during"], seen)}
   <h4>戰後</h4>
-  {paras(stage["after"])}
+  {paras(stage["after"], seen)}
   {note}
 </article>
 """
@@ -234,7 +391,7 @@ TEMPLATE_HEAD = r"""<!DOCTYPE html>
   <div class="nav-group">導讀</div>
   <a class="item" href="#overview">總覽</a>
   <a class="item" href="#flow">路線圖</a>
-  <a class="item" href="#names">譯名</a>
+  <a class="item" href="#names">角色與機體</a>
   <a class="item" href="#endings">結局</a>
   <a class="item" href="#sources">出典</a>
   <div class="nav-group">F</div>
@@ -258,7 +415,7 @@ TEMPLATE_HEAD = r"""<!DOCTYPE html>
 <div class="main">
   <div class="topbar">
     <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="nav">目錄</button>
-    <input class="search" id="q" type="search" placeholder="搜尋話名、角色、日文標題" aria-label="搜尋話數">
+    <input class="search" id="q" type="search" placeholder="搜尋話名、角色、機體或日文" aria-label="搜尋話數與名字">
     <span class="count" id="count"></span>
   </div>
   <div class="page" id="content">
@@ -475,42 +632,10 @@ TEMPLATE_INTRO = r"""
   </div>
 </section>
 
-<section id="names" class="block prose">
-  <h2>譯名</h2>
-  <p>角色與機體採用香港通行的寫法。日文留在括號裡，避免和台灣常用的「鋼彈」「馬沙」混在一起。下表只列本站反覆出現、而且容易對不上的名字。</p>
-  <table class="glossary">
-    <thead><tr><th>本站</th><th>日文</th><th>說明</th></tr></thead>
-    <tbody>
-      <tr><td>高達</td><td>ガンダム</td><td>不寫成鋼彈。</td></tr>
-      <tr><td>隆德貝爾</td><td>ロンド・ベル</td><td>第十三獨立部隊。</td></tr>
-      <tr><td>阿姆羅·雷</td><td>アムロ・レイ</td><td></td></tr>
-      <tr><td>夏亞／卡多</td><td>シャア／クワトロ・バジーナ</td><td>同一個人的兩個名字。</td></tr>
-      <tr><td>希羅·尤伊</td><td>ヒイロ・ユイ</td><td></td></tr>
-      <tr><td>卡特爾</td><td>カトル・ラバーバ・ウィナー</td><td>不是卡多。</td></tr>
-      <tr><td>托雷茲</td><td>トレーズ・クシュリナーダ</td><td></td></tr>
-      <tr><td>多蒙·卡遜</td><td>ドモン・カッシュ</td><td></td></tr>
-      <tr><td>東方不敗／亞洲大師</td><td>マスター・アジア</td><td>流派東方不敗的前代掌門。</td></tr>
-      <tr><td>魔鬼高達</td><td>デビルガンダム</td><td>究極大高達失控後的名字。</td></tr>
-      <tr><td>魔神Z／兜甲兒</td><td>マジンガーZ／兜甲児</td><td></td></tr>
-      <tr><td>蓋特機器人／流龍馬</td><td>ゲッターロボ／流竜馬</td><td></td></tr>
-      <tr><td>斷空我</td><td>ダンクーガ</td><td>獸戰機隊合體後的名字。</td></tr>
-      <tr><td>新世紀福音戰士／EVA</td><td>エヴァンゲリオン</td><td>組織寫 NERV，使徒保持「使徒」。</td></tr>
-      <tr><td>哈曼·卡恩</td><td>ハマーン・カーン</td><td></td></tr>
-      <tr><td>嘉斯特</td><td>アナベル・ガトー</td><td>所羅門的惡夢。不是蓋斯特。</td></tr>
-      <tr><td>蓋斯特</td><td>ゲスト</td><td>外星勢力。地球方面的稱呼。</td></tr>
-      <tr><td>波賽達爾</td><td>ポセイダル</td><td>既是彭塔戈納的軍方，也是首領的名字。</td></tr>
-      <tr><td>神聖十字軍／DC</td><td>ディバイン・クルセイダーズ</td><td></td></tr>
-      <tr><td>泰坦斯</td><td>ティターンズ</td><td></td></tr>
-      <tr><td>桑克王國</td><td>サンクキングダム</td><td></td></tr>
-      <tr><td>翔·薩馬</td><td>ショウ・ザマ</td><td>聖戰士丹拜因。</td></tr>
-      <tr><td>托德·吉尼斯</td><td>トッド・ギネス</td><td></td></tr>
-      <tr><td>達巴</td><td>ダバ・マイロード</td><td>重戰機艾爾蓋姆。</td></tr>
-      <tr><td>伊迪安／伊迪</td><td>イデオン／イデ</td><td>傳說巨神，以及驅使它的意志。</td></tr>
-      <tr><td>頂點戰士</td><td>ガンバスター</td><td>駕駛是高屋法子。</td></tr>
-      <tr><td>梅基博斯</td><td>メキボス</td><td>蓋斯特的特使。生死決定 DC 篇結局語氣。</td></tr>
-      <tr><td>修·白河</td><td>シュウ・シラカワ</td><td>古蘭森。</td></tr>
-    </tbody>
-  </table>
+<section id="names" class="block">
+  <h2>角色與機體</h2>
+  <p class="prose">正文用香港通行的中文。每一話第一次寫到的角色、機體、勢力和地名，後面附上日文；同一話裡再出現就只留中文，避免括號把長句切斷。下面可以按類別看，頁首的搜尋框也認日文。</p>
+  <!--NAME_INDEX-->
 </section>
 """
 
@@ -527,7 +652,7 @@ TEMPLATE_END = r"""
   <h3>通常結局</h3>
   <p>外星人與人類談妥一條不必再靠武力往前走的路。隆德貝爾解散，地球上算得上武器的東西被封存。空間接受了，地球也正要跟上。莉莉娜走向總體和平，殖民衛星聯合在和平之下解散國界；這份和平站在死者身上，包括同伴。第三避難所把蓋斯特／波賽達爾篇寫成必然進入這個結局，不必再滿足隱藏旗標。DC 篇則要梅基博斯活著，並且一起把火星的事做完。維基的寫法更窄一點：在「恐怖與恐慌之間」第七回合出現的選擇裡，不要選「打倒梅基博斯、轉去打蓋斯特」。</p>
   <h3>全面戰爭結局</h3>
-  <p>只存在於 DC 篇。特使梅基博斯死在火星之前的選擇裡。蓋斯特本國的仗暫時停了，和平卻是用力量換來的。甲兒問大家到底為了什麼而戰。隆德貝爾沒有解散，武器也沒有封存。攻略記載這條結局沒有結束 CG，音樂是「レクレイム」，不是通常結局的 結局二。維基把觸發寫成：該話第七玩家階段的選項裡，選打倒梅基博斯。這個選項要先出現，也就是洛夫、塞蒂、澤布三人在第七回合開始時都還活著；若提前擊破其中一人，三人會先撤，梅基博斯仍會登艦，走的是通常結局那邊。第三避難所把條件簡化成「打倒格雷特金II、梅基博斯死亡」，沒有寫三人的存活與「再等一下」的選項。</p>
+  <p>只存在於 DC 篇。特使梅基博斯死在火星之前的選擇裡。蓋斯特本國的仗暫時停了，和平卻是用力量換來的。甲兒問大家到底為了什麼而戰。隆德貝爾沒有解散，武器也沒有封存。攻略記載這條結局沒有結束 CG，音樂是「レクレイム」，不是通常結局的「結局二」。維基把觸發寫成：該話第七玩家階段的選項裡，選打倒梅基博斯。這個選項要先出現，也就是洛夫、塞蒂、澤布三人在第七回合開始時都還活著；若提前擊破其中一人，三人會先撤，梅基博斯仍會登艦，走的是通常結局那邊。第三避難所把條件簡化成「打倒格雷特金II、梅基博斯死亡」，沒有寫三人的存活與「再等一下」的選項。</p>
   <h3>EVA 壞結局</h3>
   <p>澤勒的計畫藉初號機往前走。渚薰作為第四適格者與使徒出現，真嗣親手送走他，然後關進自己的殼裡。世界在「誰都看不見我，那就全部消失」的句子裡崩掉。卡特爾因為從未成為同伴，只以一個轉為憎恨的幻影出現。遊戲在「未完的使者」結束，後面的清算、卡特爾的悲傷、DC 篇與蓋斯特篇都不會發生。第三避難所寫明這不算完整通關，畫面上有動畫再現，之後如何則沒有下文。</p>
   <p>條件各說各話，本站不把它們捏成第五份：</p>
@@ -558,7 +683,7 @@ TEMPLATE_END = r"""
   <p>已知比較薄、或來源互相打架的地方：基輔先行時超級系的「グラン・ガラン救出」沒有獨立的長篇轉述，攻略只說與另一條路線的古蘭加蘭戰鬥大致相同；「噴射飛行翼千鈞一髮」與「被鎖定的光子力研究所」在官方表上分屬繞路兩側，中文攻略卻把炸彈、戴安娜A與神西格瑪合流寫成同一場、並說繞路只是少打拉薩。這兩話的正文都標了這個落差。EVA 壞結局的結算回合與同步率對象，見上方結局一節，沒有取平均。</p>
 </section>
 <footer class="colophon">
-  <p>靜態頁面。日文話名保留官方表的寫法；PS 與土星只有「背叛的月面基地／月面都市」這一題被維基注明改過名。角色譯名從香港習慣，不代表遊戲內的中文版用字——這兩作沒有官方中文。</p>
+  <p>靜態頁面。日文話名保留官方表的寫法；PS 與土星只有「背叛的月面基地／月面都市」這一題被維基注明改過名。角色和機體在每一話第一次出現時附上日文，全表見「角色與機體」。中文從香港習慣，不代表遊戲內的中文版用字——這兩作沒有官方中文。</p>
 </footer>
 """
 
@@ -566,6 +691,7 @@ TEMPLATE_TAIL = r"""
   </div>
 </div>
 </div>
+<a class="totop" href="#overview">回到頂部</a>
 <script src="js/app.js"></script>
 </body>
 </html>
@@ -575,10 +701,11 @@ TEMPLATE_TAIL = r"""
 def main():
     stages = load_stages()
     check(stages)
-    body = [TEMPLATE_HEAD, TEMPLATE_INTRO, '<section id="stages" class="block"><h2>全話</h2>']
+    intro = annotate_html(TEMPLATE_INTRO).replace("<!--NAME_INDEX-->", render_names())
+    body = [TEMPLATE_HEAD, intro, '<section id="stages" class="block"><h2>全話</h2>']
     body.append("".join(render_stage(stage) for stage in stages))
     body.append("</section>")
-    body.append(TEMPLATE_END)
+    body.append(annotate_html(TEMPLATE_END))
     body.append(TEMPLATE_TAIL)
     OUT.write_text("".join(body), encoding="utf-8")
     print(f"wrote {OUT} with {len(stages)} stages")
